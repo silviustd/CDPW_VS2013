@@ -29,8 +29,9 @@ namespace CDPW.DAL
 
                     // Add parameters to SPROC
                     cmd.Parameters.Add("@Action", SqlDbType.TinyInt).Value = 99;
-                    cmd.Parameters.Add("@username", SqlDbType.NVarChar, 50).Value = username;
-                    cmd.Parameters.Add("@userpasswd", SqlDbType.NVarChar, 50).Value = password;
+                    cmd.Parameters.Add("@UserName", SqlDbType.NVarChar, 50).Value = username;
+                    cmd.Parameters.Add("@UserPasswd", SqlDbType.NVarChar, 50).Value = password;
+                    cmd.Parameters.Add("@Passphrase", SqlDbType.NVarChar, 256).Value = EncryptDecrypt.DB_PASSPHRASE;
 
                     dbConnection.Open();
 
@@ -190,9 +191,10 @@ namespace CDPW.DAL
 
                     // Add parameters to SPROC
                     cmd.Parameters.Add("@Action", SqlDbType.TinyInt).Value = 2;
-                    cmd.Parameters.Add("@username", SqlDbType.NVarChar, 50).Value = username;
-                    cmd.Parameters.Add("@useremail", SqlDbType.NVarChar, 50).Value = email;
-                    cmd.Parameters.Add("@userpasswd", SqlDbType.NVarChar, 50).Value = password;
+                    cmd.Parameters.Add("@UserName", SqlDbType.NVarChar, 50).Value = username;
+                    cmd.Parameters.Add("@UserEmail", SqlDbType.NVarChar, 50).Value = email;
+                    cmd.Parameters.Add("@UserPasswd", SqlDbType.NVarChar, 50).Value = password;
+                    cmd.Parameters.Add("@Passphrase", SqlDbType.NVarChar, 256).Value = EncryptDecrypt.DB_PASSPHRASE;
 
                     dbConnection.Open();
 
@@ -213,7 +215,7 @@ namespace CDPW.DAL
 
                     // Add parameters to SPROC
                     cmd.Parameters.Add("@Action", SqlDbType.TinyInt).Value = 1;
-                    cmd.Parameters.Add("@useremail", SqlDbType.NVarChar, 50).Value = email;
+                    cmd.Parameters.Add("@UserEmail", SqlDbType.NVarChar, 50).Value = email;
 
                     dbConnection.Open();
                     cmd.ExecuteNonQuery();
@@ -233,8 +235,9 @@ namespace CDPW.DAL
 
                         // Add parameters to SPROC
                         cmd.Parameters.Add("@Action", SqlDbType.TinyInt).Value = 2;
-                        cmd.Parameters.Add("@useremail", SqlDbType.NVarChar, 50).Value = Email;
-                        cmd.Parameters.Add("@userpasswd", SqlDbType.NVarChar, 50).Value = Password;
+                        cmd.Parameters.Add("@Useremail", SqlDbType.NVarChar, 50).Value = Email;
+                        cmd.Parameters.Add("@Userpasswd", SqlDbType.NVarChar, 50).Value = Password;
+                        cmd.Parameters.Add("@Passphrase", SqlDbType.NVarChar, 256).Value = EncryptDecrypt.DB_PASSPHRASE;
 
                         dbConnection.Open();
                         cmd.ExecuteNonQuery();

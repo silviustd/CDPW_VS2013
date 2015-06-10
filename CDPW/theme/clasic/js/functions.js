@@ -169,6 +169,52 @@ $(document).ready(function () {
     });
 
 
+    $(".msg_alert")
+        .mouseenter(function () {
+            $('.msg_alert').css('background-color', '#e6c26e');
+        })
+        .mouseleave(function () {
+            $('.msg_alert').css('background-color', '#faf5c8');
+        });
+
+    //$(".msg_alert").hover(
+    //    function () {
+    //        $('.msg_alert').css('background-color', '#e6c26e');
+    //        }, 
+    //    function () {
+    //        $('.msg_alert').css('background-color', '#faf5c8');
+    //        } 
+    //);
+
+    $(".msg_error").hover(
+        function () {
+            $('.msg_error').css('background-color', '#ae432e');
+        },
+        function () {
+            $('.msg_error').css('background-color', '#f2cac2');
+        }
+    );
+
+    $(".msg_error").hover(
+    function () {
+        $('.msg_ok').css('background-color', '#77ab13');
+    },
+    function () {
+        $('.msg_ok').css('background-color', '#d5e5b8');
+    }
+    );
+
+
+
+    $(".msg_info").hover(
+        function () {
+            $('.msg_info').css('background-color', '#058dc7');
+        },
+        function () {
+            $('.msg_info').css('background-color', '#c2e2f2');
+        }
+    );
+
     $(".msg_box").bind("click", function () {
         $(this).hide();
         $("#main-1").removeClass("main-1-message");

@@ -44,8 +44,8 @@
         <div id="divoverlay">
             <div id="masterMessage">
                 <span class="span50"></span>
-                <asp:Label ID="lblMasterMessage" runat="server" class="msg_box msg_info corners" style="width: 300px;">
-                    An e-mail message was sent to the e-mail address provided with instructions how
+                <asp:Label ID="lblMasterMessage" runat="server" class="msg_box msg_info corners" style="width: 400px;">
+                    An e-mail message has been sent to the e-mail address provided with instructions how
                     to reset your passsword.
                     <br>
                     Note that confirmation string expire in approximately 3 days.

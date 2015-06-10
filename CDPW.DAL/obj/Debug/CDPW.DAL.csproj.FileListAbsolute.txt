@@ -46,3 +46,12 @@ K:\Projects\CS\CDPW_Project_\CDPW\CDPW.DAL\bin\Debug\log4net.xml
 K:\Projects\CS\CDPW_Project_\CDPW\CDPW.DAL\obj\Debug\CDPW.DAL.csprojResolveAssemblyReference.cache
 K:\Projects\CS\CDPW_Project_\CDPW\CDPW.DAL\obj\Debug\CDPW.DAL.dll
 K:\Projects\CS\CDPW_Project_\CDPW\CDPW.DAL\obj\Debug\CDPW.DAL.pdb
+K:\Projects\CS\CDPW_Project_\CDPW_VS2013\CDPW.DAL\bin\Debug\CDPW.DAL.dll
+K:\Projects\CS\CDPW_Project_\CDPW_VS2013\CDPW.DAL\bin\Debug\CDPW.DAL.pdb
+K:\Projects\CS\CDPW_Project_\CDPW_VS2013\CDPW.DAL\bin\Debug\CDPW.BLL.dll
+K:\Projects\CS\CDPW_Project_\CDPW_VS2013\CDPW.DAL\bin\Debug\log4net.dll
+K:\Projects\CS\CDPW_Project_\CDPW_VS2013\CDPW.DAL\bin\Debug\CDPW.BLL.pdb
+K:\Projects\CS\CDPW_Project_\CDPW_VS2013\CDPW.DAL\bin\Debug\log4net.xml
+K:\Projects\CS\CDPW_Project_\CDPW_VS2013\CDPW.DAL\obj\Debug\CDPW.DAL.csprojResolveAssemblyReference.cache
+K:\Projects\CS\CDPW_Project_\CDPW_VS2013\CDPW.DAL\obj\Debug\CDPW.DAL.dll
+K:\Projects\CS\CDPW_Project_\CDPW_VS2013\CDPW.DAL\obj\Debug\CDPW.DAL.pdb

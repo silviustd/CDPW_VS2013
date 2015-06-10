@@ -63,7 +63,7 @@
                             <p>
                                 <label for="txtDOB">
                                     Date of Birth</label>
-                                <asp:TextBox ID="txtDOB" runat="server" class="text text-1" original-title="mm/dd/yyyy" />
+                                <asp:TextBox ID="txtDOB" runat="server" class="text text-1 validate[custom[date]" original-title="mm/dd/yyyy" />
                             </p>
                             <p>
                                 <label for="txtFName">
@@ -97,7 +97,7 @@
                             <legend>Residential Address</legend>
                             <p>
                                 <label for="txtStrNo">
-                                    Street Number</label><asp:TextBox ID="txtStrNo" runat="server" class="text-1" MaxLength="5" />
+                                    Street Number</label><asp:TextBox ID="txtStrNo" runat="server" class="text-1 validate[custom[smallintno]"   MaxLength="5" />
                             </p>
                             <p>
                                 <label for="txtStrName">

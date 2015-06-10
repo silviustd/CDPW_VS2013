@@ -27,3 +27,10 @@ K:\Projects\CS\CDPW_Project_\CDPW\CDPW.BLL\bin\Debug\log4net.xml
 K:\Projects\CS\CDPW_Project_\CDPW\CDPW.BLL\obj\Debug\CDPW.BLL.csprojResolveAssemblyReference.cache
 K:\Projects\CS\CDPW_Project_\CDPW\CDPW.BLL\obj\Debug\CDPW.BLL.dll
 K:\Projects\CS\CDPW_Project_\CDPW\CDPW.BLL\obj\Debug\CDPW.BLL.pdb
+K:\Projects\CS\CDPW_Project_\CDPW_VS2013\CDPW.BLL\bin\Debug\CDPW.BLL.dll
+K:\Projects\CS\CDPW_Project_\CDPW_VS2013\CDPW.BLL\bin\Debug\CDPW.BLL.pdb
+K:\Projects\CS\CDPW_Project_\CDPW_VS2013\CDPW.BLL\bin\Debug\log4net.dll
+K:\Projects\CS\CDPW_Project_\CDPW_VS2013\CDPW.BLL\bin\Debug\log4net.xml
+K:\Projects\CS\CDPW_Project_\CDPW_VS2013\CDPW.BLL\obj\Debug\CDPW.BLL.csprojResolveAssemblyReference.cache
+K:\Projects\CS\CDPW_Project_\CDPW_VS2013\CDPW.BLL\obj\Debug\CDPW.BLL.dll
+K:\Projects\CS\CDPW_Project_\CDPW_VS2013\CDPW.BLL\obj\Debug\CDPW.BLL.pdb

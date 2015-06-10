@@ -369,6 +369,7 @@ namespace CDPW
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         // Add parameters to SPROC
+                        cmd.Parameters.Add("@Passphrase", SqlDbType.NVarChar, 256).Value = EncryptDecrypt.DB_PASSPHRASE;
                         cmd.Parameters.Add("@WAppUId", SqlDbType.BigInt).Value = UserID;
                         cmd.Parameters.Add("@PersonId", SqlDbType.BigInt).Value = uLogin.WPersonId;
                         cmd.Parameters.Add("@UserName", SqlDbType.NVarChar, 50).Value = txtUName;

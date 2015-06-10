@@ -12,6 +12,10 @@ namespace CDPW.BLL
         /// Encrypting a text using SHA1.
         /// </summary>
         /// <param name="plainText">text to encrypt.</param>
+        /// 
+
+        public const String DB_PASSPHRASE = "Per Ardua Ad Astra";
+
         public static string Encrypt(string plainText)
         {
             if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Enter");
