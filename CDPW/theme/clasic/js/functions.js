@@ -195,7 +195,7 @@ $(document).ready(function () {
         }
     );
 
-    $(".msg_error").hover(
+    $(".msg_ok").hover(
     function () {
         $('.msg_ok').css('background-color', '#77ab13');
     },
@@ -203,8 +203,6 @@ $(document).ready(function () {
         $('.msg_ok').css('background-color', '#d5e5b8');
     }
     );
-
-
 
     $(".msg_info").hover(
         function () {

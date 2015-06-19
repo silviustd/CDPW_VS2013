@@ -235,8 +235,8 @@ namespace CDPW.DAL
 
                         // Add parameters to SPROC
                         cmd.Parameters.Add("@Action", SqlDbType.TinyInt).Value = 2;
-                        cmd.Parameters.Add("@Useremail", SqlDbType.NVarChar, 50).Value = Email;
-                        cmd.Parameters.Add("@Userpasswd", SqlDbType.NVarChar, 50).Value = Password;
+                        cmd.Parameters.Add("@UserEmail", SqlDbType.NVarChar, 50).Value = Email;
+                        cmd.Parameters.Add("@UserPasswd", SqlDbType.NVarChar, 50).Value = Password;
                         cmd.Parameters.Add("@Passphrase", SqlDbType.NVarChar, 256).Value = EncryptDecrypt.DB_PASSPHRASE;
 
                         dbConnection.Open();

@@ -43,7 +43,7 @@ namespace CDPW
                                 {
                                     // Recover message EXPIRED
                                     phFormRecoverPasswd.Visible = false;
-                                    Helpers.toggleMasterMessage(this, true, "ERR_RESET_PWD_MORE3DAYS", "msg_box_v msg_alert corners bold span50", "cdprecoverpasswd.aspx");
+                                    Helpers.toggleMasterMessage(this, true, "ERR_RESET_PWD_MORE3DAYS", "msg_box_v msg_alert_mm bold span50", "cdprecoverpasswd.aspx");
                                     //ltrRecoverWrong.Text = "The confirmation message was sent more than 3 days ago. <br />Please try to re-submit your request.";
                                     //phRecoverWrong.Visible = true;
                                 }
@@ -65,7 +65,7 @@ namespace CDPW
                                         Mail.Send(emailToReset, null, null, CDPWMessages.EMAIL_SUBJECT_NEW_PASSWORD, emailTemplate, System.Net.Mail.MailPriority.Normal);
 
                                         phFormRecoverPasswd.Visible = false;
-                                        Helpers.toggleMasterMessage(this, true, "MSG_RECOVER_PASSWORD_SUCCESS", "msg_box_v msg_ok corners span50", "cdplogin.aspx");
+                                        Helpers.toggleMasterMessage(this, true, "MSG_RECOVER_PASSWORD_SUCCESS", "msg_box_v msg_ok_mm span50", "cdplogin.aspx");
                                         //phResetPasswd.Visible = true;
 
                                         Response.Redirect("cdprecoverpasswd.aspx?ps=pes",false);
@@ -73,7 +73,7 @@ namespace CDPW
                                     else
                                     {
                                         phFormRecoverPasswd.Visible = false;
-                                        Helpers.toggleMasterMessage(this, true, "ERR_NO_EMAIL", "msg_box_v msg_alert corners bold span50", "cdprecoverpasswd.aspx");
+                                        Helpers.toggleMasterMessage(this, true, "ERR_NO_EMAIL", "msg_box_v msg_alert_mm bold span50", "cdprecoverpasswd.aspx");
                                         //phRecoverWrong.Visible = true;
                                     }
                                 }
@@ -82,7 +82,7 @@ namespace CDPW
                             else
                             {
                                 phFormRecoverPasswd.Visible = false;
-                                Helpers.toggleMasterMessage(this, true, "ERR_RESET_PWD_MORE3DAYS", "msg_box_v msg_alert corners bold span50", "cdprecoverpasswd.aspx");
+                                Helpers.toggleMasterMessage(this, true, "ERR_RESET_PWD_MORE3DAYS", "msg_box_v msg_alert_mm bold span50", "cdprecoverpasswd.aspx");
                                 //ltrRecoverWrong.Text = "The confirmation message was sent more than 3 days ago. <br />Please try to re-submit your request.";
                                 //phRecoverWrong.Visible = true;
                             }
@@ -91,7 +91,7 @@ namespace CDPW
                         else
                         {
                             phFormRecoverPasswd.Visible = false;
-                            Helpers.toggleMasterMessage(this, true, "ERR_MSG_TRY_AGAIN", "msg_box_v msg_error corners span50", "cdprecoverpasswd.aspx");
+                            Helpers.toggleMasterMessage(this, true, "ERR_MSG_TRY_AGAIN", "msg_box_v msg_error_mm span50", "cdprecoverpasswd.aspx");
                             //phError.Visible = true;
                         }
 
@@ -99,7 +99,7 @@ namespace CDPW
                     else if (pSection == "pes")
                     {
                         phFormRecoverPasswd.Visible = false;
-                        Helpers.toggleMasterMessage(this, true, "MSG_RECOVER_PASSWORD_SUCCESS", "msg_box_v msg_ok corners span50", "cdplogin.aspx");
+                        Helpers.toggleMasterMessage(this, true, "MSG_RECOVER_PASSWORD_SUCCESS", "msg_box_v msg_ok_mm span50", "cdplogin.aspx");
                         //phResetPasswd.Visible = true;
                     }
                 }
@@ -108,7 +108,7 @@ namespace CDPW
             {
                 //components.Error_Show.Show(phError, true, ltrError, ex, phFormRecoverPasswd, true);
                 phFormRecoverPasswd.Visible = false;
-                Helpers.toggleMasterMessage(this, true, "ERR_MSG_TRY_AGAIN", "msg_box_v msg_error corners span50", "cdprecoverpasswd.aspx");
+                Helpers.toggleMasterMessage(this, true, "ERR_MSG_TRY_AGAIN", "msg_box_v msg_error_mm span50", "cdprecoverpasswd.aspx");
                 if (log.IsErrorEnabled) log.Error(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Error", ex);
             }
 
@@ -136,14 +136,14 @@ namespace CDPW
                     Mail.Send(email, null, null, CDPWMessages.EMAIL_SUBJECT_RESET_PWD, emailTemplate, System.Net.Mail.MailPriority.Normal);
 
                     phFormRecoverPasswd.Visible = false;
-                    Helpers.toggleMasterMessage(this, true, "MSG_RECOVER_PASSWORD", "msg_box_v msg_info corners", "cdplogin.aspx");
+                    Helpers.toggleMasterMessage(this, true, "MSG_RECOVER_PASSWORD", "msg_box_v msg_info_mm ", "cdplogin.aspx");
                     //phRecoverSuccess.Visible = true;
                     
                 }
                 else
                 {
                     phFormRecoverPasswd.Visible = false;
-                    Helpers.toggleMasterMessage(this, true, "ERR_NO_EMAIL", "msg_box_v msg_alert corners bold", "cdprecoverpasswd.aspx");
+                    Helpers.toggleMasterMessage(this, true, "ERR_NO_EMAIL", "msg_box_v msg_alert_mm bold", "cdprecoverpasswd.aspx");
                     //phRecoverWrong.Visible = true;
                 }
             }
@@ -151,7 +151,7 @@ namespace CDPW
             {
                 //components.Error_Show.Show(phError, true, ltrError, ex, phFormRecoverPasswd, true);
                 phFormRecoverPasswd.Visible = false;
-                Helpers.toggleMasterMessage(this, true, "ERR_MSG_TRY_AGAIN", "msg_box_v msg_error corners span50", "cdprecoverpasswd.aspx");
+                Helpers.toggleMasterMessage(this, true, "ERR_MSG_TRY_AGAIN", "msg_box_v msg_error_mm span50", "cdprecoverpasswd.aspx");
                 if (log.IsErrorEnabled) log.Error(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Error", ex);
             }
 

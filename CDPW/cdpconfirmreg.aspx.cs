@@ -29,40 +29,47 @@ namespace CDPW
                             if (!WAppUserActivated)
                             {
                                 CDPW.DAL.Users.UserAccount_Confirm(email);
-                                ltrSignupSuccess.Text = CDPWMessages.MSG_ACCOUNT_ACTIVATED;
+                                //ltrSignupSuccess.Text = CDPWMessages.MSG_ACCOUNT_ACTIVATED;
+                                Helpers.toggleMasterMessage(this, true, "MSG_ACCOUNT_ACTIVATED", "msg_box_v msg_ok_mm ", "cdplogin.aspx");
                             }
                             else
                             {
-                                ltrSignupSuccess.Text = CDPWMessages.MSG_ACCOUNT_ALREADY_ACTIVATED;
+                                //ltrSignupSuccess.Text = CDPWMessages.MSG_ACCOUNT_ALREADY_ACTIVATED;
+                                Helpers.toggleMasterMessage(this, true, "MSG_ACCOUNT_ALREADY_ACTIVATED", "msg_box_v msg_info_mm ", "cdplogin.aspx");
                             }
-                            phSuccess.Visible = true;
-                            phMailIncorrect.Visible = false;
-                            phURLIncorrect.Visible = false;
+                            
+                            //phSuccess.Visible = true;
+                            //phMailIncorrect.Visible = false;
+                            //phURLIncorrect.Visible = false;
                         }
                         else
                         {
-                            phMailIncorrect.Visible = true;
-                            phSuccess.Visible = false;
-                            phURLIncorrect.Visible = false;
+                            Helpers.toggleMasterMessage(this, true, "ERR_NO_USER_EMAIL", "msg_box_v msg_alert_mm ", "cdplogin.aspx");
+                            //phMailIncorrect.Visible = true;
+                            //phSuccess.Visible = false;
+                            //phURLIncorrect.Visible = false;
                         }
                     }
                     else
                     {
-                        phMailIncorrect.Visible = true;
-                        phSuccess.Visible = false;
-                        phURLIncorrect.Visible = false;
+                        //phMailIncorrect.Visible = true;
+                        Helpers.toggleMasterMessage(this, true, "ERR_NO_USER_EMAIL", "msg_box_v msg_alert_mm ", "cdplogin.aspx");
+                        //phSuccess.Visible = false;
+                        //phURLIncorrect.Visible = false;
                     }
                 }
                 else
                 {
-                    phMailIncorrect.Visible = false;
-                    phSuccess.Visible = false;
-                    phURLIncorrect.Visible = true;
+                    //phMailIncorrect.Visible = false;
+                    //phSuccess.Visible = false;
+                    //phURLIncorrect.Visible = true;
+                    Helpers.toggleMasterMessage(this, true, "ERR_URL_INCORRECT", "msg_box_v msg_alert_mm ", "cdplogin.aspx");
                 }
             }
             catch (Exception ex)
             {
-                components.Error_Show.Show(phError, false, ltrError, ex, phSuccess, true);
+                //components.Error_Show.Show(phError, false, ltrError, ex, phSuccess, true);
+                Helpers.toggleMasterMessage(this, true, "ERR_MSG_TRY_AGAIN", "msg_box_v msg_error_mm span50", "cdprecoverpasswd.aspx");
                 if (log.IsErrorEnabled) log.Error(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Error", ex);
             }
             if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Exit");

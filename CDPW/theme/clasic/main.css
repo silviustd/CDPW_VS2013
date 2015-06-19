@@ -910,8 +910,8 @@ a:focus {
 .corners {-moz-border-radius: 5px; -webkit-border-radius: 5px; -khtml-border-radius: 5px; border-radius: 5px;}
 .span50 {display:block; padding-bottom: 50px;}
 .span30 {display:block; padding-bottom: 30px;}
-.msg_box {display: block; margin:0 auto;width:400px; padding:8px 20px 8px 46px;margin-top:10px;margin-bottom:10px;position:relative;color:#444;overflow:hidden;text-align:left;min-height:34px;}
-.msg_box_v {display: block; margin:0 auto;width:400px; padding:8px 20px 8px 46px;margin-top:10px;margin-bottom:10px;position:relative;color:#444;overflow:hidden;text-align:left;min-height:34px;}
+.msg_box {display: block; margin:0 auto;width:400px; padding:8px 20px 8px 46px;margin-top:10px;margin-bottom:10px;position:relative;color:#444;overflow:hidden;text-align:left;min-height:34px;cursor:pointer;}
+.msg_box_v {display: block; margin:0 auto;width:400px; padding:8px 20px 8px 46px;margin-top:25px;margin-bottom:10px;position:relative;color:#444;overflow:hidden;text-align:left;min-height:34px;}
 .msg_box_login {display: block; margin:0 auto;width:652px; padding:8px 20px 8px 46px;margin-top:10px;margin-bottom:10px;position:relative;color:#444;overflow:hidden;text-align:left;}
 .msg_box_text {	font-family: Arial, Helvetica, sans-serif; font-size: 15px; }
 .msg_box_text14 {	font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: rgb(48, 48, 48);}
@@ -925,6 +925,16 @@ a:focus {
 .msg_ok img {background-position:-47px -9px;}
 .msg_alert { background:#faf5c8 url(clasic/images/icons/warning.png) no-repeat 14px center;border:1px solid #e6c26e;}
 .msg_alert img {background-position:-47px -27px;}
+
+.msg_error_mm {background:#ffffff url(clasic/images/icons/taken.gif) no-repeat 14px center;border:1px solid #D03314;box-shadow: 3px 4px 6px #D03314;}
+.msg_error_mm img {background-position:-47px 0;}
+.msg_info_mm {background:#ffffff url(clasic/images/icons/information_blue.png) no-repeat 14px center;border:1px solid #058dc7;box-shadow: 3px 4px 6px #058dc7;}
+.msg_info_mm img {background-position:-47px -18px;}
+.msg_ok_mm {background:#ffffff url(clasic/images/icons/accept.png) no-repeat 14px center;border:1px solid #77ab13;box-shadow: 3px 4px 6px #77ab13;}
+.msg_ok_mm img {background-position:-47px -9px;}
+.msg_alert_mm { background:#ffffff url(clasic/images/icons/warning.png) no-repeat 14px center;border:1px solid #e6c26e;box-shadow: 3px 4px 6px #e6c26e;}
+.msg_alert_mm img {background-position:-47px -27px;}
+
 
 .message-save {
  background-color: #f9edbe;
@@ -949,3 +959,10 @@ a:focus {
 
 @media print
 {}
+
+  /*/* border-top: 1px solid #77ab13; */
+  /*border-bottom: 1px solid #77ab13;*/
+  /*border-right: 3px solid #77ab13;*/
+  /*box-shadow: 3px 4px 6px #77ab13;*/
+  /*/* border-left: 3px solid #77ab13; */
+  
