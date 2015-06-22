@@ -44,11 +44,13 @@ namespace CDPW
                     {
                         Int64 UserID = uLogin.WAppUserId;
                         Int64 USPId = uLogin.PId_USA;
+                        Int64 CountryIdres = 0;
+
 
                         //ltrError.Text = string.Format("UserID: {0}<br />Username: {1}<br />PersonId: {2}<br />Nume: {3} {4} {5}", uLogin.WAppUserId, uLogin.WAppUserName, uLogin.WPersonId, uLogin.WPLastName, uLogin.WPFirstName, uLogin.WPMiddleName);
                         //phError.Visible = true;
 
-                        DataSet dsUSA = CDPW.DAL.FormUSA.Form_Get(UserID, USPId);
+                        DataSet dsUSA = CDPW.DAL.FormUSA.Form_Get(UserID, USPId, out CountryIdres);
 
                         if (dsUSA.Tables[0].Rows.Count < 1)
                         {
@@ -98,15 +100,17 @@ namespace CDPW
                             }
                         }
 
+                        Helpers.Lists(ddlCountryResidence, CountryIdres.ToString(), Lists.Countries(), "CountryName", "CountryId");
+
                         if (dsUSA.Tables[2].Rows.Count < 1)
                         {
-                            Helpers.Lists(ddlCountryResidence, string.Empty, Lists.Countries(), "CountryName", "CountryId");
+                            //Helpers.Lists(ddlCountryResidence, string.Empty, Lists.Countries(), "CountryName", "CountryId");
                         }
                         else
                         {
                             foreach (DataRow dr in dsUSA.Tables[2].Rows)
                             {
-                                Helpers.Lists(ddlCountryResidence, dr["CountryResidence"].ToString(), Lists.Countries(), "CountryName", "CountryId");
+                                //Helpers.Lists(ddlCountryResidence, dr["CountryResidence"].ToString(), Lists.Countries(), "CountryName", "CountryId");
                                 txtNoFamMembers.Text = dr["NoFamMembers"].ToString();
                                 txtCountriesVisited.Text = dr["ContriesVisited"].ToString();
                                 txtCountriesVisited2.Text = dr["CountriesVisited2"].ToString();

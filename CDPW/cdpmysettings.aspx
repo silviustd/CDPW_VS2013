@@ -114,7 +114,7 @@
                             </p>
                             <p>
                                 <label for="txtUNo">
-                                    Unit/Apt Number</label><asp:TextBox ID="txtUNo" runat="server" class="text-1" MaxLength="5" />
+                                    Unit/Apt Number</label><asp:TextBox ID="txtUNo" runat="server" class="text-1" MaxLength="10" />
                             </p>
                             <p>
                                 <label for="txtCity">

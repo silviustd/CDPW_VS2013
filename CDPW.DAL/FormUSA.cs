@@ -149,10 +149,13 @@ namespace CDPW.DAL
             /// Get info from DB and fill the form.
             /// </summary>
             /// <param name="WAppUserId">Web app user id.</param>
-            public static DataSet Form_Get(Int64 WAppUserId, Int64 PGId)
+        public static DataSet Form_Get(Int64 WAppUserId, Int64 PGId, out Int64 CountryIdRes )
             {
                 if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Enter");
+                
                 DataSet dsUsaForm;
+
+                CountryIdRes = 0;
 
                 using (SqlConnection dbConnection = new SqlConnection(DBConnection.ConnectionString))
                 {
@@ -162,12 +165,15 @@ namespace CDPW.DAL
                     // Add parameters to SPROC
                     cmd.Parameters.Add("@WAppUserId", SqlDbType.BigInt).Value = WAppUserId;
                     cmd.Parameters.Add("@PGId", SqlDbType.BigInt).Value = PGId;
+                    cmd.Parameters.Add("@CountryIdRes", SqlDbType.BigInt).Direction = ParameterDirection.Output;
 
                     dbConnection.Open();
 
                     SqlDataAdapter daUsaForm = new SqlDataAdapter(cmd);
                     dsUsaForm = new DataSet();
                     daUsaForm.Fill(dsUsaForm);
+
+                    CountryIdRes = (Int64)cmd.Parameters["@CountryIdRes"].Value;
 
                     daUsaForm.Dispose();
                     cmd.Dispose();
