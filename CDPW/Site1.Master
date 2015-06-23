@@ -21,17 +21,17 @@
         function printCF() {
             var purl = window.location.href;
             if (purl.indexOf("DCANForm.aspx") > 0) {
-                window.open('cdpprintpreview.aspx?Report=CANForm');
+                window.open('cdpprintpreview2.aspx?Report=CANForm');
             }
 
             if (purl.indexOf("DUSAForm.aspx") > 0) {
 
                 if (document.getElementById("opt2").checked || document.getElementById("opt22").checked) {
-                    window.open('cdpprintpreview.aspx?Report=USAFormB');
+                    window.open('cdpprintpreview2.aspx?Report=USAFormB');
                 }
 
                 if (document.getElementById("opt1").checked || document.getElementById("opt11").checked) {
-                    window.open('cdpprintpreview.aspx?Report=USAForm');
+                    window.open('cdpprintpreview2.aspx?Report=USAForm');
                 }
             }
         } 

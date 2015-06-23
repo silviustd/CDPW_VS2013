@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace CDPW.BLL
 {
@@ -14,11 +16,11 @@ namespace CDPW.BLL
         public static String MSG_SIGN_UP_S = "The sign up process completed with success. A confirmation message has been sent to the email address provided";
         public static String MSG_ACCOUNT_ACTIVATED = "Congratulations! You have activated your account.<br>To log in, please click <a href={0}>here</a>";
         public static String MSG_ACCOUNT_ALREADY_ACTIVATED = "Account is already activated.To log in, please click <a href={0}>here</a>";
-        public static String MSG_RECOVER_PASSWORD = @"An e-mail message has been sent to the e-mail address provided with instructions how to reset your passsword. 
+        public static String MSG_RECOVER_PASSWORD = @"An email message has been sent to the email address provided with instructions how to reset your passsword. 
                                                      <br/>Note that confirmation string expire in approximately 3 days.
                                                      <br/>Please click <a href={0}>here</a> to login.";
 
-        public static String MSG_RECOVER_PASSWORD_SUCCESS = @"You've successfully reset your password. An e-mail message was sent to the e-mail address provided with instructions how to access your account.
+        public static String MSG_RECOVER_PASSWORD_SUCCESS = @"You've successfully reset your password. An email message has been sent to the email address provided with instructions how to access your account.
                                                             <br/>Please click <a href={0}>here</a> to login.";
 
         
@@ -43,5 +45,176 @@ namespace CDPW.BLL
         public static String EMAIL_SUBJECT_RESET_PWD = "CDP - Reset your password request";
         public static String EMAIL_SUBJECT_SIGNUP_CONFIRM = "CDP - Sign-up confirm";
         public static String EMAIL_SUBJECT_NEW_PASSWORD = "CDP - New password to access your account";
+
+        //public static void MsgNotif(Page pg, Boolean RunScript, Label ctlMsg, String msgCode, Boolean useR, String strItem = "", Boolean addBR = false, Int16 noBR = 1, Boolean fadeOut = true)
+        //{
+        //    if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Enter");
+        //    //string.Format("Error: {0}<br />Data: {4}<br />Exceptie: {1}<br />Sursa: {2}<br />StackTrace: {3}", ex.Message, ex.InnerException, ex.Source, ex.StackTrace, ex.Data);
+
+        //    String msg = String.Empty;
+        //    Boolean bEx = false;
+
+        //    //String sJSScript = "setTimeout(\"$('#lblMessage').fadeOut(2000,'linear')\", 3000);";
+        //    String sJSScript = "setTimeout(\"$('#" + ctlMsg.ID + "').fadeOut(2000,'linear')\", 3000);";
+
+        //    if (ctlMsg == null)
+        //    {
+        //        return;
+        //    }
+
+        //    if (useR)
+        //    {
+
+        //        if (String.IsNullOrEmpty(msgCode))
+        //        {
+        //            msgCode = "ERR_MSG_ERROR";
+        //        }
+
+        //        if (msgCode.Substring(0, 3).CompareTo("ERR") == 0)
+        //        {
+        //            bEx = true;
+        //        }
+
+        //        if (!String.IsNullOrEmpty(msgCode))
+        //        {
+        //            MessageHandler mh = new MessageHandler();
+
+        //            Type _cClass = mh.GetType(); // Type.GetType(cClass);
+        //            FieldInfo myf = _cClass.GetField(msgCode);
+
+        //            msg = myf.GetValue(null).ToString();
+        //        }
+        //    }
+
+        //    ctlMsg.Visible = true;
+        //    String BR = "<br/>";
+        //    if (addBR)
+        //    {
+        //        msg = BR + msg;
+        //    }
+        //    if (String.IsNullOrEmpty(strItem))
+        //    {
+        //        ctlMsg.Text = msg;
+        //    }
+        //    else
+        //    {
+        //        ctlMsg.Text = string.Format(msg, strItem);
+        //    }
+
+        //    if (bEx)
+        //    {
+        //        ctlMsg.ForeColor = System.Drawing.Color.FromKnownColor(KnownColor.Red);
+        //    }
+        //    else
+        //    {
+        //        ctlMsg.ForeColor = System.Drawing.Color.FromKnownColor(KnownColor.Blue);
+        //    }
+
+        //    if (fadeOut && !bEx)
+        //    {
+        //        //pg.ClientScript.RegisterStartupScript(pg.GetType(), "mykey", "MsgFadeOut();", true);
+        //        pg.ClientScript.RegisterStartupScript(pg.GetType(), "mykey", sJSScript, true);
+        //    }
+
+        //    if (bEx)
+        //    {
+        //        //string mailBody = string.Format("Error: {0}<br />Data: {4}<br />Exceptie: {1}<br />Sursa: {2}<br />StackTrace: {3}", ex.Message, ex.InnerException, ex.Source, ex.StackTrace, ex.Data);
+        //        string mailBody = string.Format("Error: {0}<br />", msg);
+
+        //        String strEmailTo = ((SmtpSection)ConfigurationManager.GetSection("system.net/mailSettings/smtp")).From;
+        //        //Mail.Send(strEmailTo, null, null, "IITS Error", mailBody, System.Net.Mail.MailPriority.High);
+        //    }
+
+        //    if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Exit");
+        //}
+
+        //public static void MsgNotif(Page pg, Label ctlMsg, String msgCode, Boolean useR, String strItem = "", Boolean addBR = false, Int16 noBR = 1, Boolean fadeOut = true)
+        //{
+        //    if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Enter");
+        //    //string.Format("Error: {0}<br />Data: {4}<br />Exceptie: {1}<br />Sursa: {2}<br />StackTrace: {3}", ex.Message, ex.InnerException, ex.Source, ex.StackTrace, ex.Data);
+
+        //    String msg = String.Empty;
+        //    Boolean bEx = false;
+
+        //    if (ctlMsg == null)
+        //    {
+        //        return;
+        //    }
+
+        //    if (useR)
+        //    {
+
+        //        if (String.IsNullOrEmpty(msgCode))
+        //        {
+        //            msgCode = "ERR_MSG_ERROR";
+        //        }
+
+        //        if (msgCode.Substring(0, 3).CompareTo("ERR") == 0)
+        //        {
+        //            bEx = true;
+        //        }
+
+        //        if (!String.IsNullOrEmpty(msgCode))
+        //        {
+        //            MessageHandler mh = new MessageHandler();
+
+        //            Type _cClass = mh.GetType(); // Type.GetType(cClass);
+        //            FieldInfo myf = _cClass.GetField(msgCode);
+
+        //            msg = myf.GetValue(null).ToString();
+        //        }
+        //    }
+
+        //    ctlMsg.Visible = true;
+        //    String BR = "<br/>";
+        //    if (addBR)
+        //    {
+        //        msg = BR + msg;
+        //    }
+        //    if (String.IsNullOrEmpty(strItem))
+        //    {
+        //        ctlMsg.Text = msg;
+        //    }
+        //    else
+        //    {
+        //        ctlMsg.Text = string.Format(msg, strItem);
+        //    }
+
+        //    if (bEx)
+        //    {
+        //        ctlMsg.ForeColor = System.Drawing.Color.FromKnownColor(KnownColor.Red);
+        //    }
+        //    else
+        //    {
+        //        ctlMsg.ForeColor = System.Drawing.Color.FromKnownColor(KnownColor.Blue);
+        //    }
+
+        //    if (fadeOut && !bEx)
+        //    {
+        //        pg.ClientScript.RegisterStartupScript(pg.GetType(), "mykey", "MsgFadeOut();", true);
+        //    }
+
+        //    //RadAjaxManager1.ResponseScripts.Add("FadeOut()");
+        //    //string strError = string.Format("Mesaj: {0}<br />Data: {4}<br />Exceptie: {1}<br />Sursa: {2}<br />StackTrace: {3}", ex.Message, ex.InnerException, ex.Source, ex.StackTrace, ex.Data);
+        //    //string strError = string.Format("There was an error:<br /> {0}", ex.Message);
+        //    if (bEx)
+        //    {
+        //        //string mailBody = string.Format("Error: {0}<br />Data: {4}<br />Exceptie: {1}<br />Sursa: {2}<br />StackTrace: {3}", ex.Message, ex.InnerException, ex.Source, ex.StackTrace, ex.Data);
+        //        string mailBody = string.Format("Error: {0}<br />", msg);
+
+        //        String strEmailTo = ((SmtpSection)ConfigurationManager.GetSection("system.net/mailSettings/smtp")).From;
+        //        //Mail.Send(strEmailTo, null, null, "IITS Error", mailBody, System.Net.Mail.MailPriority.High);
+        //    }
+
+        //    if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Exit");
+        //}
+
+        //function MsgFadeOut()
+        //{
+        //    setTimeout("$('#lblMessageFU').fadeOut(2000,'linear')", 3000);
+        //    //$('#lblMsg').fadeOut(2000);
+        //    //$("#lblMsg").fadeOut(1000, "linear", complete);
+        //    //$("#lblMsg").fadeOut(1000, "linear");
+        //}
     }
 }
