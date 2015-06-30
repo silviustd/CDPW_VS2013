@@ -22,40 +22,13 @@ namespace CDPW {
         protected global::System.Web.UI.WebControls.PlaceHolder phUsForm;
         
         /// <summary>
-        /// phFormSave control.
+        /// lblMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phFormSave;
-        
-        /// <summary>
-        /// ltrFromSave control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltrFromSave;
-        
-        /// <summary>
-        /// phError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phError;
-        
-        /// <summary>
-        /// ltrError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltrError;
+        protected global::System.Web.UI.WebControls.Label lblMessage;
         
         /// <summary>
         /// phReproduction control.
@@ -650,6 +623,15 @@ namespace CDPW {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSaveForm;
+        
+        /// <summary>
+        /// btnNewForm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnNewForm;
         
         /// <summary>
         /// my_settings_2 control.

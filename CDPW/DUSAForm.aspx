@@ -4,17 +4,29 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphMain" runat="server">
+
+    <script type="text/javascript">
+
+        function MsgFadeOut() {
+            //$('#phMessage').css('visibility', 'visible');
+            setTimeout("$('#lblMessage').fadeOut(2000,'linear')", 3000);
+            $('#discl_USA').css('visibility', 'hidden');
+            setTimeout("$('#discl_USA').css('visibility', 'visible')", 8000);
+            setTimeout("$('#discl_USA').fadeIn(2000,'linear')", 10000);
+        }
+
+        function MsgFadeOutC(ctrl) {
+            //$('#discl_USA').css('display', 'none');
+            setTimeout("$('#" + ctrl.id + "').fadeOut(1000,'linear')", 3000);
+            //setTimeout("$('#discl_USA').fadeIn(2000)", 3500);
+        }
+
+        </script>
+
     <asp:PlaceHolder ID="phUsForm" runat="server">
         <div id="top">
-            <asp:PlaceHolder ID="phFormSave" runat="server" Visible="false">
-                <p class="msg_box msg_info corners">
-                    <asp:Literal ID="ltrFromSave" Text="Please Save first, then Print !" runat="server" />
-                </p>
-            </asp:PlaceHolder>
-            <asp:PlaceHolder ID="phError" runat="server" Visible="false">
-                <p id="pError" class="msg_box msg_error corners">
-                    <asp:Literal ID="ltrError" runat="server" /></p>
-            </asp:PlaceHolder>
+    <asp:Label class="msg_box_md msg_ok_md corners" ID="lblMessage" style="left: 260px;"
+        Text="Data has been saved." runat="server" ViewStateMode="Enabled" Visible="false" ClientIDMode="Static" />
             <asp:PlaceHolder ID="phReproduction" runat="server" Visible="true">
                 <p id="discl_USA" class="disclaimer-4">
                     This is a reproduction and it does not replace U.S. Customs and Border Protection
@@ -526,6 +538,7 @@
 			<a href="cdpmysettings.aspx" id="my_settings_2">My Settings</a> 
 			<a href="cdplogout.aspx" id="logout-2">Logout</a>
             --%>
+            <asp:Button ID="btnNewForm" Text="Save" OnClick="btnNewForm_Click" runat="server" />
             <asp:HyperLink ID="my_settings_2" runat="server" NavigateUrl="cdpmysettings.aspx">My Settings</asp:HyperLink>
             <asp:HyperLink ID="logout_2" runat="server" NavigateUrl="cdplogout.aspx">Logout</asp:HyperLink>
         </div>

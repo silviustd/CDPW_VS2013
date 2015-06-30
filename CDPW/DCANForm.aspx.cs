@@ -15,6 +15,10 @@ namespace CDPW
 
         protected String returnValue;
 
+        private String MessageCode = String.Empty;
+        private String SeesionObjMessageID = "DCANMessage";
+        String MsgStrItem = String.Empty;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Enter");
@@ -23,6 +27,7 @@ namespace CDPW
             {
                 if (HttpContext.Current.Session != null && HttpContext.Current.Session["cdpUser"] != null)
                 {
+                    CDPWMessages.ProcessPageMessage(this.Page, SeesionObjMessageID, lblMessage.ID);
                     //register client scripts for callback
                     String cbReference =
                                 Page.ClientScript.GetCallbackEventReference(this,
@@ -35,10 +40,12 @@ namespace CDPW
 
                     CurrentUser uLogin = (CurrentUser)HttpContext.Current.Session["cdpUser"];
 
-                    if (uLogin.NoSignUp) {
+                    if (uLogin.NoSignUp)
+                    {
+                        btnNewForm.Visible = false;
                         my_settings_2.Visible = false;
                         logout_2.Visible = false;
-                    }  
+                    }
 
                     if (!Page.IsPostBack)
                     {
@@ -51,151 +58,163 @@ namespace CDPW
                             PIds = new Int64[4];
                         }
 
-                        ltrError.Text = string.Format("UserID: {0}<br />Username: {1}<br />PersonId: {2}<br />Nume: {3} {4} {5}", uLogin.WAppUserId, uLogin.WAppUserName, uLogin.WPersonId, uLogin.WPLastName, uLogin.WPFirstName, uLogin.WPMiddleName);
-                        phError.Visible = false;
+                        //ltrError.Text = string.Format("UserID: {0}<br />Username: {1}<br />PersonId: {2}<br />Nume: {3} {4} {5}", uLogin.WAppUserId, uLogin.WAppUserName, uLogin.WPersonId, uLogin.WPLastName, uLogin.WPFirstName, uLogin.WPMiddleName);
+                        //phError.Visible = false;
 
-                        DataSet dsCAN = CDPW.DAL.FormCanada.Form_Get(UserID, PIds[0]);
-
-                        if (dsCAN.Tables[0].Rows.Count > 0)
+                        if (uLogin.NewForm)
                         {
-                            // persons
-                            int i = 1;
-                            //PIds = new Int64[4];
-                            foreach (DataRow dr in dsCAN.Tables[0].Rows)
-                            {
-                                switch (i)
-                                {
-                                    case 1:
-                                        PIds[0] = String.IsNullOrEmpty(dr["PersonId"].ToString()) ? 0 : (Int64)dr["PersonId"];
-                                        txtName1.Text = string.Format("{0}", dr["Name"].ToString()).Trim();
-                                        hidName1.Value = string.Format("{0}", dr["Name"].ToString()).Trim();
-                                        if (!string.IsNullOrEmpty(dr["DateofBirth"].ToString()))
-                                        {
-                                            txtDOB1.Text = TextUtils.ReturnFromDB(dr["DateofBirth"].ToString(), true);
-                                            hidDOB1.Value = TextUtils.ReturnFromDB(dr["DateofBirth"].ToString(), true);
-                                        }
-                                        txtCitiz1.Text = dr["Citizenship"].ToString().Trim();
-                                        hidCitiz1.Value = dr["Citizenship"].ToString().Trim();
-                                        break;
-                                    case 2:
-                                        PIds[1] = String.IsNullOrEmpty(dr["PersonId"].ToString()) ? 0 : (Int64)dr["PersonId"];
-                                        txtName2.Text = string.Format("{0}", dr["Name"].ToString()).Trim();
-                                        if (!string.IsNullOrEmpty(dr["DateofBirth"].ToString()))
-                                        {
-                                            txtDOB2.Text = TextUtils.ReturnFromDB(dr["DateofBirth"].ToString(), true);
-                                        }
-                                        txtCitiz2.Text = dr["Citizenship"].ToString().Trim();
-                                        break;
-                                    case 3:
-                                        PIds[2] = String.IsNullOrEmpty(dr["PersonId"].ToString()) ? 0 : (Int64)dr["PersonId"];
-                                        txtName3.Text = string.Format("{0}", dr["Name"].ToString()).Trim();
-                                        if (!string.IsNullOrEmpty(dr["DateofBirth"].ToString()))
-                                        {
-                                            txtDOB3.Text = TextUtils.ReturnFromDB(dr["DateofBirth"].ToString(), true);
-                                        }
-                                        txtCitiz3.Text = dr["Citizenship"].ToString().Trim();
-                                        break;
-                                    case 4:
-                                        PIds[3] = String.IsNullOrEmpty(dr["PersonId"].ToString()) ? 0 : (Int64)dr["PersonId"];
-                                        txtName4.Text = string.Format("{0}", dr["Name"].ToString()).Trim();
-                                        if (!string.IsNullOrEmpty(dr["DateofBirth"].ToString()))
-                                        {
-                                            txtDOB4.Text = TextUtils.ReturnFromDB(dr["DateofBirth"].ToString(), true);
-                                        }
-                                        txtCitiz4.Text = dr["Citizenship"].ToString().Trim();
-                                        break;
-                                }
-
-                                i++;
-                            }
-
-                            //add PIds to ulogin and then in seesion
-                            uLogin.PIds_CAN = PIds;
+                            uLogin.NewForm = false;
                             HttpContext.Current.Session.Add("cdpUser", uLogin);
 
-                            // address
-                            if (dsCAN.Tables[1].Rows.Count < 1)
-                            {
-                                Helpers.Lists(ddlProv, string.Empty, Lists.Regions(1), "AdministrativeRegion", "AdministrativeRegionId");
-                                Helpers.Lists(ddlCountry, null, Lists.Countries(), "CountryName", "CountryId");
-                            }
-                            else
-                            {
-                                foreach (DataRow dr in dsCAN.Tables[1].Rows)
-                                {
-                                    txtAddress.Text = string.Format("{0}", dr["StreetName"]);
-                                    txtCity.Text = dr["City"].ToString();
-
-                                    int iCountryId = String.IsNullOrEmpty(dr["CountryId"].ToString()) ? 0 : int.Parse(dr["CountryId"].ToString());
-
-                                    Helpers.Lists(ddlProv, dr["AdministrativeRegionId"].ToString(), Lists.Regions(iCountryId), "AdministrativeRegion", "AdministrativeRegionId");
-                                    Helpers.Lists(ddlCountry, dr["CountryId"].ToString(), Lists.Countries(), "CountryName", "CountryId");
-                                    txtPostalCode.Text = dr["PostalCode"].ToString();
-                                }
-                            }
-
-                            // Trip info
-                            foreach (DataRow dr in dsCAN.Tables[2].Rows)
-                            {
-                                rblArrive.SelectedValue = dr["WArrivingBy"].ToString();
-                                txtTripNo.Text = TextUtils.ReturnFromDB(dr["TransportationId"].ToString());
-                                rblPurpose.SelectedValue = dr["WTripPurpose"].ToString();
-                                rblArriveFrom.SelectedValue = dr["WArrivingFrom"].ToString();
-                                rblFirearms.SelectedValue = dr["Firearms"].ToString();
-                                rblCG.SelectedValue = dr["CommercialGoods"].ToString();
-                                rblFood.SelectedValue = dr["MeatProducts"].ToString();
-                                rblMoney.SelectedValue = dr["CurrencyValue"].ToString();
-                                rblGoods.SelectedValue = dr["Goods"].ToString();
-                                rblFarm.SelectedValue = dr["FarmVisit"].ToString();
-                                rblExceededDutyFree.SelectedValue = dr["ExceedDutyFree"].ToString();
-                                rblExceededExemptions.SelectedValue = dr["ExceedExemptions"].ToString();
-                                txtDureation.Text = dr["DurationOfStay"].ToString();
-                                if (!string.IsNullOrEmpty(dr["TripDate"].ToString()))
-                                {
-                                    txtdDate.Text = TextUtils.ReturnFromDB(dr["TripDate"].ToString(), true);
-                                }
-                            }
-
-                            // Arrival info
-                            int j = 1;
-                            foreach (DataRow dr in dsCAN.Tables[3].Rows)
-                            {
-                                switch (j)
-                                {
-                                    case 1:
-                                        txtDtC1.Text = TextUtils.ReturnFromDB(dr["DateLeftCanada"].ToString(), false, true);
-                                        txtCVG1.Text = string.Format(new System.Globalization.CultureInfo("en-US"), "{0:#.##}", dr["ValueGoods"]);
-                                        break;
-                                    case 2:
-                                        txtDtC2.Text = TextUtils.ReturnFromDB(dr["DateLeftCanada"].ToString(), false, true);
-                                        txtCVG2.Text = string.Format(new System.Globalization.CultureInfo("en-US"), "{0:#.##}", dr["ValueGoods"]);
-                                        break;
-                                    case 3:
-                                        txtDtC3.Text = TextUtils.ReturnFromDB(dr["DateLeftCanada"].ToString(), false, true);
-                                        txtCVG3.Text = string.Format(new System.Globalization.CultureInfo("en-US"), "{0:#.#}", dr["ValueGoods"]);
-                                        break;
-                                    case 4:
-                                        txtDtC4.Text = TextUtils.ReturnFromDB(dr["DateLeftCanada"].ToString(), false, true);
-                                        txtCVG4.Text = string.Format(new System.Globalization.CultureInfo("en-US"), "{0:#.##}", dr["ValueGoods"]);
-                                        break;
-                                }
-                                j++;
-                            }
+                            Helpers.Lists(ddlProv, string.Empty, Lists.Regions(1), "AdministrativeRegion", "AdministrativeRegionId");
+                            Helpers.Lists(ddlCountry, null, Lists.Countries(), "CountryName", "CountryId");
                         }
                         else
                         {
-                            Helpers.Lists(ddlProv, string.Empty, Lists.Regions(1), "AdministrativeRegion", "AdministrativeRegionCode");
-                            Helpers.Lists(ddlCountry, null, Lists.Countries(), "CountryName", "CountryId");
+
+                            DataSet dsCAN = CDPW.DAL.FormCanada.Form_Get(UserID, PIds[0]);
+
+                            if (dsCAN.Tables[0].Rows.Count > 0)
+                            {
+                                // persons
+                                int i = 1;
+                                //PIds = new Int64[4];
+                                foreach (DataRow dr in dsCAN.Tables[0].Rows)
+                                {
+                                    switch (i)
+                                    {
+                                        case 1:
+                                            PIds[0] = String.IsNullOrEmpty(dr["PersonId"].ToString()) ? 0 : (Int64)dr["PersonId"];
+                                            txtName1.Text = string.Format("{0}", dr["Name"].ToString()).Trim();
+                                            hidName1.Value = string.Format("{0}", dr["Name"].ToString()).Trim();
+                                            if (!string.IsNullOrEmpty(dr["DateofBirth"].ToString()))
+                                            {
+                                                txtDOB1.Text = TextUtils.ReturnFromDB(dr["DateofBirth"].ToString(), true);
+                                                hidDOB1.Value = TextUtils.ReturnFromDB(dr["DateofBirth"].ToString(), true);
+                                            }
+                                            txtCitiz1.Text = dr["Citizenship"].ToString().Trim();
+                                            hidCitiz1.Value = dr["Citizenship"].ToString().Trim();
+                                            break;
+                                        case 2:
+                                            PIds[1] = String.IsNullOrEmpty(dr["PersonId"].ToString()) ? 0 : (Int64)dr["PersonId"];
+                                            txtName2.Text = string.Format("{0}", dr["Name"].ToString()).Trim();
+                                            if (!string.IsNullOrEmpty(dr["DateofBirth"].ToString()))
+                                            {
+                                                txtDOB2.Text = TextUtils.ReturnFromDB(dr["DateofBirth"].ToString(), true);
+                                            }
+                                            txtCitiz2.Text = dr["Citizenship"].ToString().Trim();
+                                            break;
+                                        case 3:
+                                            PIds[2] = String.IsNullOrEmpty(dr["PersonId"].ToString()) ? 0 : (Int64)dr["PersonId"];
+                                            txtName3.Text = string.Format("{0}", dr["Name"].ToString()).Trim();
+                                            if (!string.IsNullOrEmpty(dr["DateofBirth"].ToString()))
+                                            {
+                                                txtDOB3.Text = TextUtils.ReturnFromDB(dr["DateofBirth"].ToString(), true);
+                                            }
+                                            txtCitiz3.Text = dr["Citizenship"].ToString().Trim();
+                                            break;
+                                        case 4:
+                                            PIds[3] = String.IsNullOrEmpty(dr["PersonId"].ToString()) ? 0 : (Int64)dr["PersonId"];
+                                            txtName4.Text = string.Format("{0}", dr["Name"].ToString()).Trim();
+                                            if (!string.IsNullOrEmpty(dr["DateofBirth"].ToString()))
+                                            {
+                                                txtDOB4.Text = TextUtils.ReturnFromDB(dr["DateofBirth"].ToString(), true);
+                                            }
+                                            txtCitiz4.Text = dr["Citizenship"].ToString().Trim();
+                                            break;
+                                    }
+
+                                    i++;
+                                }
+
+                                //add PIds to ulogin and then in seesion
+                                uLogin.PIds_CAN = PIds;
+                                HttpContext.Current.Session.Add("cdpUser", uLogin);
+
+                                // address
+                                if (dsCAN.Tables[1].Rows.Count < 1)
+                                {
+                                    Helpers.Lists(ddlProv, string.Empty, Lists.Regions(1), "AdministrativeRegion", "AdministrativeRegionId");
+                                    Helpers.Lists(ddlCountry, null, Lists.Countries(), "CountryName", "CountryId");
+                                }
+                                else
+                                {
+                                    foreach (DataRow dr in dsCAN.Tables[1].Rows)
+                                    {
+                                        txtAddress.Text = string.Format("{0}", dr["StreetName"]);
+                                        txtCity.Text = dr["City"].ToString();
+
+                                        int iCountryId = String.IsNullOrEmpty(dr["CountryId"].ToString()) ? 0 : int.Parse(dr["CountryId"].ToString());
+
+                                        Helpers.Lists(ddlProv, dr["AdministrativeRegionId"].ToString(), Lists.Regions(iCountryId), "AdministrativeRegion", "AdministrativeRegionId");
+                                        Helpers.Lists(ddlCountry, dr["CountryId"].ToString(), Lists.Countries(), "CountryName", "CountryId");
+                                        txtPostalCode.Text = dr["PostalCode"].ToString();
+                                    }
+                                }
+
+                                // Trip info
+                                foreach (DataRow dr in dsCAN.Tables[2].Rows)
+                                {
+                                    rblArrive.SelectedValue = dr["WArrivingBy"].ToString();
+                                    txtTripNo.Text = TextUtils.ReturnFromDB(dr["TransportationId"].ToString());
+                                    rblPurpose.SelectedValue = dr["WTripPurpose"].ToString();
+                                    rblArriveFrom.SelectedValue = dr["WArrivingFrom"].ToString();
+                                    rblFirearms.SelectedValue = dr["Firearms"].ToString();
+                                    rblCG.SelectedValue = dr["CommercialGoods"].ToString();
+                                    rblFood.SelectedValue = dr["MeatProducts"].ToString();
+                                    rblMoney.SelectedValue = dr["CurrencyValue"].ToString();
+                                    rblGoods.SelectedValue = dr["Goods"].ToString();
+                                    rblFarm.SelectedValue = dr["FarmVisit"].ToString();
+                                    rblExceededDutyFree.SelectedValue = dr["ExceedDutyFree"].ToString();
+                                    rblExceededExemptions.SelectedValue = dr["ExceedExemptions"].ToString();
+                                    txtDureation.Text = dr["DurationOfStay"].ToString();
+                                    if (!string.IsNullOrEmpty(dr["TripDate"].ToString()))
+                                    {
+                                        txtdDate.Text = TextUtils.ReturnFromDB(dr["TripDate"].ToString(), true);
+                                    }
+                                }
+
+                                // Arrival info
+                                int j = 1;
+                                foreach (DataRow dr in dsCAN.Tables[3].Rows)
+                                {
+                                    switch (j)
+                                    {
+                                        case 1:
+                                            txtDtC1.Text = TextUtils.ReturnFromDB(dr["DateLeftCanada"].ToString(), false, true);
+                                            txtCVG1.Text = string.Format(new System.Globalization.CultureInfo("en-US"), "{0:#.##}", dr["ValueGoods"]);
+                                            break;
+                                        case 2:
+                                            txtDtC2.Text = TextUtils.ReturnFromDB(dr["DateLeftCanada"].ToString(), false, true);
+                                            txtCVG2.Text = string.Format(new System.Globalization.CultureInfo("en-US"), "{0:#.##}", dr["ValueGoods"]);
+                                            break;
+                                        case 3:
+                                            txtDtC3.Text = TextUtils.ReturnFromDB(dr["DateLeftCanada"].ToString(), false, true);
+                                            txtCVG3.Text = string.Format(new System.Globalization.CultureInfo("en-US"), "{0:#.#}", dr["ValueGoods"]);
+                                            break;
+                                        case 4:
+                                            txtDtC4.Text = TextUtils.ReturnFromDB(dr["DateLeftCanada"].ToString(), false, true);
+                                            txtCVG4.Text = string.Format(new System.Globalization.CultureInfo("en-US"), "{0:#.##}", dr["ValueGoods"]);
+                                            break;
+                                    }
+                                    j++;
+                                }
+                            }
+                            else
+                            {
+                                Helpers.Lists(ddlProv, string.Empty, Lists.Regions(1), "AdministrativeRegion", "AdministrativeRegionCode");
+                                Helpers.Lists(ddlCountry, null, Lists.Countries(), "CountryName", "CountryId");
+                            }
                         }
                     }
-                    if (!uLogin.SavedDCAN)
-                    {
-                        if (!String.IsNullOrEmpty(Request.QueryString["saved"]) && !Boolean.Parse(Request.QueryString["saved"]))
-                        {
-                            phFormSave.Visible = true;
-                            phReproduction.Visible = false;
-                        }
-                    }
+                    //if (!uLogin.SavedDCAN)
+                    //{
+                    //    if (!String.IsNullOrEmpty(Request.QueryString["saved"]) && !Boolean.Parse(Request.QueryString["saved"]))
+                    //    {
+                    //        phFormSave.Visible = true;
+                    //        phReproduction.Visible = false;
+                    //    }
+                    //}
 
                     if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Exit");
                 }
@@ -203,13 +222,15 @@ namespace CDPW
                 {
                     // user is not logged
                     if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Redirect to Login");
-                    Response.Redirect("cdplogin.aspx",true);
+                    Response.Redirect("cdplogin.aspx", true);
                 }
             }
             catch (Exception ex)
             {
-                components.Error_Show.Show(phError, true, ltrError, ex, phReproduction, true);
+                //components.Error_Show.Show(phError, true, ltrError, ex, phReproduction, true);
                 if (log.IsErrorEnabled) log.Error(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Error", ex);
+                MessageCode = "ERR_MSG_ERR_TRY_AGAIN";
+                CDPWMessages.DisplayeMessage(this.Page, MessageCode, lblMessage.ID, "", "msg_box_md msg_error_md corners");
             }
 
 
@@ -250,8 +271,10 @@ namespace CDPW
             }
             catch (Exception ex)
             {
-                components.Error_Show.Show(phError, true, ltrError, ex, phReproduction, true);
+                //components.Error_Show.Show(phError, true, ltrError, ex, phReproduction, true);
                 if (log.IsErrorEnabled) log.Error(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Error", ex);
+                MessageCode = "ERR_MSG_ERR_TRY_AGAIN";
+                CDPWMessages.DisplayeMessage(this.Page, MessageCode, lblMessage.ID, "", "msg_box_md msg_error_md corners");
             }
             if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Exit");
         }
@@ -310,12 +333,48 @@ namespace CDPW
             }
             catch (Exception ex)
             {
-                components.Error_Show.Show(phError, true, ltrError, ex, phReproduction, true);
+                //components.Error_Show.Show(phError, true, ltrError, ex, phReproduction, true);
                 if (log.IsErrorEnabled) log.Error(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Error", ex);
+                MessageCode = "ERR_MSG_ERR_TRY_AGAIN";
+                CDPWMessages.DisplayeMessage(this.Page, MessageCode, lblMessage.ID, "", "msg_box_md msg_error_md corners");
             }
 
             if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Exit");
         }
+
+
+        protected void btnNewForm_Click(Object sender, EventArgs e)
+        {
+            if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Enter");
+            try
+            {
+                // throw new Exception("testing");
+                if (HttpContext.Current.Session != null && HttpContext.Current.Session["cdpUser"] != null && HttpContext.Current.Session["cdpUser"] is CurrentUser)
+                {
+                    CurrentUser uLogin = (CurrentUser)HttpContext.Current.Session["cdpUser"];
+
+                    uLogin.NewForm = true;
+
+                    HttpContext.Current.Session.Add("cdpUser", uLogin);
+
+                    Response.Redirect("DCANForm.aspx", false);
+                }
+                else
+                {
+                    if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Redirect to Login");
+                    Response.Redirect("cdplogin.aspx");
+                }
+            }
+            catch (Exception ex)
+            {
+                //components.Error_Show.Show(phError, true, ltrError, ex, phReproduction, true);
+                if (log.IsErrorEnabled) log.Error(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Error", ex);
+                MessageCode = "ERR_MSG_ERR_TRY_AGAIN";
+                CDPWMessages.DisplayeMessage(this.Page, MessageCode, lblMessage.ID, "", "msg_box_md msg_error_md corners");
+            }
+            if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Exit");
+        }
+
 
 
         public static Boolean CANForm_Save()
@@ -350,8 +409,10 @@ namespace CDPW
                 }
                 catch (Exception ex)
                 {
-                    components.Error_Show.Show(phError, true, ltrError, ex, phReproduction, true);
+                    //components.Error_Show.Show(phError, true, ltrError, ex, phReproduction, true);
                     if (log.IsErrorEnabled) log.Error(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Error", ex);
+                    MessageCode = "ERR_MSG_ERR_TRY_AGAIN";
+                    CDPWMessages.DisplayeMessage(this.Page, MessageCode, lblMessage.ID, "", "msg_box_md msg_error_md corners");
                 }
             }
 
@@ -379,8 +440,10 @@ namespace CDPW
                     }
                     catch (Exception ex)
                     {
-                        components.Error_Show.Show(phError, true, ltrError, ex, phReproduction, true);
+                        //components.Error_Show.Show(phError, true, ltrError, ex, phReproduction, true);
                         if (log.IsErrorEnabled) log.Error(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Error", ex);
+                        MessageCode = "ERR_MSG_ERR_TRY_AGAIN";
+                        CDPWMessages.DisplayeMessage(this.Page, MessageCode, lblMessage.ID, "", "msg_box_md msg_error_md corners");
                     }
                 }
                 returnValue = eventArgument;
@@ -389,9 +452,11 @@ namespace CDPW
             {
                 if (HttpContext.Current.Session != null && HttpContext.Current.Session["cdpUser"] != null && !((CurrentUser)(HttpContext.Current.Session["cdpUser"])).SavedDCAN)
                 {
-                    phFormSave.Visible = true;
-                    phReproduction.Visible = false;
+                    //phFormSave.Visible = true;
+                    //phReproduction.Visible = false;
                     returnValue = "#24";
+                    MessageCode = "MSG_SAVE_TO_PRINT";
+                    CDPWMessages.DisplayeMessage(this.Page, MessageCode, lblMessage.ID, "", "msg_box_md msg_alert_md corners");
                 }
                 else
                 {
@@ -403,7 +468,7 @@ namespace CDPW
             else if (String.Compare(eventArgument, "ifdeletedata", true) == 0)
             {
                 if (HttpContext.Current.Session != null && HttpContext.Current.Session["cdpUser"] != null && !((CurrentUser)(HttpContext.Current.Session["cdpUser"])).SavedDCAN)
-                {                                       
+                {
                     CurrentUser uLogin = (CurrentUser)HttpContext.Current.Session["cdpUser"];
                     if (uLogin.NoSignUp || !uLogin.NoSignUp)
                     {
@@ -420,7 +485,7 @@ namespace CDPW
             {
                 if (HttpContext.Current.Session != null && HttpContext.Current.Session["cdpUser"] != null && !((CurrentUser)(HttpContext.Current.Session["cdpUser"])).SavedDCAN)
                 {
-                    
+
                     Boolean DeleteUData = false;
                     CurrentUser uLogin = (CurrentUser)HttpContext.Current.Session["cdpUser"];
                     DeleteUData = cdplogout.UserData_Delete(uLogin, 0);

@@ -64,16 +64,29 @@ function ReceiveServerData(rValue) {
     }
 
     if (rValue.toLowerCase() == "#24") {
-        //document.getElementById("discl_CAN").style = "disclaimer-4-update";
-        $('#discl_CAN').addClass('disclaimer-4-update');
-        document.getElementById("discl_CAN").innerHTML = '<span class="message-save">Please Save first, then Print</span>';
-
+        var textMessage = 'Please Save first, then Print.';
+        $('#top').remove('#lblMessage');
+        var spMsg = '<span id="lblMessage" style="left: 244px; display: none;"></span>';
+        $('#top').append(spMsg);
+        //document.getElementById("lblMessage").innerHTML = 'Please Save first, then Print.';
+        $('#lblMessage').html(textMessage);
+        $('#lblMessage').removeClass();
+        $('#lblMessage').addClass("msg_box_md msg_alert_md corners");
+        $('#lblMessage').css('display', 'block');
+        setTimeout("$('#lblMessage').fadeOut(1500,'linear')", 4000);
     }
 
     if (rValue.toLowerCase() == "#1600") {
-        //document.getElementById("discl_USA").style = "disclaimer-4-update";
-        $('#discl_USA').addClass('disclaimer-4-update');
-        document.getElementById("discl_USA").innerHTML = '<span class="message-save">Please Save first, then Print</span>';
+        var textMessage = 'Please Save first, then Print.';
+        $('#top').remove('#lblMessage');
+        var spMsg = '<span id="lblMessage" style="left: 260px; display: none;"></span>';
+        $('#top').append(spMsg);
+        //document.getElementById("lblMessage").innerHTML = 'Please Save first, then Print.';
+        $('#lblMessage').html(textMessage);
+        $('#lblMessage').removeClass();
+        $('#lblMessage').addClass("msg_box_md msg_alert_md corners");
+        $('#lblMessage').css('display', 'block');
+        setTimeout("$('#lblMessage').fadeOut(1500,'linear')", 4000);
     }
 
     if (rValue.toLowerCase() == "msgdeletedata") {

@@ -20,6 +20,7 @@ namespace CDPW.BLL
         public Int64 PId_USA { get; set; }
         public Boolean SavedDUSA { get; set; }
         public Boolean SavedDCAN { get; set; }
+        public Boolean NewForm { get; set; }
 
         public List<UserActiveEnrollments> ActiveEnrollments { get; set; }
     }
