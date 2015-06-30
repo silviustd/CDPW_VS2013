@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDPW", "CDPW\CDPW.csproj", "{7621FF8F-71A7-4C56-B80A-69B5E3F48024}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1C5E1D2A-E494-43A9-A908-927D523A67B7} = {1C5E1D2A-E494-43A9-A908-927D523A67B7}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDPW.DAL", "CDPW.DAL\CDPW.DAL.csproj", "{1C5E1D2A-E494-43A9-A908-927D523A67B7}"
 EndProject
