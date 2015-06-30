@@ -606,6 +606,26 @@ a:focus {
 	#btnSaveForm:hover {
 		background-position: right top;
 	}
+
+	#btnNewForm 
+	{
+	    float: left;
+		display: inline-block;
+		background-image: url('clasic/images/new-btn.png');
+		background-repeat: no-repeat;
+		background-position: left top;
+		width: 80px;
+		height: 30px;
+		border: none;
+        margin-left:10px;
+		text-indent: -9999px;
+		cursor: pointer;
+	}
+
+    #btnNewForm:hover {
+		background-position: bottom;
+	}
+
 	#btnCancel2 {
 	    float: left;
 		display: inline-block;
@@ -623,7 +643,7 @@ a:focus {
 	#button-form-3 {
 		clear: both;
 		margin: 10px auto 20px;
-		width: 420px;
+		width: 510px;
 		height: 30px;
 		padding-bottom: 10px;
 	}
@@ -934,6 +954,15 @@ a:focus {
 .msg_ok_mm img {background-position:-47px -9px;}
 .msg_alert_mm { background:#ffffff url(clasic/images/icons/warning.png) no-repeat 14px center;border:1px solid #e6c26e;box-shadow: 3px 4px 6px #e6c26e;}
 .msg_alert_mm img {background-position:-47px -27px;}
+
+.msg_box_md {display: block; margin:0 auto;width:400px; padding:8px 20px 8px 46px;margin-top:10px;margin-bottom:10px;position:relative;color:#444;overflow:hidden;text-align:left;min-height:15px;cursor:pointer;}
+.msg_ok_md {background:#d5e5b8 url(clasic/images/icons/accept.png) no-repeat 14px center;border:0px solid #77ab13;}
+.msg_error_md {background:#f2cac2 url(clasic/images/icons/taken.gif) no-repeat 14px center;border:0px solid #ae432e;}
+.msg_info_md {background:#c2e2f2 url(clasic/images/icons/information_blue.png) no-repeat 14px center;border:0px solid #058dc7;}
+.msg_alert_md { background:#faf5c8 url(clasic/images/icons/warning.png) no-repeat 14px center;border:0px solid #e6c26e;}
+
+/*.msg_box_mb {position: absolute; top: -24px;z-index:99;display: block; margin:0 auto;width:400px; padding:8px 20px 8px 46px;color:#444;overflow:hidden;text-align:left;min-height:15px;cursor:pointer;}
+.msg_ok_mb {background:#d5e5b8 url(clasic/images/icons/accept.png) no-repeat 14px center;box-shadow: 1px 3px 17px #77ab13;border:0px solid #77ab13;}*/
 
 
 .message-save {
