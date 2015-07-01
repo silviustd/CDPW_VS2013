@@ -16,13 +16,12 @@
                             <li>
                                 <fieldset id="recoverPasswd">
                                     <p>
-                                        <asp:Label ID="lblEmail" Text="Email: " AssociatedControlID="txtEmail" runat="server" />
-                                        <asp:TextBox ID="txtEmail" CssClass="validate[required,custom[email]]" runat="server" />
+                                        <%--<asp:Label ID="lblEmail" Text="Email: " AssociatedControlID="txtEmail" runat="server" />--%>
+                                        <asp:TextBox ID="txtEmail" CssClass="validate[required,custom[email]]" runat="server" placeholder="Email" style="margin-top: 10px;"/>
                                     </p>
                                     <p id="recovButton">
                                         <label>
-                                            &nbsp;</label><asp:Button ID="btnSend" Text="Reset my password" OnClick="btnSend_Click"
-                                                runat="server" />
+                                            &nbsp;</label><asp:Button ID="btnSend" Text="Reset my password" OnClick="btnSend_Click" runat="server" style="margin-left: 41px;"/>
                                     </p>
                                 </fieldset>
                             </li>

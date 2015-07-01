@@ -71,7 +71,12 @@ namespace CDPW.DAL
             /// <summary>
             /// ADD INFO ABOUT PERSONS.
             /// </summary>
-            public static void Form_AddInfo_Person(Int64 userID, Int64[] PIds, string person1Name, string person1DoB, string person1Citizenship, string person1DateLeft, string person1ValueGoods, string person2Name, string person2DoB, string person2Citizenship, string person2DateLeft, string person2ValueGoods, string person3Name, string person3DoB, string person3Citizenship, string person3DateLeft, string person3ValueGoods, string person4Name, string person4DoB, string person4Citizenship, string person4DateLeft, string person4ValueGoods, int AddressID, Int64 TripInfoID)
+            public static void Form_AddInfo_Person(Int64 userID, Int64[] PIds, string person1Name, string person1DoB, string person1Citizenship, 
+                                                    string person1DateLeft, string person1ValueGoods, string person2Name, string person2DoB, 
+                                                    string person2Citizenship, string person2DateLeft, string person2ValueGoods, string person3Name, 
+                                                    string person3DoB, string person3Citizenship, string person3DateLeft, string person3ValueGoods, 
+                                                    string person4Name, string person4DoB, string person4Citizenship, string person4DateLeft, 
+                                                    string person4ValueGoods, int AddressID, Int64 TripInfoID)
             {
                 if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Enter");
                 using (SqlConnection dbConnection = new SqlConnection(DBConnection.ConnectionString))

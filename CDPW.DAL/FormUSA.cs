@@ -12,7 +12,11 @@ namespace CDPW.DAL
         /// <summary>
         /// Add general info from USA form.
         /// </summary>
-        public static string Form_AddInfo(Int64 userID, Int64 UPId, string userName, string StreetAddress, string City, string ProvinceID, string NoFamMembers, string CountryResidence, string ContriesVisited, string ContriesVisited2, string TransportationId, string TripPPurposeBusiness, string BringFruits, string BringMeats, string BringDiseaseAgents, string BringSoil, string Livestock, string CurrencyValue, string CommercialMerchandise, string RGoodsValue, string VGoodsValue, string TripDate)
+        public static string Form_AddInfo(Int64 userID, Int64 UPId, string userName, string StreetAddress, string City, string ProvinceID, 
+                                        string NoFamMembers, string CountryResidence, string ContriesVisited, string ContriesVisited2, 
+                                        string TransportationId, string TripPPurposeBusiness, string BringFruits, string BringMeats, 
+                                        string BringDiseaseAgents, string BringSoil, string Livestock, string CurrencyValue, string CommercialMerchandise, 
+                                        string RGoodsValue, string VGoodsValue, string TripDate)
         {
             if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Enter");
             Int64 TripInfoID;

@@ -91,16 +91,15 @@
                         <ul id="tab-1">
                             <li>
                                 <p>
-                                    <label for="txtLoginName">
-                                        Username / Email</label>
-                                    <asp:TextBox ID="txtLoginName" CssClass="validate[required,minSize[6]]" runat="server" />
+<%--                                    <label for="txtLoginName">
+                                        Username / Email</label>--%>
+                                    <asp:TextBox ID="txtLoginName" CssClass="validate[required,minSize[6]]" runat="server" placeholder="Username" style="margin-top: 20px;"/>
                                     <span class="required">*</span>
                                 </p>
                                 <p>
-                                    <label for="txtLoginPasswd">
-                                        Password</label>
-                                    <asp:TextBox ID="txtLoginPasswd" TextMode="Password" CssClass="validate[required,minSize[6]]"
-                                        runat="server" />
+<%--                                    <label for="txtLoginPasswd">
+                                        Password</label>--%>
+                                    <asp:TextBox ID="txtLoginPasswd" TextMode="Password" CssClass="validate[required,minSize[6]]" runat="server" placeholder="Password"  />
                                     <span class="required">*</span>
                                 </p>
                                 <p>
@@ -116,28 +115,28 @@
                         <ul id="tab-2" class="hide">
                             <li>
                                 <p>
-                                    <label for="txtSignUName">
-                                        Username</label>
-                                    <asp:TextBox ID="txtSignUName" runat="server" CssClass="validate[minSize[6]]" />
+<%--                                    <label for="txtSignUName">
+                                        Username</label>--%>
+                                    <asp:TextBox ID="txtSignUName" runat="server" CssClass="validate[minSize[6]]" placeholder="Username" style="margin-top: 20px;"/>
                                 </p>
                                 <p>
-                                    <label for="txtSignEmail">
-                                        Email</label>
-                                    <asp:TextBox ID="txtSignEmail" CssClass="validate[required,custom[email]]" runat="server" />
+<%--                                    <label for="txtSignEmail">
+                                        Email</label>--%>
+                                    <asp:TextBox ID="txtSignEmail" CssClass="validate[required,custom[email]]" runat="server" placeholder="Email"/>
                                     <span class="required">*</span>
                                 </p>
                                 <p>
-                                    <label for="txtSignPasswd">
-                                        Password</label>
+<%--                                    <label for="txtSignPasswd">
+                                        Password</label>--%>
                                     <asp:TextBox ID="txtSignPasswd" TextMode="Password" CssClass="validate[required,minSize[6]]"
-                                        runat="server" />
+                                        runat="server" placeholder="Password" />
                                     <span class="required">*</span>
                                 </p>
                                 <p>
-                                    <label for="txtSignPasswdConfirm">
-                                        Confirm password</label>
+<%--                                    <label for="txtSignPasswdConfirm">
+                                        Confirm password</label>--%>
                                     <asp:TextBox ID="txtSignPasswdConfirm" TextMode="Password" CssClass="validate[required,equals[txtSignPasswd]]"
-                                        runat="server" />
+                                        runat="server" placeholder="Confirm Password" />
                                     <span class="required">*</span>
                                 </p>
                                 <p>
@@ -153,8 +152,7 @@
                     <p>
                         <span class="bullet-1">
                             <asp:Image ID="imgContinueCheck" runat="server" AlternateText="" /></span>
-                        <asp:LinkButton ID="btnNoSignUp" Text="Continue without login or sign up" OnClick="btnNoSignUp_Click"
-                            runat="server" />
+                        <asp:LinkButton ID="btnNoSignUp" Text="Continue without login or sign up" OnClick="btnNoSignUp_Click" runat="server" style="margin-top: 110px;"/>
                     </p>
                     <%--<div align="center"><a href="cdpprintpreview.aspx?Report=USAForm" class="a1">Print US Form</a></div>
 					<div align="center"><a href="cdpprintpreview.aspx?Report=USAFormB" class="a1">Print US Form back</a></div>

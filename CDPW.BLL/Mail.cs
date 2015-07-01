@@ -31,6 +31,8 @@ namespace CDPW.BLL
 
             using (MailMessage mm = new MailMessage())
             {
+                MailAddress emilFrom = new MailAddress(mm.From.Address, mailFromTitleString);
+                mm.From = emilFrom;
                 mm.To.Add(new MailAddress(To));
                 if (!string.IsNullOrEmpty(cc)) mm.CC.Add(new MailAddress(cc));
                 if (!string.IsNullOrEmpty(bcc)) mm.Bcc.Add(new MailAddress(bcc));

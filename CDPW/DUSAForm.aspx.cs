@@ -131,14 +131,14 @@ namespace CDPW
                                     txtCountriesVisited.Text = dr["ContriesVisited"].ToString();
                                     txtCountriesVisited2.Text = dr["CountriesVisited2"].ToString();
                                     txtTripNo.Text = dr["TransportationId"].ToString();
-                                    rblPrimaryPurpose.SelectedValue = TextUtils.ReturnBitFromDB(Convert.ToBoolean(String.IsNullOrEmpty(dr["TripPPurposeBusiness"].ToString()) ? false : dr["TripPPurposeBusiness"]));
-                                    rblBringFruits.SelectedValue = TextUtils.ReturnBitFromDB(Convert.ToBoolean(String.IsNullOrEmpty(dr["BringFruits"].ToString()) ? false : dr["BringFruits"]));
-                                    rblBringAnimal.SelectedValue = TextUtils.ReturnBitFromDB(Convert.ToBoolean(String.IsNullOrEmpty(dr["BringMeats"].ToString()) ? false : dr["BringMeats"]));
-                                    rblBringCultures.SelectedValue = TextUtils.ReturnBitFromDB(Convert.ToBoolean(String.IsNullOrEmpty(dr["BringDiseaseAgents"].ToString()) ? false : dr["BringDiseaseAgents"]));
-                                    rblBringSoil.SelectedValue = TextUtils.ReturnBitFromDB(Convert.ToBoolean(String.IsNullOrEmpty(dr["BringSoil"].ToString()) ? false : dr["BringSoil"]));
-                                    rblProximityLivestock.SelectedValue = TextUtils.ReturnBitFromDB(Convert.ToBoolean(String.IsNullOrEmpty(dr["Livestock"].ToString()) ? false : dr["Livestock"]));
-                                    rblCurrencyOver.SelectedValue = TextUtils.ReturnBitFromDB(Convert.ToBoolean(String.IsNullOrEmpty(dr["CurrencyValue"].ToString()) ? false : dr["CurrencyValue"]));
-                                    rblCommercialMerchandise.SelectedValue = TextUtils.ReturnBitFromDB(Convert.ToBoolean(String.IsNullOrEmpty(dr["CommercialMerchandise"].ToString()) ? false : dr["CommercialMerchandise"]));
+                                    rblPrimaryPurpose.SelectedValue = dr["TripPPurposeBusiness"].ToString();//TextUtils.ReturnBitFromDB(Convert.ToBoolean(String.IsNullOrEmpty(dr["TripPPurposeBusiness"].ToString()) ? null : dr["TripPPurposeBusiness"]));
+                                    rblBringFruits.SelectedValue = dr["BringFruits"].ToString();// TextUtils.ReturnBitFromDB(Convert.ToBoolean(String.IsNullOrEmpty(dr["BringFruits"].ToString()) ? false : dr["BringFruits"]));
+                                    rblBringAnimal.SelectedValue = dr["BringMeats"].ToString();// TextUtils.ReturnBitFromDB(Convert.ToBoolean(String.IsNullOrEmpty(dr["BringMeats"].ToString()) ? false : dr["BringMeats"]));
+                                    rblBringCultures.SelectedValue = dr["BringDiseaseAgents"].ToString();// TextUtils.ReturnBitFromDB(Convert.ToBoolean(String.IsNullOrEmpty(dr["BringDiseaseAgents"].ToString()) ? false : dr["BringDiseaseAgents"]));
+                                    rblBringSoil.SelectedValue = dr["BringSoil"].ToString();// TextUtils.ReturnBitFromDB(Convert.ToBoolean(String.IsNullOrEmpty(dr["BringSoil"].ToString()) ? false : dr["BringSoil"]));
+                                    rblProximityLivestock.SelectedValue = dr["Livestock"].ToString();// TextUtils.ReturnBitFromDB(Convert.ToBoolean(String.IsNullOrEmpty(dr["Livestock"].ToString()) ? false : dr["Livestock"]));
+                                    rblCurrencyOver.SelectedValue = dr["CurrencyValue"].ToString();// TextUtils.ReturnBitFromDB(Convert.ToBoolean(String.IsNullOrEmpty(dr["CurrencyValue"].ToString()) ? false : dr["CurrencyValue"]));
+                                    rblCommercialMerchandise.SelectedValue = dr["CommercialMerchandise"].ToString();// TextUtils.ReturnBitFromDB(Convert.ToBoolean(String.IsNullOrEmpty(dr["CommercialMerchandise"].ToString()) ? false : dr["CommercialMerchandise"]));
                                     txtResTotValGoods.Text = string.Format(new System.Globalization.CultureInfo("en-US"), "{0:#.00}", dr["RGoodsValue"]);
                                     txtVisTotValGoods.Text = string.Format(new System.Globalization.CultureInfo("en-US"), "{0:#.00}", dr["VGoodsValue"]); //dr["VGoodsValue"].ToString();
 
