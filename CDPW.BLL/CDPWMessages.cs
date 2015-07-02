@@ -27,6 +27,9 @@ namespace CDPW.BLL
         public static String MSG_DATA_SAVED = "Data have been saved.";
         public static String MSG_SAVE_TO_PRINT = "Please Save first, then Print.";
 
+        public static String MSG_EMAIL_TO_RESET_PASSWORD = "Yes, reset my password.";
+        public static String MSG_EMAIL_PASSWORD_RESET = "Please log in here.";
+
 
         public static String ERR_MSG_LOGOUT_LOGIN_EMAIL = "Please <a href='cdplogout.aspx'> Log Out</a>  and Log in again.<br/>If the problem persists please <A HREF='mailto:office@columnasoft.com?subject={0}'>email us</A> with your Name, Address, Email and Plan";
 
@@ -39,7 +42,7 @@ namespace CDPW.BLL
         public static String ERR_RESET_PWD_MORE3DAYS = "The confirmation message was sent more than 3 days ago. <br/><a href={0}>Please click here to reset your password again.</a> ";
         public static String ERR_MSG_ERR = "There is a problem processing your request.";
         public static String ERR_MSG_ERR_TRY_AGAIN = "There has been a problem processing your request. Please try again.";
-        public static String ERR_MSG_TRY_AGAIN = "Sorry, an error has occured.<a href={0}>Please click here to try again.</a>";
+        public static String ERR_MSG_TRY_AGAIN = "Sorry, an error has occured. <a href={0}>Please click here to try again.</a>";
 
         //cdpconfirmreg
         public static String ERR_NO_USER_EMAIL = "Sorry, there is no user  with the email address/username provided. In order to access the application,<a href={0}> please Sign-Up here</a> by using <b>I don't have an account</b>.";

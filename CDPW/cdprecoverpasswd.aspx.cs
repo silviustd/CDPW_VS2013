@@ -60,7 +60,9 @@ namespace CDPW
                                         // Change password in database
                                         Users.Password_Reset(emailToReset, newPasswd);
 
-                                        string emailTemplate = Template.readTemplate("[email_address]\\[new_password]", uName + "\\" + newPasswd, HttpContext.Current.Server.MapPath("components/reset_password.html"));
+                                        string url = string.Format("<a href=\"http://www.columnasoft.com/cdpww/cdplogin.aspx\">" + CDPWMessages.MSG_EMAIL_PASSWORD_RESET + "</a>");
+
+                                        string emailTemplate = Template.readTemplate("[email_address]\\[new_password]\\[reset_link]", uName + "\\" + newPasswd+ "\\" + url, HttpContext.Current.Server.MapPath("components/reset_password.html"));
 
                                         Mail.Send(emailToReset, null, null, CDPWMessages.EMAIL_SUBJECT_NEW_PASSWORD, emailTemplate, System.Net.Mail.MailPriority.Normal);
 
@@ -129,7 +131,7 @@ namespace CDPW
                     string encodedEmail = EncryptDecrypt.Encrypt(email);
                     DateTime dt = DateTime.Now.AddDays(3);
                     string encodedDate = EncryptDecrypt.Encrypt(dt.ToString());
-                    string url = string.Format("<a href=\"http://www.columnasoft.com/cdpww/cdprecoverpasswd.aspx?etr={0}&g={1}&dte={2}&ps=rp\">Yes, reset my password</a>", encodedEmail, guid, encodedDate);
+                    string url = string.Format("<a href=\"http://www.columnasoft.com/cdpww/cdprecoverpasswd.aspx?etr={0}&g={1}&dte={2}&ps=rp\">" + CDPWMessages.MSG_EMAIL_TO_RESET_PASSWORD + "</a>", encodedEmail, guid, encodedDate);
 
                     //string emailTemplate = Template.readTemplate("[email_address]\\[reset_link]", email + "\\" + url, HttpContext.Current.Server.MapPath("components/recover_passwd.html"));
                     string emailTemplate = Template.readTemplate("[email_address]\\[reset_link]", uName + "\\" + url, HttpContext.Current.Server.MapPath("components/recover_passwd.html"));
