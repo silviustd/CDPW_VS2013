@@ -41,12 +41,12 @@
     <p><a href="http://www.cbsa-asfc.gc.ca/publications/forms-formulaires/e311-fra.pdf" target = "_blank">http://www.cbsa-asfc.gc.ca/publications/forms-formulaires/e311-fra.pdf</a></p>
 
     <h2><a name="print_custom_forms">Print Custom Forms</a></h2>
-    <p>To print Custom Forms you have to use Internet Explorer browser</p>
+    <p>To print Custom Forms the browser you are using should allow pop-ups</p>
     <p>The browser should allow pop-ups</p>
     <p><img src="theme/clasic/images/IE_Allow_popups1.jpg" alt="" /></p>
     
 
-    <p>If requested, allow to install SQL Server Reporting Services, an add-on provided by Microsoft that enable the reports’ printing</p>
+    <p>For Internet Explorer, if requested, allow to install SQL Server Reporting Services, an add-on provided by Microsoft that enable the reports’ printing</p>
     <p><img src="theme/clasic/images/Install_SQLServerReportingServices2008R2.jpg" alt="" /></p>
     <p><img src="theme/clasic/images/Install_SQLServerReportingServices2008R2_2.jpg" alt="" /></p>
 
@@ -55,9 +55,10 @@
     <p><span class="special-2">Account Info:</span> Username, Email, Alternate Email, Password. With Email and Password being mandatory information</p>
     <p><span class="special-2">General Info:</span> Salutation, First, Middle and Last Name, Date of Birth and Gender</p>
     <p><span class="special-2">Residential Address:</span> Street Number, Street Type, Street Name, Street Direction, Unit/Apt Number, City, Postal Code, Province/State and Country</p>
-
-    <p><span class="special-2">Do not keep data:</span> If checked, certain information filled in using My Settings or Customs Forms will be deleted at log out. The information that will be deleted are also listed on My Settings page and they are - Passport, Address, Date of Birth and Citizenship.</p>
+    <p><span class="special-2">Update info for Customs Forms:</span> If checked, the name and date of birth information filled in on this page will be used on Customs Forms, where residential address information is required to be filled out.</p>
     <p><span class="special-2">Update address for Customs Forms:</span> If checked, the address information filled in on this page will be used on Customs Forms, where residential address information is required to be filled out.</p>
+    <p><span class="special-2">Do not keep data:</span> If checked, certain information filled in using My Settings or Customs Forms will be deleted at log out. The information that will be deleted are also listed on My Settings page and they are - Passport, Address, Date of Birth and Citizenship.</p>
+    
 
     
 
