@@ -15,18 +15,12 @@
             setTimeout("$('#discl_USA').fadeIn(2000,'linear')", 10000);
         }
 
-        function MsgFadeOutC(ctrl) {
-            //$('#discl_USA').css('display', 'none');
-            setTimeout("$('#" + ctrl.id + "').fadeOut(1000,'linear')", 3000);
-            //setTimeout("$('#discl_USA').fadeIn(2000)", 3500);
-        }
-
-        </script>
+    </script>
 
     <asp:PlaceHolder ID="phUsForm" runat="server">
         <div id="top">
-    <asp:Label class="msg_box_md msg_ok_md corners" ID="lblMessage" style="left: 260px;"
-        Text="Data has been saved." runat="server" ViewStateMode="Enabled" Visible="false" ClientIDMode="Static" />
+            <asp:Label class="msg_box_md msg_ok_md corners" ID="lblMessage" Style="left: 260px;"
+                Text="Data has been saved." runat="server" ViewStateMode="Enabled" Visible="false" ClientIDMode="Static" />
             <asp:PlaceHolder ID="phReproduction" runat="server" Visible="true">
                 <p id="discl_USA" class="disclaimer-4">
                     This is a reproduction and it does not replace U.S. Customs and Border Protection
@@ -41,18 +35,18 @@
             <!-- front -->
             <div class="main-3">
                 <div id="header-form">
-                    &nbsp;</div>
+                    &nbsp;
+                </div>
                 <div>
                 </div>
-                <h2>
-                    Custom Declaration</h2>
+                <h2>Custom Declaration</h2>
                 <p>
                     Each arriving traveler or responsible family member must provide the following information
-                    (only ONE written declaration per family is required):</p>
+                    (only ONE written declaration per family is required):
+                </p>
                 <table class="DUSAForm1">
                     <tr>
-                        <td class="column-1">
-                            1.
+                        <td class="column-1">1.
                         </td>
                         <td style="width: 40px;">
                             <asp:Label ID="lblFamName" AssociatedControlID="txtFamName" runat="server" Text="Family <strong>Name</strong>"></asp:Label>
@@ -67,8 +61,7 @@
                             <table>
                                 <tr>
                                     <td>
-                                        <td class="column-1">
-                                            2.
+                                        <td class="column-1">2.
                                         </td>
                                         <td>
                                             <label id="lblFName" for="txtFstName">
@@ -92,14 +85,12 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="column-1">
-                            &nbsp;
+                        <td class="column-1">&nbsp;
                         </td>
                         <td>
                             <strong>Birth date</strong>
                         </td>
-                        <td colspan="4">
-                            Day
+                        <td colspan="4">Day
                             <asp:TextBox ID="txtdobDay" runat="server" class="text validate[funcCall[checkBD]]"
                                 MaxLength="2" original-title="dd" AutoPostBack="False" onchange="javascript:ChangeAlert();" />
                             Month
@@ -111,11 +102,9 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="column-1">
-                            3.
+                        <td class="column-1">3.
                         </td>
-                        <td colspan="3">
-                            Number of <strong>family members</strong> traveling with you
+                        <td colspan="3">Number of <strong>family members</strong> traveling with you
                         </td>
                         <td colspan="2" class="right">
                             <asp:TextBox ID="txtNoFamMembers" runat="server" class="text text-3 validate[custom[byte]]"
@@ -123,16 +112,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="column-1">
-                            4.
+                        <td class="column-1">4.
                         </td>
-                        <td colspan="5">
-                            U.S. Street <strong>Address</strong> (hotel name/ destination)
+                        <td colspan="5">U.S. Street <strong>Address</strong> (hotel name/ destination)
                         </td>
                     </tr>
                     <tr>
-                        <td class="column-1">
-                            &nbsp;
+                        <td class="column-1">&nbsp;
                         </td>
                         <td colspan="5" class="right">
                             <asp:TextBox ID="txtAddress" runat="server" class="text text-4" original-title="48 characters"
@@ -140,18 +126,15 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="column-1">
-                            &nbsp;
+                        <td class="column-1">&nbsp;
                         </td>
-                        <td style="padding-left: 10px;">
-                            City
+                        <td style="padding-left: 10px;">City
                         </td>
                         <td>
                             <asp:TextBox ID="txtCity" runat="server" class="text text-2" original-title="25 characters"
                                 MaxLength="25" AutoPostBack="False" onchange="javascript:ChangeAlert();"></asp:TextBox>
                         </td>
-                        <td colspan="2" class="right">
-                            State
+                        <td colspan="2" class="right">State
                         </td>
                         <td class="right">
                             <asp:DropDownList ID="ddlState" runat="server" class="lista-2  text-5" AutoPostBack="False"
@@ -159,8 +142,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="column-1">
-                            5.
+                        <td class="column-1">5.
                         </td>
                         <td colspan="2">
                             <strong>Passport issued by</strong> (country)
@@ -171,8 +153,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="column-1">
-                            6.
+                        <td class="column-1">6.
                         </td>
                         <td colspan="2">
                             <asp:Label ID="lblPasspNo" AssociatedControlID="txtPasspNo" runat="server" Text="<strong>Passport number</strong>"></asp:Label>
@@ -183,8 +164,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="column-1">
-                            7.
+                        <td class="column-1">7.
                         </td>
                         <td colspan="2">
                             <asp:Label ID="lblCountryResidence" AssociatedControlID="ddlCountryResidence" runat="server"
@@ -196,8 +176,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="column-1">
-                            8.
+                        <td class="column-1">8.
                         </td>
                         <td colspan="2">
                             <asp:Label ID="lblCountriesVisited" AssociatedControlID="txtCountriesVisited" runat="server"
@@ -211,8 +190,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="column-1">
-                            9.
+                        <td class="column-1">9.
                         </td>
                         <td colspan="2">
                             <asp:Label ID="lblTripNo" AssociatedControlID="txtTripNo" runat="server" Text="<strong>Airline/Flight No.</strong> or <strong>Vessel Name</strong>"></asp:Label>
@@ -223,8 +201,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="column-1">
-                            10.
+                        <td class="column-1">10.
                         </td>
                         <td colspan="4">
                             <asp:Label ID="lblPrimaryPurpose" AssociatedControlID="rblPrimaryPurpose" runat="server"
@@ -234,25 +211,21 @@
                             <asp:RadioButtonList ID="rblPrimaryPurpose" runat="server" RepeatDirection="Horizontal"
                                 TextAlign="Left" RepeatLayout="Flow" AutoPostBack="False" onchange="javascript:ChangeAlert();">
                                 <asp:ListItem Value="1" Text="Yes" />
-                                <asp:ListItem Value="0" Text="No" 
-                                 />
+                                <asp:ListItem Value="0" Text="No" />
                             </asp:RadioButtonList>
                         </td>
                     </tr>
                     <tr>
-                        <td class="column-1">
-                            11.
+                        <td class="column-1">11.
                         </td>
                         <td colspan="4">
                             <asp:Label ID="Label7" runat="server" Text="I am (We are) bringing"></asp:Label>
                         </td>
-                        <td>
-                            &nbsp;
+                        <td>&nbsp;
                         </td>
                     </tr>
                     <tr>
-                        <td class="column-1">
-                            &nbsp;
+                        <td class="column-1">&nbsp;
                         </td>
                         <td colspan="4">
                             <asp:Label ID="lblBringFruits" AssociatedControlID="rblBringFruits" runat="server"
@@ -267,8 +240,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="column-1">
-                            &nbsp;
+                        <td class="column-1">&nbsp;
                         </td>
                         <td colspan="4">
                             <asp:Label ID="lblBringAnimal" AssociatedControlID="rblBringAnimal" runat="server"
@@ -278,13 +250,12 @@
                             <asp:RadioButtonList ID="rblBringAnimal" runat="server" RepeatDirection="Horizontal"
                                 TextAlign="Left" RepeatLayout="Flow" AutoPostBack="False" onchange="javascript:ChangeAlert();">
                                 <asp:ListItem Value="1" Text="Yes" />
-                                <asp:ListItem Value="0" Text="No"  />
+                                <asp:ListItem Value="0" Text="No" />
                             </asp:RadioButtonList>
                         </td>
                     </tr>
                     <tr>
-                        <td class="column-1">
-                            &nbsp;
+                        <td class="column-1">&nbsp;
                         </td>
                         <td colspan="4">
                             <asp:Label ID="lblBringCultures" AssociatedControlID="rblBringCultures" runat="server"
@@ -294,13 +265,12 @@
                             <asp:RadioButtonList ID="rblBringCultures" runat="server" RepeatDirection="Horizontal"
                                 TextAlign="Left" RepeatLayout="Flow" AutoPostBack="False" onchange="javascript:ChangeAlert();">
                                 <asp:ListItem Value="1" Text="Yes" />
-                                <asp:ListItem Value="0" Text="No"  />
+                                <asp:ListItem Value="0" Text="No" />
                             </asp:RadioButtonList>
                         </td>
                     </tr>
                     <tr>
-                        <td class="column-1">
-                            &nbsp;
+                        <td class="column-1">&nbsp;
                         </td>
                         <td colspan="4">
                             <asp:Label ID="lblBringSoil" AssociatedControlID="rblBringSoil" runat="server" Text="(d) soil or have been on a farm/ranch/pasture:"></asp:Label>
@@ -309,13 +279,12 @@
                             <asp:RadioButtonList ID="rblBringSoil" runat="server" RepeatDirection="Horizontal"
                                 TextAlign="Left" RepeatLayout="Flow" AutoPostBack="False" onchange="javascript:ChangeAlert();">
                                 <asp:ListItem Value="1" Text="Yes" />
-                                <asp:ListItem Value="0" Text="No"  />
+                                <asp:ListItem Value="0" Text="No" />
                             </asp:RadioButtonList>
                         </td>
                     </tr>
                     <tr>
-                        <td class="column-1">
-                            12.
+                        <td class="column-1">12.
                         </td>
                         <td colspan="4">
                             <asp:Label ID="lblProximityLivestock" AssociatedControlID="rblProximityLivestock"
@@ -325,13 +294,12 @@
                             <asp:RadioButtonList ID="rblProximityLivestock" runat="server" RepeatDirection="Horizontal"
                                 TextAlign="Left" RepeatLayout="Flow" AutoPostBack="False" onchange="javascript:ChangeAlert();">
                                 <asp:ListItem Value="1" Text="Yes" />
-                                <asp:ListItem Value="0" Text="No"  />
+                                <asp:ListItem Value="0" Text="No" />
                             </asp:RadioButtonList>
                         </td>
                     </tr>
                     <tr>
-                        <td class="column-1">
-                            13.
+                        <td class="column-1">13.
                         </td>
                         <td colspan="4">
                             <asp:Label ID="lblCurrencyOver" AssociatedControlID="rblCurrencyOver" runat="server"
@@ -341,13 +309,12 @@
                             <asp:RadioButtonList ID="rblCurrencyOver" runat="server" RepeatDirection="Horizontal"
                                 TextAlign="Left" RepeatLayout="Flow" AutoPostBack="False" onchange="javascript:ChangeAlert();">
                                 <asp:ListItem Value="1" Text="Yes" />
-                                <asp:ListItem Value="0" Text="No"  />
+                                <asp:ListItem Value="0" Text="No" />
                             </asp:RadioButtonList>
                         </td>
                     </tr>
                     <tr>
-                        <td class="column-1">
-                            14.
+                        <td class="column-1">14.
                         </td>
                         <td colspan="4">
                             <asp:Label ID="lblCommercialMerchandise" AssociatedControlID="rblCommercialMerchandise"
@@ -357,13 +324,12 @@
                             <asp:RadioButtonList ID="rblCommercialMerchandise" runat="server" RepeatDirection="Horizontal"
                                 TextAlign="Left" RepeatLayout="Flow" AutoPostBack="False" onchange="javascript:ChangeAlert();">
                                 <asp:ListItem Value="1" Text="Yes" />
-                                <asp:ListItem Value="0" Text="No"  />
+                                <asp:ListItem Value="0" Text="No" />
                             </asp:RadioButtonList>
                         </td>
                     </tr>
                     <tr>
-                        <td class="column-1">
-                            15.
+                        <td class="column-1">15.
                         </td>
                         <td colspan="3">
                             <asp:Label ID="lblResTotValGoods" AssociatedControlID="txtResTotValGoods" runat="server"
@@ -376,8 +342,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="column-1">
-                            &nbsp;
+                        <td class="column-1">&nbsp;
                         </td>
                         <td colspan="3">
                             <asp:Label ID="lblVisTotValGoods" AssociatedControlID="txtVisTotValGoods" runat="server"
@@ -391,7 +356,8 @@
                     </tr>
                 </table>
                 <p>
-                    <asp:Label ID="lblIndications" runat="server" Text="Read the instructions on the back of this form. Space is provided to list all the items you must declare.<br /><strong>I HAVE READ THE IMPORTANT INFORMATION ON THE REVERSE SIDE OF THIS FORM AND HAVE MADE A TRUTHFUL DECLARATION</strong>"></asp:Label></p>
+                    <asp:Label ID="lblIndications" runat="server" Text="Read the instructions on the back of this form. Space is provided to list all the items you must declare.<br /><strong>I HAVE READ THE IMPORTANT INFORMATION ON THE REVERSE SIDE OF THIS FORM AND HAVE MADE A TRUTHFUL DECLARATION</strong>"></asp:Label>
+                </p>
                 <p>
                     <asp:Label ID="Label18" runat="server" Text="_________________________________________"></asp:Label>
                     <span style="margin-left: 10px;">
@@ -406,14 +372,16 @@
             <!-- back -->
             <div class="main-3 back">
                 <p style="font-size: 11px;">
-                    <asp:Label ID="lblIntroductions1" runat="server" Text="U.S. Customs and Border Protection is responsible for protecting the United States against the illegal importation of prohibited items. CBP officers have the authority to question you and to examine you and your personal property. If you are one of the travelers selected for an examination, you will be treated in a courteous, professional, and dignified manner. CBP Supervisors and Passenger Service Representatives are available to answer your questions. Comment cards are available to compliment or provide feedback."></asp:Label></p>
+                    <asp:Label ID="lblIntroductions1" runat="server" Text="U.S. Customs and Border Protection is responsible for protecting the United States against the illegal importation of prohibited items. CBP officers have the authority to question you and to examine you and your personal property. If you are one of the travelers selected for an examination, you will be treated in a courteous, professional, and dignified manner. CBP Supervisors and Passenger Service Representatives are available to answer your questions. Comment cards are available to compliment or provide feedback."></asp:Label>
+                </p>
                 <p style="font-size: 11px;">
                     <asp:Label ID="Label20" runat="server" Text="<strong>Important Information</strong> <br />U.S. Residents - Declare all articles that you have acquired abroad and are bringing into the United States.<br />Visitors (Non-Residents) - Declare the value of all articles that will remain in the United States.<br />Declare all articles on this declaration form and show the value in U.S. dollars. For gifts, please indicate the retail value.<br />Duty - CBP officers will determine duty. U.S. residents are normally entitled to a duty-free exemption of $800 on items accompanying them. Visitors (nonresidents) are normally entitled to an exemption of $100. Duty will be assessed at the current rate on the first $1,000 above the exemption.<br />Agricultural and Wildlife Products - To prevent the entry of dangerous agricultural pests and prohibited wildlife, the following are restricted: Fruits, vegetables, plants, plant products, soil, meat, meat products, birds, snails, and other live animals or animal products. Failure to declare such items to a Customs and Border Protection Officer/Customs and Border Protection Agriculture Specialist/Fish and Wildlife Inspector can result in penalties and the items may be subject to seizure. <br />Controlled substances, obscene articles, and toxic substances are generally prohibited entry.<br /><em>Thank You, and Welcome to the United States.</em><br />The transportation of currency or monetary instruments, regardless of the amount, is legal. However, if you bring in to or take out of the United States more than $10,000 (U.S. or foreign equivalent, or a combination of both), you are required by law to file a report on FinCEN 105 (formerly Customs Form 4790) with U.S. Customs and Border Protection. Monetary instruments include coin, currency, travelers checks and bearer instruments such as personal or cashiers checks and stocks and bonds. If you have someone else carry the currency or monetary instrument for you, you must also file a report on FinCEN 105. Failure to file the required report or failure to report the total amount that you are carrying may lead to the seizure of all the currency or monetary instruments, and may subject you to civil penalties and/or criminal prosecution. SIGN ON THE OPPOSITE 
 		SIDE OF THIS FORM AFTER YOU HAVE READ I'IIE IMPORTANT INFORMATION ABOVE AND MADE A TRUTHFUL DECLARATION."></asp:Label>
                     <asp:Label ID="lblInstructions1" runat="server" Text="Controlled substances, obscene articles, and toxic substances are generally prohibited entry. 
 		Thank You, and Welcome to the United States."></asp:Label>
                     <asp:Label ID="lblInstructions2" runat="server" Text="The transportation of currency or monetary instruments, regardless of the amount, is legal. However, if you bring in to or take out of the United States more than $10,000 (U.S. or foreign equivalent, or a combination of both), you are required by law to file a report on FinCEN 105 (formerly Customs Form 4790) with U.S. Customs and Border Protection. Monetary instruments include coin, currency, travelers checks and bearer instruments such as personal or cashiers checks and stocks and bonds. If you have someone else carry the currency or monetary instrument for you, you must also file a report on FinCEN 105. Failure to file the required report or failure to report the total amount that you are carrying may lead to the seizure of all the currency or monetary instruments, and may subject you to civil penalties and/or criminal prosecution. SIGN ON THE OPPOSITE 
-		SIDE OF THIS FORM AFTER YOU HAVE READ THE IMPORTANT INFORMATION ABOVE AND MADE A TRUTHFUL DECLARATION">.</asp:Label></p>
+		SIDE OF THIS FORM AFTER YOU HAVE READ THE IMPORTANT INFORMATION ABOVE AND MADE A TRUTHFUL DECLARATION">.</asp:Label>
+                </p>
                 <br />
                 <table class="DUSAForm1">
                     <tr>
@@ -500,8 +468,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="text-align: right">
-                            Total
+                        <td style="text-align: right">Total
                         </td>
                         <td colspan="2">
                             <asp:TextBox ID="txtTotalValArticles" runat="server" disabled class="text-10 textAlignRight validate[custom[money2USA]] validate[custom[number2CAN]]"
@@ -511,12 +478,14 @@
                     </tr>
                 </table>
                 <p style="font-size: 11px;">
-                    <asp:Label ID="Label23" runat="server" Text="PAPERWORK REDUCTION ACT NOTICE: The Paperwork Reduction Act says we must tell you why we are collecting this information, how we will use it, and whether you have to give it to us. The information collected on this form is needed to carry out the Customs. Agriculture, and currency laws of the United States. CBP requires the information on this form to insure that travelers are complying with these laws and to allow us to figure and collect the right amount of duty and tax Your response is mandatory An agency may not conduct or sponsor and a person is not required to respond to a collection of information. unless it displays a valid OMB control number. The estimated average burden associated with this collection of information is 4 minutes per respondent or record keeper depending on individual circumstances. Comments concerning the accuracy of this burden estimate and suggestions for reducing this burden should be directed to U.S. Customs and Border Protection. Reports Clearance Officer, Information Services Branch. Washington DC 20229, and to the Office of Management and Budget, Paperwork Reduction Project (1651-0009), Washington, DC 20503 THIS FORM MAY NOT BE REPRODUCED WITHOUT APPROVAL FROM THE CBP FORMS MANAGER. G:Y> U.S. G.P.O.: 2011-570-089/40009 CBP Form 6059B (10/07)"></asp:Label></p>
+                    <asp:Label ID="Label23" runat="server" Text="PAPERWORK REDUCTION ACT NOTICE: The Paperwork Reduction Act says we must tell you why we are collecting this information, how we will use it, and whether you have to give it to us. The information collected on this form is needed to carry out the Customs. Agriculture, and currency laws of the United States. CBP requires the information on this form to insure that travelers are complying with these laws and to allow us to figure and collect the right amount of duty and tax Your response is mandatory An agency may not conduct or sponsor and a person is not required to respond to a collection of information. unless it displays a valid OMB control number. The estimated average burden associated with this collection of information is 4 minutes per respondent or record keeper depending on individual circumstances. Comments concerning the accuracy of this burden estimate and suggestions for reducing this burden should be directed to U.S. Customs and Border Protection. Reports Clearance Officer, Information Services Branch. Washington DC 20229, and to the Office of Management and Budget, Paperwork Reduction Project (1651-0009), Washington, DC 20503 THIS FORM MAY NOT BE REPRODUCED WITHOUT APPROVAL FROM THE CBP FORMS MANAGER. G:Y> U.S. G.P.O.: 2011-570-089/40009 CBP Form 6059B (10/07)"></asp:Label>
+                </p>
             </div>
         </div>
         <p class="disclaimer-3">
             This is a reproduction and it does not replace U.S. Customs and Border Protection
-            official form.</p>
+            official form.
+        </p>
         <div id="button-form-3">
             <%--
 			<asp:LinkButton ID="btnSaveForm" Text="Save" OnClick="btnSaveForm_Click" runat="server" />
@@ -543,8 +512,7 @@
             <asp:HyperLink ID="logout_2" runat="server" NavigateUrl="cdplogout.aspx">Logout</asp:HyperLink>
         </div>
     </asp:PlaceHolder>
-    <asp:PlaceHolder ID="phUSAFormSuccess" runat="server" Visible="false"><span class="span50">
-    </span>
+    <asp:PlaceHolder ID="phUSAFormSuccess" runat="server" Visible="false"><span class="span50"></span>
         <p class="msg_box msg_ok corners">
             <asp:Literal ID="ltrUSAFormSuccess" Text="The form was submited with success." runat="server" />
         </p>
@@ -769,6 +737,6 @@
 
             return new Number(nS);
         }
-        
+
     </script>
 </asp:Content>

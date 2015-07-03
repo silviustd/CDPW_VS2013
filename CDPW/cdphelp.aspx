@@ -7,7 +7,7 @@
 <div id="help-wrapper" style='font-size: 14px; color:#3D3D3D;'>
     <ul id="help-menu">
         <li><a href="#register">Register</a></li>
-        <li><a href="#translate">Translate</a></li>
+        <li><a href="#translat">Translate</a></li>
         <li><a href="#customs_forms">Customs Forms</a></li>
         <li><a href="#print_custom_forms">Print Custom Forms</a></li>
         <li><a href="#my_settings">My Settings</a></li>
@@ -20,7 +20,7 @@
     <p><span class="special-2">Continue without Login</span> or <span class="special-2">Sign Up</span> allows the application to be used if you choose to not register or even not to log in (although registered).</p>
     <p>A temporary user will be created and you will only have the option to fill out and print a Custom Form (US CBP Form 6059b or CBSA Form E311), one time only.</p>
     <p>Any data entered during a <span class="special-2">Continue without Login</span> or <span class="special-2">Sign Up</span> session will be deleted.</p>
-    <h2><a name="translate">Translate</a></h2>
+    <h2><a name="translat">Translate</a></h2>
     <p>The translate widget can be used to translate the current page in various languages.<br />At any time you can return to the original page by closing or canceling the widget.<br />The widget can be closed by clicking <span class="special-2">Close [x]</span> on the widget or by clicking X on the widget bar.</p>
     <div></div>
     <p><img style="float: left; margin-right: 20px;" src="theme/clasic/images/Translate_1.png" alt="" /><img src="theme/clasic/images/Translate_2.png" alt="" /></p>
@@ -30,15 +30,16 @@
     <p>Customs Forms page allows one to choose the Customs Form (US CBP Form 6059b or CBSA Form E311) wanted to be filled out and printed.</p>
     <p>If registered, there is also the option of enrolling in a plan for one of the Customs Forms(US CBP Form 6059b or CBSA Form E311).</p>
     <p> More information about how the form should be filled out:</p>
+    
     <p class="special-2">US CBP 6059b</p>
-    <p><a href="http://www.cbp.gov/xp/cgov/travel/vacation/sample_declaration_form.xml">http://www.cbp.gov/xp/cgov/travel/vacation/sample_declaration_form.xml</a></p>
-    <p><a href="http://www.cbp.gov/linkhandler/cgov/travel/clearing/traveler_entry_form/cbp_traveler_brochure.ctt/cbp_traveler_brochure.pdf" target = "_blank"></a>http://www.cbp.gov/linkhandler/cgov/travel/clearing/traveler_entry_form/cbp_traveler_brochure.ctt/cbp_traveler_brochure.pdf</p>
-
+    
+    <p><a href="http://www.cbp.gov/travel/clearing-cbp/traveler-entry-form" target = "_blank">http://www.cbp.gov/travel/clearing-cbp/traveler-entry-form</a></p>
+    <p><a href="http://www.cbp.gov/travel/us-citizens/CBP-declaration-form-6059B" target = "_blank">http://www.cbp.gov/travel/us-citizens/CBP-declaration-form-6059B</a></p>
+    <p><a href="http://www.cbp.gov/travel/us-citizens/sample-declaration-form" target = "_blank">http://www.cbp.gov/travel/us-citizens/sample-declaration-form</a></p>
+    <br/>
     <p class="special-2">CBSA E311</p>
-    <p><a href="http://www.cbsa-asfc.gc.ca/publications/dm-md/d2/d2-5-7-eng.html" target = "_blank">http://www.cbsa-asfc.gc.ca/publications/dm-md/d2/d2-5-7-eng.html</a></p>
-    <p><a href="http://www.cbsa-asfc.gc.ca/publications/forms-formulaires/e311-eng.pdf" target = "_blank">http://www.cbsa-asfc.gc.ca/publications/forms-formulaires/e311-eng.pdf</a></p>
-    <p><a href="http://www.cbsa-asfc.gc.ca/publications/dm-md/d2/d2-5-7-fra.html" target = "_blank">http://www.cbsa-asfc.gc.ca/publications/dm-md/d2/d2-5-7-fra.html</a></p>
-    <p><a href="http://www.cbsa-asfc.gc.ca/publications/forms-formulaires/e311-fra.pdf" target = "_blank">http://www.cbsa-asfc.gc.ca/publications/forms-formulaires/e311-fra.pdf</a></p>
+    <p><a href="http://www.cbsa-asfc.gc.ca/publications/forms-formulaires/e311-eng.html" target = "_blank">http://www.cbsa-asfc.gc.ca/publications/forms-formulaires/e311-eng.html</a></p>
+    <p><a href="http://www.cbsa-asfc.gc.ca/publications/forms-formulaires/e311-fra.html" target = "_blank">http://www.cbsa-asfc.gc.ca/publications/forms-formulaires/e311-fra.html</a></p>
 
     <h2><a name="print_custom_forms">Print Custom Forms</a></h2>
     <p>To print Custom Forms the browser you are using should allow pop-ups</p>

@@ -28,17 +28,23 @@ namespace CDPW.BLL
         public static String MSG_SAVE_TO_PRINT = "Please Save first, then Print.";
 
         public static String MSG_EMAIL_TO_RESET_PASSWORD = "Yes, reset my password.";
+        
         public static String MSG_EMAIL_PASSWORD_RESET = "Please log in here.";
 
+        public static String MSG_please_click_here = "please click here.";
 
         public static String ERR_MSG_LOGOUT_LOGIN_EMAIL = "Please <a href='cdplogout.aspx'> Log Out</a>  and Log in again.<br/>If the problem persists please <A HREF='mailto:office@columnasoft.com?subject={0}'>email us</A> with your Name, Address, Email and Plan";
 
         public static String ERR_NO_USER = "Sorry, there is no user  with the email address/username provided. In order to access the application, please Sign-Up by using <b>I don't have an account</b>.";
 
-        public static String ERR_NO_EMAIL = "Sorry, there is no user with the email address provided.<br/><a href={0}>Please click here to try again.</a> ";
+        public static String ERR_NO_EMAIL = "Sorry, there is no user with the email provided.<br/><a href={0}>Please click here to register.</a> ";
         public static String ERR_WRONG_PWD = "Sorry, the password you provided is not correct. If you forgot your password, try to recover it <a href='cdprecoverpasswd.aspx'>here</a>.";
         public static String ERR_SAME_USERNAME = "Sorry, there is another user registered with the same username.";
         public static String ERR_SAME_EMAIL = "Sorry, there is another user registered with this email address. If you forgot your password, <a href='cdprecoverpasswd.aspx'>try to recover it here</a>.";
+
+        public static String ERR_SAME_EMAIL_SETTINGS = "Sorry, there is another user registered with same email address.";
+        public static String ERR_SAME_AEMAIL_SETTINGS = "Sorry, there is another user registered with same alternate email address.";
+
         public static String ERR_RESET_PWD_MORE3DAYS = "The confirmation message was sent more than 3 days ago. <br/><a href={0}>Please click here to reset your password again.</a> ";
         public static String ERR_MSG_ERR = "There is a problem processing your request.";
         public static String ERR_MSG_ERR_TRY_AGAIN = "There has been a problem processing your request. Please try again.";

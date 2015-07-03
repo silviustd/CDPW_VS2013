@@ -4,16 +4,20 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphMain" runat="server">
-    <asp:PlaceHolder ID="phError" runat="server" Visible="false">
+    <%--    <asp:PlaceHolder ID="phError" runat="server" Visible="false">
         <p id="pError" class="msg_box msg_error corners">
             <asp:Literal ID="ltrError" runat="server" />
+        </p>
+    </asp:PlaceHolder>--%>
             <asp:ScriptManager ID="ScriptManager1" runat="server">
             </asp:ScriptManager>
-        </p>
-    </asp:PlaceHolder>
+
+
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <div id="mainSettings">
+    <asp:Label class="msg_box_md msg_ok_md corners" ID="lblMessage" style="left: 240px;"
+        Text="Data has been saved." runat="server" ViewStateMode="Enabled" Visible="false" ClientIDMode="Static" />
                 <div>
                     <asp:PlaceHolder ID="phSettings" runat="server">
                         <fieldset>

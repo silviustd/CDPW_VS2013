@@ -697,24 +697,6 @@ namespace CDPW {
         protected global::System.Web.UI.WebControls.HiddenField hidCitiz1;
         
         /// <summary>
-        /// phCanFormSuccess control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phCanFormSuccess;
-        
-        /// <summary>
-        /// ltrCanFormSuccess control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltrCanFormSuccess;
-        
-        /// <summary>
         /// phCanFormNoName1 control.
         /// </summary>
         /// <remarks>

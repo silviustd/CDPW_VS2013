@@ -15,9 +15,13 @@
                         <ul id="tab-1">
                             <li>
                                 <fieldset id="recoverPasswd">
-                                    <p>
+                                    <p style="margin-bottom:5px;">
                                         <%--<asp:Label ID="lblEmail" Text="Email: " AssociatedControlID="txtEmail" runat="server" />--%>
                                         <asp:TextBox ID="txtEmail" CssClass="validate[required,custom[email]]" runat="server" placeholder="Email" style="margin-top: 10px;"/>
+                                    </p>
+                                    <p style="font-style:italic;">
+                                        <%--<asp:Label ID="lblEmail" Text="Email: " AssociatedControlID="txtEmail" runat="server" />--%>
+                                        <asp:CheckBox ID="chkAEmail" style="" runat="server" TextAlign="Right" Checked="false" />Use alternate email
                                     </p>
                                     <p id="recovButton">
                                         <label>

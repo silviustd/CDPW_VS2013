@@ -16,16 +16,20 @@ namespace CDPW.BLL
         {
             if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Enter");
             string message = "";
-            string[] paramsToReplace2 = paramsToReplace.Split('\\');
-            string[] textToReplaceWith2 = textToReplaceWith.Split('\\');
+            string[] paramsToReplaceArr = paramsToReplace.Split('\\');
+            string[] textToReplaceWithArr = textToReplaceWith.Split('\\');
 
             bool fileExists = System.IO.File.Exists(templatePath);
 
             if (fileExists)
             {
                 message = File.ReadAllText(templatePath);
-                message = message.Replace(paramsToReplace2[0], textToReplaceWith2[0]);
-                message = message.Replace(paramsToReplace2[1], textToReplaceWith2[1]);
+                for (int i = 0; i < paramsToReplaceArr.Length; i++) {
+                    message = message.Replace(paramsToReplaceArr[i], textToReplaceWithArr[i]);
+                }
+                
+                //message = message.Replace(paramsToReplace2[0], textToReplaceWith2[0]);
+                //message = message.Replace(paramsToReplace2[1], textToReplaceWith2[1]);
             }
             if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Exit");
             return message;

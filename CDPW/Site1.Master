@@ -58,7 +58,7 @@
         <div id="header">
             <a href="http://columnasoft.com/" id="logo">&nbsp;</a>
             <h1>
-                <a href="https://www.columnasoft.com/cdpw/cdplogin.aspx" id="A2">Customs Declaration
+                <a href="cdplogin.aspx" id="A2" style="cursor:pointer;">Customs Declaration
                     Printing</a></h1>
             <span id="beta">(beta)</span>
             <ul>

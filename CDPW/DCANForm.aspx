@@ -16,11 +16,11 @@
 
         }
 
-        function MsgFadeOutC(ctrl) {
-            //$('#discl_CAN').css('display', 'none');
-            setTimeout("$('#" + ctrl.id + "').fadeOut(1500,'linear')", 4000);
-            //setTimeout("$('#discl_CAN').fadeIn(2000)", 3500);
-        }
+        //function MsgFadeOutC(ctrl) {
+        //    //$('#discl_CAN').css('display', 'none');
+        //    setTimeout("$('#" + ctrl.id + "').fadeOut(1500,'linear')", 4000);
+        //    //setTimeout("$('#discl_CAN').fadeIn(2000)", 3500);
+        //}
 
     </script>
 
@@ -552,12 +552,6 @@
         <asp:HiddenField ID="hidName1" runat="server" />
         <asp:HiddenField ID="hidDOB1" runat="server" />
         <asp:HiddenField ID="hidCitiz1" runat="server" />
-    </asp:PlaceHolder>
-    <asp:PlaceHolder ID="phCanFormSuccess" runat="server" Visible="false">
-        <span class="span50"></span>
-        <p class="msg_box msg_ok corners">
-            <asp:Literal ID="ltrCanFormSuccess" Text="The form was submited with success." runat="server" />
-        </p>
     </asp:PlaceHolder>
     <asp:PlaceHolder ID="phCanFormNoName1" runat="server" Visible="false"><span class="span50"></span>
         <p class="msg_box msg_error corners">

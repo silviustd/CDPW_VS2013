@@ -222,15 +222,18 @@ namespace CDPW
                 {
                     // user is not logged
                     if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Redirect to Login");
-                    Response.Redirect("cdplogin.aspx", true);
+                    Response.Redirect("cdplogin.aspx", false);
                 }
             }
             catch (Exception ex)
             {
                 //components.Error_Show.Show(phError, true, ltrError, ex, phReproduction, true);
                 if (log.IsErrorEnabled) log.Error(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Error", ex);
+                //MessageCode = "ERR_MSG_ERR_TRY_AGAIN";
+                //CDPWMessages.DisplayeMessage(this.Page, MessageCode, lblMessage.ID, "", "msg_box_md msg_error_md corners");
                 MessageCode = "ERR_MSG_ERR_TRY_AGAIN";
-                CDPWMessages.DisplayeMessage(this.Page, MessageCode, lblMessage.ID, "", "msg_box_md msg_error_md corners");
+                CDPWMessages.SessionAddMessage(SeesionObjMessageID, this.lblMessage.ID, MessageCode, MsgStrItem, "msg_box_md msg_error_md corners");
+
             }
 
 
@@ -274,7 +277,7 @@ namespace CDPW
                 //components.Error_Show.Show(phError, true, ltrError, ex, phReproduction, true);
                 if (log.IsErrorEnabled) log.Error(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Error", ex);
                 MessageCode = "ERR_MSG_ERR_TRY_AGAIN";
-                CDPWMessages.DisplayeMessage(this.Page, MessageCode, lblMessage.ID, "", "msg_box_md msg_error_md corners");
+                CDPWMessages.SessionAddMessage(SeesionObjMessageID, this.lblMessage.ID, MessageCode, MsgStrItem, "msg_box_md msg_error_md corners");
             }
             if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Exit");
         }
@@ -315,20 +318,23 @@ namespace CDPW
                         // Form - add PERSON, WTripInfoCANDetailsP
                         CDPW.DAL.FormCanada.Form_AddInfo_Person(UserID, uLogin.PIds_CAN, txtName1.Text, txtDOB1.Text, txtCitiz1.Text, txtDtC1.Text, txtCVG1.Text, txtName2.Text, txtDOB2.Text, txtCitiz2.Text, txtDtC2.Text, txtCVG2.Text, txtName3.Text, txtDOB3.Text, txtCitiz3.Text, txtDtC3.Text, txtCVG3.Text, txtName4.Text, txtDOB4.Text, txtCitiz4.Text, txtDtC4.Text, txtCVG4.Text, int.Parse(TripInfo[1]), Int64.Parse(TripInfo[0]));
 
-                        phCanForm.Visible = false;
-                        phCanFormSuccess.Visible = true;
-
                         tran.Complete();
+
+                        //phCanForm.Visible = false;
+                        //phCanFormSuccess.Visible = true;
+                        ////phReproduction.Visible = false;
 
                         uLogin.SavedDCAN = true;
                         HttpContext.Current.Session.Add("cdpUser", uLogin);
-
-                        Response.Redirect("DCANForm.aspx?saved=true");
+                        MessageCode = "MSG_DATA_SAVED";
+                        CDPWMessages.SessionAddMessage(SeesionObjMessageID, this.lblMessage.ID, MessageCode, MsgStrItem, "msg_box_md msg_ok_md corners");
+                        Response.Redirect("DCANForm.aspx?saved=true", false);
+                        //Response.Redirect("DCANForm.aspx?saved=true",true);
                     }
                 }
                 else
                 {
-                    Response.Redirect("cdplogin.aspx");
+                    Response.Redirect("cdplogin.aspx", false);
                 }
             }
             catch (Exception ex)
@@ -336,7 +342,8 @@ namespace CDPW
                 //components.Error_Show.Show(phError, true, ltrError, ex, phReproduction, true);
                 if (log.IsErrorEnabled) log.Error(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Error", ex);
                 MessageCode = "ERR_MSG_ERR_TRY_AGAIN";
-                CDPWMessages.DisplayeMessage(this.Page, MessageCode, lblMessage.ID, "", "msg_box_md msg_error_md corners");
+                CDPWMessages.SessionAddMessage(SeesionObjMessageID, this.lblMessage.ID, MessageCode, MsgStrItem, "msg_box_md msg_error_md corners");
+                //CDPWMessages.DisplayeMessage(this.Page, MessageCode, lblMessage.ID, "", "msg_box_md msg_error_md corners");
             }
 
             if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Exit");
@@ -370,7 +377,7 @@ namespace CDPW
                 //components.Error_Show.Show(phError, true, ltrError, ex, phReproduction, true);
                 if (log.IsErrorEnabled) log.Error(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Error", ex);
                 MessageCode = "ERR_MSG_ERR_TRY_AGAIN";
-                CDPWMessages.DisplayeMessage(this.Page, MessageCode, lblMessage.ID, "", "msg_box_md msg_error_md corners");
+                CDPWMessages.SessionAddMessage(SeesionObjMessageID, this.lblMessage.ID, MessageCode, MsgStrItem, "msg_box_md msg_error_md corners");
             }
             if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Exit");
         }
@@ -382,10 +389,6 @@ namespace CDPW
             if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Enter");
 
             Boolean bRet = false;
-
-
-
-
 
             if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Exit");
 
@@ -412,7 +415,7 @@ namespace CDPW
                     //components.Error_Show.Show(phError, true, ltrError, ex, phReproduction, true);
                     if (log.IsErrorEnabled) log.Error(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Error", ex);
                     MessageCode = "ERR_MSG_ERR_TRY_AGAIN";
-                    CDPWMessages.DisplayeMessage(this.Page, MessageCode, lblMessage.ID, "", "msg_box_md msg_error_md corners");
+                    CDPWMessages.SessionAddMessage(SeesionObjMessageID, this.lblMessage.ID, MessageCode, MsgStrItem, "msg_box_md msg_error_md corners");
                 }
             }
 

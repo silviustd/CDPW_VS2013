@@ -71,9 +71,20 @@
       <HintPath>..\Log4Net\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.ReportViewer.Common.dll</HintPath>
       <Private>True</Private>
-      <HintPath>..\packages\MicrosoftReportViewerWebForms.11.0.0.0\lib\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="SoftisServ.WebUtils">
       <HintPath>libs\SoftisServ.WebUtils.dll</HintPath>
@@ -202,6 +213,11 @@
       <DependentUpon>CDP_Dataset.xsd</DependentUpon>
     </Content>
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\CDPW.pubxml" />
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+    <None Include="Properties\PublishProfiles\Profile2.pubxml" />
+    <None Include="Properties\PublishProfiles\Profile3.pubxml" />
+    <None Include="Properties\PublishProfiles\ServerPersonal.pubxml" />
     <None Include="theme\clasic\js\Copy of jquery.validationEngine-en.jjs" />
     <Content Include="theme\clasic\js\functions.js" />
     <Content Include="theme\clasic\js\jquery-ui-1.8.23.custom.min.js" />
@@ -219,6 +235,9 @@
     <Content Include="theme\clasic\tipsy.css" />
     <Content Include="theme\clasic\validationEngine.jquery.css" />
     <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web_prod.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
@@ -366,10 +385,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web_prod.config" />
-    <Content Include="Web_prodvs.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Web_prod_2012.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CanadianForm.rdlc">

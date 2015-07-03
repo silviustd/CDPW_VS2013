@@ -144,9 +144,26 @@ namespace CDPW.BLL
         /// <param name="FromDB">Data from database</param>
         public static string ReturnBitFromDB(bool FromDB)
         {
-            if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Enter");
-            if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Exit");
+            if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Enter/Exit");
+
             return (FromDB) ? "1" : "0";
+        }
+
+        public static bool ReturnBitFromDB2(object FromDB)
+        {
+            Byte bt;
+            if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Enter_Exit");
+
+            String s = String.IsNullOrWhiteSpace(FromDB.ToString()) ? "0" : (FromDB.ToString());
+
+            if (!byte.TryParse(s, out bt))
+            {
+                return Convert.ToBoolean((s)) ? true : false;
+            }
+            else
+            {
+                return Convert.ToBoolean(Byte.Parse(s)) ? true : false;
+            }
         }
 
         public static Object ReturnBitToDB(String ToDB)

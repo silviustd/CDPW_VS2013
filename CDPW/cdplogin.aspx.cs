@@ -37,12 +37,13 @@ namespace CDPW
                     phLoginMessages.Visible = true;
                     ltrLoginMessages.Text = CDPWMessages.ERR_SAME_USERNAME;
                     //ltrLoginMessages.CssClass = "msg_box msg_info corners";
+                    ltrLoginMessages.CssClass = "msg_box msg_alert corners msg_box_text14";
                 }
                 else if (CDPW.DAL.Users.Check_Email(txtSignEmail.Text) == true)
                 {
                     phLoginMessages.Visible = true;
                     ltrLoginMessages.Text = CDPWMessages.ERR_SAME_EMAIL;
-                    //ltrLoginMessages.CssClass = "msg_box msg_info corners";
+                    ltrLoginMessages.CssClass = "msg_box msg_alert corners msg_box_text14";
                 }
                 else
                 {
@@ -56,7 +57,7 @@ namespace CDPW
                         //BLL.Mail.Send(txtSignEmail.Text, null, null, "CDP - Sign-up confirm", mailBody, System.Net.Mail.MailPriority.Normal);
 
                         String signupEmail = txtSignEmail.Text;
-                        String urlLogin = String.Format("<a href=\"{2}{3}?ma={0}&sg={1}\">here</a>", signupEmail, System.Guid.NewGuid(), Request.Url.GetLeftPart(UriPartial.Authority), ResolveUrl("~/cdpconfirmreg.aspx"));
+                        String urlLogin = String.Format("<a href=\"{2}{3}?ma={0}&sg={1}\">{4}</a>", signupEmail, System.Guid.NewGuid(), Request.Url.GetLeftPart(UriPartial.Authority), ResolveUrl("~/cdpconfirmreg.aspx"), CDPWMessages.MSG_please_click_here);
 
                         string emailTemplate = Template.readTemplateD("[link_login]", urlLogin, HttpContext.Current.Server.MapPath("components/signup.html"));
                         Mail.Send(signupEmail, null, null, CDPWMessages.EMAIL_SUBJECT_SIGNUP_CONFIRM, emailTemplate, System.Net.Mail.MailPriority.Normal);
