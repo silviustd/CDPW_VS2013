@@ -37,13 +37,13 @@ namespace CDPW
                     phLoginMessages.Visible = true;
                     ltrLoginMessages.Text = CDPWMessages.ERR_SAME_USERNAME;
                     //ltrLoginMessages.CssClass = "msg_box msg_info corners";
-                    ltrLoginMessages.CssClass = "msg_box msg_alert corners msg_box_text14";
+                    ltrLoginMessages.CssClass = "msg_box msg_alert corners";
                 }
                 else if (CDPW.DAL.Users.Check_Email(txtSignEmail.Text) == true)
                 {
                     phLoginMessages.Visible = true;
                     ltrLoginMessages.Text = CDPWMessages.ERR_SAME_EMAIL;
-                    ltrLoginMessages.CssClass = "msg_box msg_alert corners msg_box_text14";
+                    ltrLoginMessages.CssClass = "msg_box msg_alert corners";
                 }
                 else
                 {
@@ -66,7 +66,7 @@ namespace CDPW
 
                         phLoginMessages.Visible = true;
                         ltrLoginMessages.Text = CDPWMessages.MSG_SIGN_UP_S;
-                        ltrLoginMessages.CssClass = "msg_box msg_ok corners msg_box_text14";
+                        ltrLoginMessages.CssClass = "msg_box msg_ok corners";
 
                     }
                 }
@@ -97,21 +97,21 @@ namespace CDPW
                     // User not activated
                     phLoginMessages.Visible = true;
                     ltrLoginMessages.Text = CDPWMessages.MSG_ACCT_NOT_ACTIVE;
-                    ltrLoginMessages.CssClass = "msg_box msg_alert corners msg_box_text14";
+                    ltrLoginMessages.CssClass = "msg_box msg_alert corners";
                 }
                 else if (ds.Tables[1].Rows.Count < 1)
                 {
                     // User doesn't exist
                     phLoginMessages.Visible = true;
                     ltrLoginMessages.Text = CDPWMessages.ERR_NO_USER;
-                    ltrLoginMessages.CssClass = "msg_box msg_alert corners msg_box_text14";
+                    ltrLoginMessages.CssClass = "msg_box msg_alert corners";
                 }
                 else if (ds.Tables[2].Rows.Count < 1)
                 {
 
                     phLoginMessages.Visible = true;
                     ltrLoginMessages.Text = CDPWMessages.ERR_WRONG_PWD;
-                    ltrLoginMessages.CssClass = "msg_box msg_alert corners msg_box_text14";
+                    ltrLoginMessages.CssClass = "msg_box msg_alert corners";
 
                 }
                 else

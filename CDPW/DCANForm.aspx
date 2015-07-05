@@ -580,12 +580,12 @@
 
         $(document).ready(function () {
             $('.open-1').click(function () {
-                $('p.disclaimer-2').css('height', '35px').slideDown('slow');
+                $('p.disclaimer-4').css('height', '35px').slideDown('slow');
                 $('a.open-1').css('display', 'none').fadeOut("slow");
                 $('a.open-2').css('display', 'inline').fadeIn("slow");
             });
             $('.open-2').click(function () {
-                $('p.disclaimer-2').css('height', '10px').slideDown('slow');
+                $('p.disclaimer-4').css('height', '10px').slideDown('slow');
                 $('a.open-1').css('display', 'inline').fadeIn("slow");
                 $('a.open-2').css('display', 'none').fadeOut("slow");
             });

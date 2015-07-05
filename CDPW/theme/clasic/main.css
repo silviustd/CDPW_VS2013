@@ -1069,6 +1069,9 @@
         text-align: left;
         min-height: 34px;
         cursor: pointer;
+        font-family: 'Raleway', Arial, sans-serif;
+        font-weight: 500;
+        font-size: 1.1em;
     }
 
     .msg_box_v {
@@ -1083,7 +1086,10 @@
         overflow: hidden;
         text-align: left;
         min-height: 40px;
-        font-size: 13px;
+        /*font-size: 13px;*/
+        font-family: 'Raleway', Arial,sans-serif;
+        font-weight: 500;
+        font-size: 1.1em;
     }
 
     .msg_box_login {
@@ -1206,6 +1212,9 @@
         text-align: left;
         min-height: 15px;
         cursor: pointer;
+        font-family: 'Raleway',Arial,sans-serif;
+        font-weight: 500;
+        font-size: 1.1em;
     }
 
     .msg_ok_md {

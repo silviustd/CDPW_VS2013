@@ -6,9 +6,7 @@
 ///window.onbeforeunload = ConfirmDeleteData;
 
 function MsgFadeOutC(ctrl) {
-    //$('#discl_USA').css('display', 'none');
-    setTimeout("$('#" + ctrl.id + "').fadeOut(1000,'linear')", 5000);
-    //setTimeout("$('#discl_USA').fadeIn(2000)", 3500);
+    setTimeout("$('#" + ctrl.id + "').fadeOut(1000,'linear')", 4000);
 }
 
 function HideMessage(ctrl) {

@@ -210,7 +210,7 @@ namespace CDPW
                 //string strError = string.Format("There was an error:<br /> {0}<br />", ex.Message);
                 String strError = CDPWMessages.ERR_MSG_ERR;
                 lblMesaj.Text = strError;
-                lblMesaj.CssClass = "msg_box msg_error corners msg_box_text14";
+                lblMesaj.CssClass = "msg_box msg_error corners";
                 lblLogOut.Text = String.Format(CDPWMessages.ERR_MSG_LOGOUT_LOGIN_EMAIL, _Subject); 
                 btnUnsub.Visible = false;
                 lblLogOut.Visible = true;

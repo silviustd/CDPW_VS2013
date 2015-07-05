@@ -405,7 +405,7 @@
                         </td>
                         <td>
                             <asp:TextBox ID="txtArticlesValue1" runat="server" class="text-10 textAlignRight validate[custom[money2USA]] validate[custom[number2CAN]]"
-                                original-title="####[.]## (<9 digits>.<2 digits>)" MaxLength="12" AutoPostBack="False" />
+                                original-title="####[.]## (<9 digits>.<2 digits>)" MaxLength="12" AutoPostBack="False" onchange="javascript:ChangeAlertDUSAArticlesVal();" />
                         </td>
                         <td rowspan="7">
                             <asp:TextBox ID="TextBox21" runat="server" class="text-11" disabled original-title="US CBP Use Only"
@@ -420,7 +420,7 @@
                         <td>
                             <asp:TextBox ID="txtArticlesValue2" runat="server" class="text-10 textAlignRight validate[custom[money2USA]] validate[custom[number2CAN]]"
                                 original-title="####[.]## (<9 digits>.<2 digits>)" MaxLength="12" AutoPostBack="False"
-                                onchange="javascript:ChangeAlert();" />
+                                onchange="javascript:ChangeAlertDUSAArticlesVal();" />
                         </td>
                     </tr>
                     <tr>
@@ -431,7 +431,7 @@
                         <td>
                             <asp:TextBox ID="txtArticlesValue3" runat="server" class="text-10 textAlignRight validate[custom[money2USA]] validate[custom[number2CAN]]"
                                 original-title="####[.]## (<9 digits>.<2 digits>)" MaxLength="12" AutoPostBack="False"
-                                onchange="javascript:ChangeAlert();" />
+                                onchange="javascript:ChangeAlertDUSAArticlesVal();" />
                         </td>
                     </tr>
                     <tr>
@@ -442,7 +442,7 @@
                         <td>
                             <asp:TextBox ID="txtArticlesValue4" runat="server" class="text-10 textAlignRight validate[custom[money2USA]] validate[custom[number2CAN]]"
                                 original-title="####[.]## (<9 digits>.<2 digits>)" MaxLength="12" AutoPostBack="False"
-                                onchange="javascript:ChangeAlert();" />
+                                onchange="javascript:ChangeAlertDUSAArticlesVal();" />
                         </td>
                     </tr>
                     <tr>
@@ -453,7 +453,7 @@
                         <td>
                             <asp:TextBox ID="txtArticlesValue5" runat="server" class="text-10 textAlignRight validate[custom[money2USA]] validate[custom[number2CAN]]"
                                 original-title="####[.]## (<9 digits>.<2 digits>)" MaxLength="12" AutoPostBack="False"
-                                onchange="javascript:ChangeAlert();" />
+                                onchange="javascript:ChangeAlertDUSAArticlesVal();" />
                         </td>
                     </tr>
                     <tr>
@@ -464,16 +464,16 @@
                         <td>
                             <asp:TextBox ID="txtArticlesValue6" runat="server" class="text-10 textAlignRight validate[custom[money2USA]] validate[custom[number2CAN]]"
                                 original-title="####[.]## (<9 digits>.<2 digits>)" MaxLength="12" AutoPostBack="False"
-                                onchange="javascript:ChangeAlert();" />
+                                onchange="javascript:ChangeAlertDUSAArticlesVal();" />
                         </td>
                     </tr>
                     <tr>
                         <td style="text-align: right">Total
                         </td>
                         <td colspan="2">
-                            <asp:TextBox ID="txtTotalValArticles" runat="server" disabled class="text-10 textAlignRight validate[custom[money2USA]] validate[custom[number2CAN]]"
+                            <asp:TextBox ID="txtTotalValArticles" runat="server" class="text-10 textAlignRight validate[custom[money2USA]] validate[custom[number2CAN]]"
                                 original-title="####[.]## (<9 digits>.<2 digits>)" AutoPostBack="False" onchange="javascript:ChangeAlert();"
-                                Width="205"></asp:TextBox>
+                                ></asp:TextBox>
                         </td>
                     </tr>
                 </table>
@@ -626,6 +626,13 @@
         //                document.getElementById(ctrl).onblur = function () { sumVal() };
         //            }
         //        }
+
+        function ChangeAlertDUSAArticlesVal() {
+            sumVal();
+            var sendserver = 'valchange';
+            CallServer(sendserver, "");
+        }
+
 
         function sumVal() {
 

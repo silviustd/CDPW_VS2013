@@ -93,7 +93,7 @@
                                 <p>
 <%--                                    <label for="txtLoginName">
                                         Username / Email</label>--%>
-                                    <asp:TextBox ID="txtLoginName" CssClass="validate[required,minSize[6]]" runat="server" placeholder="Username" style="margin-top: 20px;"/>
+                                    <asp:TextBox ID="txtLoginName" CssClass="validate[required,minSize[6]]" runat="server" placeholder="Username / Email" style="margin-top: 20px;"/>
                                     <span class="required">*</span>
                                 </p>
                                 <p>
