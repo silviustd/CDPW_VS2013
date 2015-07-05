@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="cphMain" runat="server">
 
-<div id='privacypol' style='font-size: 14px; color:#3D3D3D' >
+<div id='privacypol' style='font-size: 1.1em; color:#3D3D3D' >
         <h2>Privacy Policy</h2>
         <p><span><strong>Columna Soft</strong> does not sell your personal information to anyone at any time, ever.</span></p>
         <p><span>All the data collected during using the website or in any other way is used to improve our services.</span></p>

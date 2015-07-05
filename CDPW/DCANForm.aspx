@@ -25,7 +25,6 @@
     </script>
 
     <asp:PlaceHolder ID="phCanForm" runat="server">
-
         <div id="top">
             <asp:Label class="msg_box_md msg_ok_md corners" ID="lblMessage" style="left: 240px;"
                 Text="Data has been saved." runat="server" ViewStateMode="Enabled" Visible="false" ClientIDMode="Static" />
@@ -39,12 +38,9 @@
         official empty form issued by Canada Border Services Agency
                 </p>
             </asp:PlaceHolder>
-
-
-
         </div>
 
-        <div id="main-2">
+        <div id="main-2" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
             <table id="DCANForm">
                 <tr>
                     <td id="column-1">

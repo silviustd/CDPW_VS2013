@@ -31,7 +31,7 @@
                 </p>
             </asp:PlaceHolder>
         </div>
-        <div class="main-3-container">
+        <div class="main-3-container" style="font-family: Arial, Helvetica, sans-serif;font-size: 12px;">
             <!-- front -->
             <div class="main-3">
                 <div id="header-form">

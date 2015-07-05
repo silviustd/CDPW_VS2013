@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphMain" runat="server">
 
-<div id="help-wrapper" style='font-size: 14px; color:#3D3D3D;'>
+<div id="help-wrapper" style='font-size: 1.1em; color:#3D3D3D;'>
     <ul id="help-menu">
         <li><a href="#register">Register</a></li>
         <li><a href="#translat">Translate</a></li>
