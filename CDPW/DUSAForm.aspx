@@ -33,7 +33,7 @@
         </div>
         <div class="main-3-container" style="font-family: Arial, Helvetica, sans-serif;font-size: 12px;">
             <!-- front -->
-            <div class="main-3">
+            <div class="main-3" style="margin-bottom:10px;">
                 <div id="header-form">
                     &nbsp;
                 </div>
@@ -370,7 +370,7 @@
                 </p>
             </div>
             <!-- back -->
-            <div class="main-3 back">
+            <div class="main-3 back" style="margin-bottom:10px;">
                 <p style="font-size: 11px;">
                     <asp:Label ID="lblIntroductions1" runat="server" Text="U.S. Customs and Border Protection is responsible for protecting the United States against the illegal importation of prohibited items. CBP officers have the authority to question you and to examine you and your personal property. If you are one of the travelers selected for an examination, you will be treated in a courteous, professional, and dignified manner. CBP Supervisors and Passenger Service Representatives are available to answer your questions. Comment cards are available to compliment or provide feedback."></asp:Label>
                 </p>
