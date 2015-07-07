@@ -25,7 +25,7 @@
                             <p>
                                 <label for="txtUName">
                                     Username</label>
-                                <asp:TextBox ID="txtUName" runat="server" class="text-1" original-title="Edit" MaxLength="50" />
+                                <asp:TextBox ID="txtUName" runat="server" class="text-1" MaxLength="50" original-title="Edit"/>
                             </p>
                             <p>
                                 <label for="txtEmail">
@@ -34,7 +34,7 @@
                             </p>
                             <p>
                                 <label for="txtPwd">
-                                    <span class="float-left">Password</span> <span class="required special">*</span></label>
+                                    <span class="float-left">Password</span> <span class="required special validate[custom[email]]">*</span></label>
                                 <asp:TextBox ID="txtPwd" runat="server" type="password" class="text-1-disable" MaxLength="50" />
                                 <a class="edit edit-pass visible show-confirm-password" original-title="Edit">
                                     <img src="theme/clasic/images/edit-1.png" alt="" /></a> <a class="apply hidden hide-confirm-password"
@@ -44,12 +44,12 @@
                             <p>
                                 <label for="txtAEmail">
                                     Alternate email</label>
-                                <asp:TextBox ID="txtAEmail" runat="server" class="text-1" MaxLength="150" />
+                                <asp:TextBox ID="txtAEmail" runat="server" class="text-1 validate[custom[email]]" MaxLength="150" />
                             </p>
                             <p class="hidden">
                                 <label for="txtPwdConf">
                                     <span class="float-left">Confirm pass.</span> <span class="required special">*</span></label>
-                                <asp:TextBox ID="txtPwdConf" runat="server" type="password" class="text-1" />
+                                <asp:TextBox ID="txtPwdConf" runat="server" type="password" class="text-1" MaxLength="50"/>
                             </p>
                         </fieldset>
                         <fieldset style="margin-bottom: 10px;">
@@ -105,7 +105,7 @@
                             </p>
                             <p>
                                 <label for="txtStrName">
-                                    Street Name</label><asp:TextBox ID="txtStrName" runat="server" class="text-1" MaxLength="200" />
+                                    Street Name</label><asp:TextBox ID="txtStrName" runat="server" class="text-1" MaxLength="100" />
                             </p>
                             <p>
                                 <label for="txtStrType">

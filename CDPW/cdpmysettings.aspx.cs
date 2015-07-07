@@ -51,6 +51,8 @@ namespace CDPW
                             txtEmail.Text = string.Format("{0}", dr["WAppUserEmail"].ToString());
                             txtAEmail.Text = string.Format("{0}", dr["WAppUserAltEmail"].ToString());
                             chkNotKeepData.Checked = (Boolean)dr["NotKeepData"];
+                            chkUpdInfoCF.Checked = (Boolean)dr["UpdateInfoCustomsForms"];
+                            chkUpdAddressCF.Checked = (Boolean)dr["UpdateAddressCustomsForms"];
                         }
 
                         if (ds.Tables[1].Rows.Count > 0)
@@ -467,7 +469,9 @@ namespace CDPW
 
                     cmd.Transaction = tran;
                     cmd.ExecuteNonQuery();
-
+                    
+                    tran.Commit();
+                    
                     //update the object
                     uLogin.WAppUserName = txtUName;
                     uLogin.WAppUserPwd = txtPwd;
@@ -488,7 +492,7 @@ namespace CDPW
                     CUSettings.CounryId = Int16.Parse(ddlCountry_SelectedValue);
                     CUSettings.AdminRegId = Int32.Parse(ddlProv_SelectedValue);
 
-                    tran.Commit();
+                    
 
                     //TODO Test
                     HttpContext.Current.Session.Add("cuSettings", CUSettings);

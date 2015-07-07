@@ -6,7 +6,7 @@
     <div id='privacypol' style='font-size: 1.3em; color: #3D3D3D'>
         <h2>&nbsp;</h2>
         <p><span>Oops, it happened. An error.</span></p>
-        <p><span>But don't worry, we are getting at it.</span></p>
+        <p><span>But don't worry, we're getting at it.</span></p>
         <p>
             <span></span>
         </p>
