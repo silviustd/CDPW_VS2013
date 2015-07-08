@@ -37,7 +37,7 @@ namespace CDPW
                     phLoginMessages.Visible = true;
                     ltrLoginMessages.Text = CDPWMessages.ERR_SAME_USERNAME;
                     //ltrLoginMessages.CssClass = "msg_box msg_info corners";
-                    ltrLoginMessages.CssClass = "msg_box msg_alert corners";
+                    ltrLoginMessages.CssClass = "msg_box msg_box_hide msg_alert corners";
                 }
                 else if (CDPW.DAL.Users.Check_Email(txtSignEmail.Text) == true)
                 {
@@ -104,7 +104,7 @@ namespace CDPW
                     // User doesn't exist
                     phLoginMessages.Visible = true;
                     ltrLoginMessages.Text = CDPWMessages.ERR_NO_USER;
-                    ltrLoginMessages.CssClass = "msg_box msg_alert corners";
+                    ltrLoginMessages.CssClass = "msg_box msg_box_hide msg_alert corners";
                 }
                 else if (ds.Tables[2].Rows.Count < 1)
                 {

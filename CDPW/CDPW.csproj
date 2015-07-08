@@ -118,6 +118,7 @@
     <Content Include="cdpprintpreview2.aspx" />
     <Content Include="cdpprivacypolicy.aspx" />
     <Content Include="cdprecoverpasswd.aspx" />
+    <Content Include="cdpresendactivemail.aspx" />
     <Content Include="cdpselectpay.aspx" />
     <Content Include="cdpselecttest.aspx" />
     <Content Include="components\signup.html" />
@@ -320,6 +321,13 @@
     <Compile Include="cdprecoverpasswd.aspx.designer.cs">
       <DependentUpon>cdprecoverpasswd.aspx</DependentUpon>
     </Compile>
+    <Compile Include="cdpresendactivemail.aspx.cs">
+      <DependentUpon>cdpresendactivemail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cdpresendactivemail.aspx.designer.cs">
+      <DependentUpon>cdpresendactivemail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="cdpselectpay.aspx.cs">
       <DependentUpon>cdpselectpay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -433,7 +441,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>22694</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:22671/</IISUrl>
+          <IISUrl>http://localhost:22678/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

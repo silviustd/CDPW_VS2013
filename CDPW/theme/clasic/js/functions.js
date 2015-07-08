@@ -230,7 +230,7 @@ $(document).ready(function () {
         }
     );
 
-    $(".msg_box").bind("click", function () {
+    $(".msg_box_hide").bind("click", function () {
         $(this).hide();
         $("#main-1").removeClass("main-1-message");
         $(".span50").hide();
