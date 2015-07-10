@@ -66,7 +66,7 @@ namespace CDPW
 
                         phLoginMessages.Visible = true;
                         ltrLoginMessages.Text = CDPWMessages.MSG_SIGN_UP_S;
-                        ltrLoginMessages.CssClass = "msg_box msg_ok corners";
+                        ltrLoginMessages.CssClass = "msg_box msg_box_hide msg_ok corners";
 
                     }
                 }
