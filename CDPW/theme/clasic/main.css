@@ -408,10 +408,10 @@
             }
 
         #main-1 input#btnSend {
-            background-image: url('clasic/images/button-5.png');
+            background-image: url('clasic/images/send-btn.png');
             background-repeat: no-repeat;
-            background-position: left;
-            width: 160px;
+            background-position: top;
+            width: 90px;
             height: 30px;
             border: none;
             cursor: pointer;
@@ -419,7 +419,7 @@
         }
 
             #main-1 input#btnSend:hover {
-                background-position: right;
+                background-position: bottom;
             }
 
         #main-1 input#btnSignUp {

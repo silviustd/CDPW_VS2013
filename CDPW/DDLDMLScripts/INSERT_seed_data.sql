@@ -1,14 +1,9 @@
-SET IDENTITY_INSERT [Countries] ON
-
 
 INSERT INTO [Countries]
            (CountryId ,[CountryISOn],[CountryCodeA2] ,[CountryCodeA3], [CountryCodeA3_9] ,[CountryName],[rowguid])
            
      VALUES (0 ,0 ,'' ,'', '' ,'' ,NULL)
 
-GO
-
-SET IDENTITY_INSERT [Countries] OFF
 GO
 
 SELECT * FROM [Countries]

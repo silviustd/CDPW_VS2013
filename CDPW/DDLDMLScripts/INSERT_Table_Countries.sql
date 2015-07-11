@@ -1,9 +1,6 @@
 ﻿
 
-SET IDENTITY_INSERT [Countries] ON
-GO
-
-INSERT [dbo].[Countries] ([CountryId], [CountryISOn], [CountryCodeA2], [CountryCodeA3], [CountryName], [rowguid]) VALUES (0, 0, N'  ', N'   ', N'', NULL)
+--INSERT [dbo].[Countries] ([CountryId], [CountryISOn], [CountryCodeA2], [CountryCodeA3], [CountryName], [rowguid]) VALUES (0, 0, N'  ', N'   ', N'', NULL)
 INSERT [dbo].[Countries] ([CountryId], [CountryISOn], [CountryCodeA2], [CountryCodeA3], [CountryName], [rowguid]) VALUES (1, 4, N'AF', N'AFG', N'Afghanistan', NULL)
 INSERT [dbo].[Countries] ([CountryId], [CountryISOn], [CountryCodeA2], [CountryCodeA3], [CountryName], [rowguid]) VALUES (2, 8, N'AL', N'ALB', N'Albania', NULL)
 INSERT [dbo].[Countries] ([CountryId], [CountryISOn], [CountryCodeA2], [CountryCodeA3], [CountryName], [rowguid]) VALUES (3, 12, N'DZ', N'DZA', N'Algeria', NULL)
@@ -285,7 +282,4 @@ INSERT [dbo].[Countries] ([CountryId], [CountryISOn], [CountryCodeA2], [CountryC
 INSERT [dbo].[Countries] ([CountryId], [CountryISOn], [CountryCodeA2], [CountryCodeA3], [CountryName], [rowguid]) VALUES (275, 275, N'PS', N'PSE', N'Palestinian Territory', NULL)
 
 GO
-print 'Inserted 276 records'
 
-SET IDENTITY_INSERT [Countries] OFF
-GO

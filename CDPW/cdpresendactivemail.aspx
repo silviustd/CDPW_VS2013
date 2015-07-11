@@ -20,7 +20,7 @@
                                     <br/>
                                     <p id="recovButton">
                                         <label>
-                                            &nbsp;</label><asp:Button ID="btnSend" Text="Resend activation password" OnClick="btnSend_Click" runat="server" style="margin-left: 41px;"/>
+                                            &nbsp;</label><asp:Button ID="btnSend" Text="Resend activation password" OnClick="btnSend_Click" runat="server" style="margin-left: 111px;"/>
                                     </p>
                                 </fieldset>
                             </li>

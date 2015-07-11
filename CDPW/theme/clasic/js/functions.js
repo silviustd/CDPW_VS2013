@@ -6,7 +6,7 @@
 ///window.onbeforeunload = ConfirmDeleteData;
 
 function MsgFadeOutC(ctrl) {
-    setTimeout("$('#" + ctrl.id + "').fadeOut(1000,'linear')", 3000);
+    setTimeout("$('#" + ctrl.id + "').fadeOut(1000,'linear')", 3500);
 }
 
 function HideMessage(ctrl) {
@@ -186,7 +186,7 @@ $(document).ready(function () {
     });
 
 
-    $(".msg_alert")
+    $(".msg_alert.msg_box_hide")
         .mouseenter(function () {
             $('.msg_alert').css('background-color', '#e6c26e');
         })
@@ -203,7 +203,7 @@ $(document).ready(function () {
     //        } 
     //);
 
-    $(".msg_error").hover(
+    $(".msg_error.msg_box_hide").hover(
         function () {
             $('.msg_error').css('background-color', '#ae432e');
         },
@@ -212,7 +212,7 @@ $(document).ready(function () {
         }
     );
 
-    $(".msg_ok").hover(
+    $(".msg_ok.msg_box_hide").hover(
     function () {
         $('.msg_ok').css('background-color', '#77ab13');
     },
@@ -221,7 +221,7 @@ $(document).ready(function () {
     }
     );
 
-    $(".msg_info").hover(
+    $(".msg_info.msg_box_hide").hover(
         function () {
             $('.msg_info').css('background-color', '#058dc7');
         },
@@ -259,7 +259,9 @@ $(document).ready(function () {
         $(this).parent().children('input').removeClass('text-1-disable').addClass('text-1');
         $(this).parent().children('input#txtUName').addClass('validate[minSize[6]]');
         $(this).parent().children('input#txtEmail').addClass('validate[required,custom[email]]');
-        $(this).parent().children('input#txtPwd').addClass('validate[required,minSize[6]]');
+        
+        $(this).parent().children('input#txtPwd').removeClass('aspNetDisabled');
+        $(this).parent().children('input#txtPwd').addClass('text validate[required,minSize[6]]');
         //$(this).parent().children('input#txtPwdConf').addClass('validate[required,equals[txtPwd]]');
         $(this).parent().children('input#txtAEmail').addClass('validate[custom[email]]');
         $(this).parent().children('input#txtDOB').addClass('validate[custom[date]]');

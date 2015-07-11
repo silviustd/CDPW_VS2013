@@ -50,7 +50,7 @@ namespace CDPW
                             txtPwd.Text = string.Format("{0}", dr["WAppUserPwd"].ToString());
                             txtEmail.Text = string.Format("{0}", dr["WAppUserEmail"].ToString());
                             txtAEmail.Text = string.Format("{0}", dr["WAppUserAltEmail"].ToString());
-                            chkNotKeepData.Checked = (Boolean)dr["NotKeepData"];
+                            //chkNotKeepData.Checked = (Boolean)dr["NotKeepData"];
                             chkUpdInfoCF.Checked = (Boolean)dr["UpdateInfoCustomsForms"];
                             chkUpdAddressCF.Checked = (Boolean)dr["UpdateAddressCustomsForms"];
                         }
@@ -256,7 +256,7 @@ namespace CDPW
                     txtPwd.Text = uLogin.WAppUserPwd;
                     txtEmail.Text = uLogin.WAppUserEmail;
                     txtAEmail.Text = uLogin.WAppUserAEmail;
-                    chkNotKeepData.Checked = uLogin.NotKeepData;
+                    //chkNotKeepData.Checked = uLogin.NotKeepData;
 
                     ddlSal.SelectedValue = CUSettings.Sal;
                     rblGender.SelectedValue = CUSettings.Gender;
@@ -302,7 +302,7 @@ namespace CDPW
 
                     Boolean resSave = false;
 
-                    resSave = MSettings_Update(txtUName.Text, txtPwd.Text, txtEmail.Text, txtAEmail.Text, chkNotKeepData.Checked, chkUpdInfoCF.Checked, chkUpdAddressCF.Checked
+                    resSave = MSettings_Update(txtUName.Text, txtPwd.Text, txtEmail.Text, txtAEmail.Text, false, chkUpdInfoCF.Checked, chkUpdAddressCF.Checked
                                                 , ddlSal.SelectedValue, txtFName.Text, txtMName.Text, txtLName.Text, txtDOB.Text, rblGender.SelectedValue, txtUNo.Text
                                                 , txtStrNo.Text, txtStrType.Text, txtStrDir.Text, txtStrName.Text, txtCity.Text, txtPCode.Text, ddlCountry.SelectedValue, ddlProv.SelectedValue
                                              );

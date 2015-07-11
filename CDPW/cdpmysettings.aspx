@@ -4,39 +4,35 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphMain" runat="server">
-    <%--    <asp:PlaceHolder ID="phError" runat="server" Visible="false">
-        <p id="pError" class="msg_box msg_error corners">
-            <asp:Literal ID="ltrError" runat="server" />
-        </p>
-    </asp:PlaceHolder>--%>
-            <asp:ScriptManager ID="ScriptManager1" runat="server">
-            </asp:ScriptManager>
+
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
 
 
     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <div id="mainSettings">
-    <asp:Label class="msg_box_md msg_ok_md corners" ID="lblMessage" style="left: 240px;"
-        Text="Data has been saved." runat="server" ViewStateMode="Enabled" Visible="false" ClientIDMode="Static" />
+                <asp:Label class="msg_box_md msg_ok_md corners" ID="lblMessage" Style="left: 240px;"
+                    Text="Data has been saved." runat="server" ViewStateMode="Enabled" Visible="false" ClientIDMode="Static" />
                 <div>
                     <asp:PlaceHolder ID="phSettings" runat="server">
-                        <fieldset>
+                        <fieldset style="margin-top:10px;">
                             <legend>Account info</legend>
                             <p>
                                 <label for="txtUName">
                                     Username</label>
-                                <asp:TextBox ID="txtUName" runat="server" class="text-1" MaxLength="50" original-title="Edit"/>
+                                <asp:TextBox ID="txtUName" runat="server" class="text text-1" MaxLength="50" original-title="50 characters" />
                             </p>
                             <p>
                                 <label for="txtEmail">
                                     <span class="float-left">Email</span> <span class="required special">*</span></label>
-                                <asp:TextBox ID="txtEmail" runat="server" class="text-1" original-title="Edit" MaxLength="150" />
+                                <asp:TextBox ID="txtEmail" runat="server" class="text text-1" original-title="150 characters" MaxLength="150" />
                             </p>
                             <p>
                                 <label for="txtPwd">
                                     <span class="float-left">Password</span> <span class="required special validate[custom[email]]">*</span></label>
-                                <asp:TextBox ID="txtPwd" runat="server" type="password" class="text-1-disable" MaxLength="50" />
-                                <a class="edit edit-pass visible show-confirm-password" original-title="Edit">
+                                <asp:TextBox ID="txtPwd" runat="server" type="password" class="text text-1-disable" MaxLength="50" original-title="50 characters"/>
+                                <a class="edit edit-pass visible show-confirm-password">
                                     <img src="theme/clasic/images/edit-1.png" alt="" /></a> <a class="apply hidden hide-confirm-password"
                                         title="Apply changes">
                                         <img src="theme/clasic/images/apply.png" alt="" /></a>
@@ -44,12 +40,12 @@
                             <p>
                                 <label for="txtAEmail">
                                     Alternate email</label>
-                                <asp:TextBox ID="txtAEmail" runat="server" class="text-1 validate[custom[email]]" MaxLength="150" />
+                                <asp:TextBox ID="txtAEmail" runat="server" class="text text-1 validate[custom[email]]" MaxLength="150" original-title="150 characters"/>
                             </p>
                             <p class="hidden">
                                 <label for="txtPwdConf">
                                     <span class="float-left">Confirm pass.</span> <span class="required special">*</span></label>
-                                <asp:TextBox ID="txtPwdConf" runat="server" type="password" class="text-1" MaxLength="50"/>
+                                <asp:TextBox ID="txtPwdConf" runat="server" type="password" class="text text-1" MaxLength="50" original-title="50 characters"/>
                             </p>
                         </fieldset>
                         <fieldset style="margin-bottom: 10px;">
@@ -72,7 +68,7 @@
                             <p>
                                 <label for="txtFName">
                                     First Name</label>
-                                <asp:TextBox ID="txtFName" runat="server" class="text-1" MaxLength="50" />
+                                <asp:TextBox ID="txtFName" runat="server" class="text text-1" MaxLength="50" original-title="50 characters"/>
                             </p>
                             <p style="padding-top: 10px;">
                                 <label for="rblGender">
@@ -86,11 +82,11 @@
                             </p>
                             <p>
                                 <label for="txtMName">
-                                    Middle Name</label><asp:TextBox ID="txtMName" runat="server" class="text-1" MaxLength="50" />
+                                    Middle Name</label><asp:TextBox ID="txtMName" runat="server" class="text text-1" MaxLength="50" original-title="50 characters"/>
                             </p>
                             <p>
                                 <label for="txtLName">
-                                    Last Name</label><asp:TextBox ID="txtLName" runat="server" class="text-1" MaxLength="50" />
+                                    Last Name</label><asp:TextBox ID="txtLName" runat="server" class="text text-1" MaxLength="50" original-title="50 characters"/>
                             </p>
                         </fieldset>
                         <p style="padding: 0px 0 0 20px;">
@@ -101,28 +97,27 @@
                             <legend>Residential Address</legend>
                             <p>
                                 <label for="txtStrNo">
-                                    Street Number</label><asp:TextBox ID="txtStrNo" runat="server" class="text-1 validate[custom[smallintno]"   MaxLength="5" />
+                                    Street Number</label><asp:TextBox ID="txtStrNo" runat="server" class="text text-1 validate[custom[smallintno]" MaxLength="5" original-title="5 numerics"/>
                             </p>
                             <p>
                                 <label for="txtStrName">
-                                    Street Name</label><asp:TextBox ID="txtStrName" runat="server" class="text-1" MaxLength="100" />
+                                    Street Name</label><asp:TextBox ID="txtStrName" runat="server" class="text text-1" MaxLength="100" original-title="100 characters"/>
                             </p>
                             <p>
                                 <label for="txtStrType">
-                                    Street Type</label><asp:TextBox ID="txtStrType" runat="server" class="text-1" />
+                                    Street Type</label><asp:TextBox ID="txtStrType" runat="server" class="text text-1" MaxLength="15" original-title="15 characters"/>
                             </p>
                             <p>
                                 <label for="txtStrDir">
-                                    Street Direction</label><asp:TextBox ID="txtStrDir" runat="server" class="text-1"
-                                        MaxLength="4" />
+                                    Street Direction</label><asp:TextBox ID="txtStrDir" runat="server" class="text text-1" MaxLength="4" original-title="4 characters"/>
                             </p>
                             <p>
                                 <label for="txtUNo">
-                                    Unit/Apt Number</label><asp:TextBox ID="txtUNo" runat="server" class="text-1" MaxLength="10" />
+                                    Unit/Apt Number</label><asp:TextBox ID="txtUNo" runat="server" class="text text-1" MaxLength="10" original-title="10 characters"/>
                             </p>
                             <p>
                                 <label for="txtCity">
-                                    City</label><asp:TextBox ID="txtCity" runat="server" class="text-1" MaxLength="50" />
+                                    City</label><asp:TextBox ID="txtCity" runat="server" class="text text-1" MaxLength="50" original-title="50 characters"/>
                             </p>
                             <p style="clear: both;">
                                 <label>
@@ -130,8 +125,7 @@
                             </p>
                             <p>
                                 <label for="txtPCode">
-                                    Postal Code</label><asp:TextBox runat="server" ID="txtPCode" value="" class="text-1"
-                                        MaxLength="10" />
+                                    Postal Code</label><asp:TextBox runat="server" ID="txtPCode" value="" class="text text-1" MaxLength="10" original-title="10 characters"/>
                             </p>
                             <p>
                                 <label for="ddlCountry">
@@ -149,14 +143,13 @@
                             <asp:CheckBox ID="chkUpdAddressCF" runat="server" TextAlign="Left" Checked="false" />
                             Update address for Customs Forms
                         </p>
-                        <p style="padding: 10px 0 0 20px; margin-top: 10px;">
+<%--                        <p style="padding: 10px 0 0 20px; margin-top: 10px;">
                             <asp:CheckBox ID="chkNotKeepData" runat="server" TextAlign="Left" />
                             Do not keep data (Passport, Address, Date of Birth and Citizenship info will be
                             deleted on logout)
-                        </p>
+                        </p>--%>
                     </asp:PlaceHolder>
-                    <asp:PlaceHolder ID="phCanFormSuccess" runat="server" Visible="false"><span class="span50">
-                    </span>
+                    <asp:PlaceHolder ID="phCanFormSuccess" runat="server" Visible="false"><span class="span50"></span>
                         <p class="msg_box msg_ok corners">
                             <asp:Literal ID="ltrCanFormSuccess" Text="The form was submited with success." runat="server" />
                         </p>
@@ -172,6 +165,11 @@
             id="logout-2">Logout</a>
     </div>
     <script type="text/javascript">
+
+        $(function () {
+            $('input.text').tipsy({ gravity: 's' });
+        });
+
         var d = new Date();
         $("#txtDOB").datepicker({
             changeMonth: true,

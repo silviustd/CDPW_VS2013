@@ -151,6 +151,8 @@
     <Content Include="theme\clasic\images\columna-soft-logo.png" />
     <Content Include="theme\clasic\images\custom-forms-button.png" />
     <Content Include="theme\clasic\images\custom-forms-icon.png" />
+    <Content Include="theme\clasic\images\customs-forms_wf_email.png" />
+    <Content Include="theme\clasic\images\customs-forms_w_email.png" />
     <Content Include="theme\clasic\images\detach-instructions.png" />
     <Content Include="theme\clasic\images\edit-1.png" />
     <Content Include="theme\clasic\images\icons\accept.png" />
@@ -168,8 +170,12 @@
     <Content Include="theme\clasic\images\Install_SQLServerReportingServices2008R2_2.jpg" />
     <Content Include="theme\clasic\images\logout-button.png" />
     <Content Include="theme\clasic\images\logout-icon.png" />
+    <Content Include="theme\clasic\images\logout_wf_email.png" />
+    <Content Include="theme\clasic\images\logout_w_email.png" />
     <Content Include="theme\clasic\images\my-settings-button.png" />
     <Content Include="theme\clasic\images\my-settings-icon.png" />
+    <Content Include="theme\clasic\images\my-settings_wf_email.png" />
+    <Content Include="theme\clasic\images\my-settings_w_email.png" />
     <Content Include="theme\clasic\images\new-btn.png" />
     <Content Include="theme\clasic\images\pattern-1.png" />
     <Content Include="theme\clasic\images\pattern-2.png" />
@@ -180,8 +186,11 @@
     <Content Include="theme\clasic\images\save-icon.png" />
     <Content Include="theme\clasic\images\scisor-bg.jpg" />
     <Content Include="theme\clasic\images\scisor-bg.png" />
+    <Content Include="theme\clasic\images\send-btn.png" />
     <Content Include="theme\clasic\images\Translate_1.png" />
     <Content Include="theme\clasic\images\Translate_2.png" />
+    <Content Include="theme\clasic\images\translate_wf_email.png" />
+    <Content Include="theme\clasic\images\translate_w_email.png" />
     <Content Include="theme\clasic\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="theme\clasic\images\ui-bg_flat_55_fbec88_40x100.png" />
     <Content Include="theme\clasic\images\ui-bg_glass_75_d0e5f5_1x400.png" />
