@@ -407,7 +407,21 @@
                 background-position: bottom;
             }
 
-        #main-1 input#btnSend {
+	#main-1 input#btnSend {
+		background-image: url('clasic/images/button-5.png');
+		background-repeat: no-repeat;
+		background-position: left;
+		width: 160px;
+		height: 30px;
+		border: none;
+		cursor: pointer;
+		text-indent: -9999px;
+	}
+	#main-1 input#btnSend:hover {
+		background-position: right;
+	}
+
+        #main-1 input#btnReSend {
             background-image: url('clasic/images/send-btn.png');
             background-repeat: no-repeat;
             background-position: top;
@@ -418,7 +432,7 @@
             text-indent: -9999px;
         }
 
-            #main-1 input#btnSend:hover {
+            #main-1 input#btnReSend:hover {
                 background-position: bottom;
             }
 

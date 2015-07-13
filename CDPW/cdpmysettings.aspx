@@ -97,7 +97,7 @@
                             <legend>Residential Address</legend>
                             <p>
                                 <label for="txtStrNo">
-                                    Street Number</label><asp:TextBox ID="txtStrNo" runat="server" class="text text-1 validate[custom[smallintno]" MaxLength="5" original-title="5 numerics"/>
+                                    Street Number</label><asp:TextBox ID="txtStrNo" runat="server" class="text text-1 validate[custom[smallintno]" MaxLength="5" original-title="5 digits"/>
                             </p>
                             <p>
                                 <label for="txtStrName">
@@ -109,7 +109,7 @@
                             </p>
                             <p>
                                 <label for="txtStrDir">
-                                    Street Direction</label><asp:TextBox ID="txtStrDir" runat="server" class="text text-1" MaxLength="4" original-title="4 characters"/>
+                                    Street Direction</label><asp:TextBox ID="txtStrDir" runat="server" class="text text-1" MaxLength="10" original-title="10 characters"/>
                             </p>
                             <p>
                                 <label for="txtUNo">
