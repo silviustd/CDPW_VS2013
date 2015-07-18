@@ -403,7 +403,7 @@ namespace CDPW
                     cmd.Parameters.Add("@UnitNo", SqlDbType.NVarChar, 10).Value = txtUNo;
                     cmd.Parameters.Add("@StreetNo", SqlDbType.SmallInt).Value = String.IsNullOrEmpty(txtStrNo) ? 0 : Int16.Parse(txtStrNo);
                     cmd.Parameters.Add("@StreetType", SqlDbType.NVarChar, 15).Value = txtStrType;
-                    cmd.Parameters.Add("@StreetPDir", SqlDbType.NVarChar, 4).Value = txtStrDir;
+                    cmd.Parameters.Add("@StreetPDir", SqlDbType.NVarChar, 10).Value = txtStrDir;
                     //concat
                     AddressToDb = String.Empty;
                     if (!String.IsNullOrWhiteSpace(txtStrNo))

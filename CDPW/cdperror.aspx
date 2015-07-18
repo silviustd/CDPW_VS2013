@@ -3,9 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphMain" runat="server">
-    <div id='privacypol' style='font-size: 1.3em; color: #3D3D3D'>
+    <div id='privacypol' style='font-size: 1.8em; color: #3D3D3D;text-align:center;'>
         <h2>&nbsp;</h2>
         <p><span>Oops, it happened. An error.</span></p>
+        <br/>
         <p><span>But don't worry, we're getting at it.</span></p>
         <p>
             <span></span>

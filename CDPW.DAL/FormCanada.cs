@@ -89,7 +89,8 @@ namespace CDPW.DAL
                     //
                     //if (!string.IsNullOrEmpty(person1Name)){
                     
-                        string[] person1 = person1Name.Trim().Split(' ');
+                        //string[] person1 = person1Name.Trim().Split(',');
+                    string[] person1 = person1Name.Trim().Split(AppConstants.DCAN_NAME_SEPARATOR);
                         cmd.Parameters.Add("@P1Id", SqlDbType.BigInt).Value = PIds[0]; 
                         cmd.Parameters.Add("@person1LastName", SqlDbType.NVarChar, 50).Value = person1[0];
                         cmd.Parameters.Add("@person1FirstName", SqlDbType.NVarChar, 50).Value = (person1.Length > 1) ? person1[1] : string.Empty;
@@ -101,7 +102,7 @@ namespace CDPW.DAL
                     //}
                     //
                     //if (!string.IsNullOrEmpty(person2Name)) {
-                        string[] person2 = person2Name.Trim().Split(' ');
+                        string[] person2 = person2Name.Trim().Split(AppConstants.DCAN_NAME_SEPARATOR);
                         cmd.Parameters.Add("@P2Id", SqlDbType.BigInt).Value = PIds[1]; 
                         cmd.Parameters.Add("@person2LastName", SqlDbType.NVarChar, 50).Value = person2[0];
                         cmd.Parameters.Add("@person2FirstName", SqlDbType.NVarChar, 50).Value = (person2.Length > 1) ? person2[1] : string.Empty; ;
@@ -113,8 +114,8 @@ namespace CDPW.DAL
                     //}
                     //
                     //if (!string.IsNullOrEmpty(person3Name)){
-                    
-                        string[] person3 = person3Name.Trim().Split(' ');
+
+                        string[] person3 = person3Name.Trim().Split(AppConstants.DCAN_NAME_SEPARATOR);
                         cmd.Parameters.Add("@P3Id", SqlDbType.BigInt).Value = PIds[2]; 
                         cmd.Parameters.Add("@person3LastName", SqlDbType.NVarChar, 50).Value = person3[0];
                         cmd.Parameters.Add("@person3FirstName", SqlDbType.NVarChar, 50).Value = (person3.Length > 1) ? person3[1] : string.Empty;
@@ -126,7 +127,7 @@ namespace CDPW.DAL
                     //}
                     //
                     //if (!string.IsNullOrEmpty(person4Name)){
-                        string[] person4 = person4Name.Trim().Split(' ');
+                        string[] person4 = person4Name.Trim().Split(AppConstants.DCAN_NAME_SEPARATOR);
                         cmd.Parameters.Add("@P4Id", SqlDbType.BigInt).Value = PIds[3]; 
                         cmd.Parameters.Add("@person4LastName", SqlDbType.NVarChar, 50).Value = person4[0];
                         cmd.Parameters.Add("@person4FirstName", SqlDbType.NVarChar, 50).Value = (person4.Length > 1) ? person4[1] : string.Empty;

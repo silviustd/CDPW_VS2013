@@ -85,19 +85,23 @@ namespace CDPW
                                     {
                                         case 1:
                                             PIds[0] = String.IsNullOrEmpty(dr["PersonId"].ToString()) ? 0 : (Int64)dr["PersonId"];
-                                            txtName1.Text = string.Format("{0}", dr["Name"].ToString()).Trim();
-                                            hidName1.Value = string.Format("{0}", dr["Name"].ToString()).Trim();
+                                            //txtName1.Text = string.Format("{0}", dr["Name"].ToString()).Trim();
+                                            //hidName1.Value = string.Format("{0}", dr["Name"].ToString()).Trim();
+                                            txtName1.Text = string.Format("{0}", dr["LastName"].ToString()).Trim() + AppConstants.DCAN_NAME_SEPARATOR +
+                                                            string.Format("{0}", dr["FirstName"].ToString()).Trim() + AppConstants.DCAN_NAME_SEPARATOR +
+                                                            string.Format("{0}", dr["MiddleName"].ToString()).Trim();
                                             if (!string.IsNullOrEmpty(dr["DateofBirth"].ToString()))
                                             {
                                                 txtDOB1.Text = TextUtils.ReturnFromDB(dr["DateofBirth"].ToString(), true);
-                                                hidDOB1.Value = TextUtils.ReturnFromDB(dr["DateofBirth"].ToString(), true);
                                             }
                                             txtCitiz1.Text = dr["Citizenship"].ToString().Trim();
-                                            hidCitiz1.Value = dr["Citizenship"].ToString().Trim();
                                             break;
                                         case 2:
                                             PIds[1] = String.IsNullOrEmpty(dr["PersonId"].ToString()) ? 0 : (Int64)dr["PersonId"];
-                                            txtName2.Text = string.Format("{0}", dr["Name"].ToString()).Trim();
+                                            //txtName2.Text = string.Format("{0}", dr["Name"].ToString()).Trim();
+                                            txtName2.Text = string.Format("{0}", dr["LastName"].ToString()).Trim() + AppConstants.DCAN_NAME_SEPARATOR +
+                                                            string.Format("{0}", dr["FirstName"].ToString()).Trim() + AppConstants.DCAN_NAME_SEPARATOR +
+                                                            string.Format("{0}", dr["MiddleName"].ToString()).Trim();
                                             if (!string.IsNullOrEmpty(dr["DateofBirth"].ToString()))
                                             {
                                                 txtDOB2.Text = TextUtils.ReturnFromDB(dr["DateofBirth"].ToString(), true);
@@ -107,6 +111,9 @@ namespace CDPW
                                         case 3:
                                             PIds[2] = String.IsNullOrEmpty(dr["PersonId"].ToString()) ? 0 : (Int64)dr["PersonId"];
                                             txtName3.Text = string.Format("{0}", dr["Name"].ToString()).Trim();
+                                            txtName3.Text = string.Format("{0}", dr["LastName"].ToString()).Trim() + AppConstants.DCAN_NAME_SEPARATOR +
+                                                            string.Format("{0}", dr["FirstName"].ToString()).Trim() + AppConstants.DCAN_NAME_SEPARATOR +
+                                                            string.Format("{0}", dr["MiddleName"].ToString()).Trim();
                                             if (!string.IsNullOrEmpty(dr["DateofBirth"].ToString()))
                                             {
                                                 txtDOB3.Text = TextUtils.ReturnFromDB(dr["DateofBirth"].ToString(), true);
@@ -116,6 +123,9 @@ namespace CDPW
                                         case 4:
                                             PIds[3] = String.IsNullOrEmpty(dr["PersonId"].ToString()) ? 0 : (Int64)dr["PersonId"];
                                             txtName4.Text = string.Format("{0}", dr["Name"].ToString()).Trim();
+                                            txtName4.Text = string.Format("{0}", dr["LastName"].ToString()).Trim() + AppConstants.DCAN_NAME_SEPARATOR +
+                                                            string.Format("{0}", dr["FirstName"].ToString()).Trim() + AppConstants.DCAN_NAME_SEPARATOR +
+                                                            string.Format("{0}", dr["MiddleName"].ToString()).Trim();
                                             if (!string.IsNullOrEmpty(dr["DateofBirth"].ToString()))
                                             {
                                                 txtDOB4.Text = TextUtils.ReturnFromDB(dr["DateofBirth"].ToString(), true);
@@ -300,8 +310,6 @@ namespace CDPW
                     {
                         CurrentUser uLogin = (CurrentUser)HttpContext.Current.Session["cdpUser"];
                         Int64 UserID = uLogin.WAppUserId;
-
-                        string CurrentName = hidName1.Value.Trim();
 
                         string TripInfo_Address;
                         TripInfo_Address = CDPW.DAL.FormCanada.Form_AddInfo(UserID, uLogin.PIds_CAN, uLogin.WAppUserName, txtAddress.Text, txtCity.Text, ddlProv.SelectedValue, ddlCountry.SelectedValue, txtPostalCode.Text, rblArrive.SelectedValue, txtTripNo.Text, rblPurpose.SelectedValue, rblArriveFrom.SelectedValue, rblFirearms.SelectedValue, rblCG.SelectedValue, rblFood.SelectedValue, rblMoney.SelectedValue, rblGoods.SelectedValue, rblFarm.SelectedValue, txtDureation.Text, rblExceededDutyFree.SelectedValue, rblExceededExemptions.SelectedValue, txtdDate.Text);

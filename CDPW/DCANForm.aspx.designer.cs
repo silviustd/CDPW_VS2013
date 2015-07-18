@@ -670,33 +670,6 @@ namespace CDPW {
         protected global::System.Web.UI.WebControls.HyperLink logout_2;
         
         /// <summary>
-        /// hidName1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hidName1;
-        
-        /// <summary>
-        /// hidDOB1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hidDOB1;
-        
-        /// <summary>
-        /// hidCitiz1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hidCitiz1;
-        
-        /// <summary>
         /// phCanFormNoName1 control.
         /// </summary>
         /// <remarks>

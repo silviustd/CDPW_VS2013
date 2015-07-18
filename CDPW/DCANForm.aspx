@@ -26,7 +26,7 @@
 
     <asp:PlaceHolder ID="phCanForm" runat="server">
         <div id="top">
-            <asp:Label class="msg_box_md msg_ok_md corners" ID="lblMessage" style="left: 240px;"
+            <asp:Label class="msg_box_md msg_ok_md corners" ID="lblMessage" Style="left: 240px;"
                 Text="Data has been saved." runat="server" ViewStateMode="Enabled" Visible="false" ClientIDMode="Static" />
 
             <asp:PlaceHolder ID="phReproduction" runat="server" Visible="true">
@@ -545,9 +545,6 @@
             <asp:HyperLink ID="logout_2" runat="server" NavigateUrl="cdplogout.aspx">Logout</asp:HyperLink>
 
         </div>
-        <asp:HiddenField ID="hidName1" runat="server" />
-        <asp:HiddenField ID="hidDOB1" runat="server" />
-        <asp:HiddenField ID="hidCitiz1" runat="server" />
     </asp:PlaceHolder>
     <asp:PlaceHolder ID="phCanFormNoName1" runat="server" Visible="false"><span class="span50"></span>
         <p class="msg_box msg_error corners">
