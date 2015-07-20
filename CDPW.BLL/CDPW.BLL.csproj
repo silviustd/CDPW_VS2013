@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppConstants.cs" />
     <Compile Include="CDPWMessages.cs" />
     <Compile Include="EncryptDecrypt.cs" />
     <Compile Include="Helpers.cs" />
