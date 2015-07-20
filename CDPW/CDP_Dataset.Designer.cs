@@ -24,8 +24,6 @@ namespace CDPW {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class CDP_Dataset : global::System.Data.DataSet {
         
-        private Get_CAN_FlightInfoDataTable tableGet_CAN_FlightInfo;
-        
         private Get_CAN_Goods1DataTable tableGet_CAN_Goods1;
         
         private Get_CAN_Goods2DataTable tableGet_CAN_Goods2;
@@ -35,6 +33,8 @@ namespace CDPW {
         private Get_CAN_PersonsDataTable tableGet_CAN_Persons;
         
         private Get_US_FlightInfo2DataTable tableGet_US_FlightInfo2;
+        
+        private Get_CAN_FlightInfoDataTable tableGet_CAN_FlightInfo;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -64,9 +64,6 @@ namespace CDPW {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Get_CAN_FlightInfo"] != null)) {
-                    base.Tables.Add(new Get_CAN_FlightInfoDataTable(ds.Tables["Get_CAN_FlightInfo"]));
-                }
                 if ((ds.Tables["Get_CAN_Goods1"] != null)) {
                     base.Tables.Add(new Get_CAN_Goods1DataTable(ds.Tables["Get_CAN_Goods1"]));
                 }
@@ -81,6 +78,9 @@ namespace CDPW {
                 }
                 if ((ds.Tables["Get_US_FlightInfo2"] != null)) {
                     base.Tables.Add(new Get_US_FlightInfo2DataTable(ds.Tables["Get_US_FlightInfo2"]));
+                }
+                if ((ds.Tables["Get_CAN_FlightInfo"] != null)) {
+                    base.Tables.Add(new Get_CAN_FlightInfoDataTable(ds.Tables["Get_CAN_FlightInfo"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -98,16 +98,6 @@ namespace CDPW {
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
             base.Tables.CollectionChanged += schemaChangedHandler;
             this.Relations.CollectionChanged += schemaChangedHandler;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public Get_CAN_FlightInfoDataTable Get_CAN_FlightInfo {
-            get {
-                return this.tableGet_CAN_FlightInfo;
-            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -157,6 +147,16 @@ namespace CDPW {
         public Get_US_FlightInfo2DataTable Get_US_FlightInfo2 {
             get {
                 return this.tableGet_US_FlightInfo2;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Get_CAN_FlightInfoDataTable Get_CAN_FlightInfo {
+            get {
+                return this.tableGet_CAN_FlightInfo;
             }
         }
         
@@ -227,9 +227,6 @@ namespace CDPW {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Get_CAN_FlightInfo"] != null)) {
-                    base.Tables.Add(new Get_CAN_FlightInfoDataTable(ds.Tables["Get_CAN_FlightInfo"]));
-                }
                 if ((ds.Tables["Get_CAN_Goods1"] != null)) {
                     base.Tables.Add(new Get_CAN_Goods1DataTable(ds.Tables["Get_CAN_Goods1"]));
                 }
@@ -244,6 +241,9 @@ namespace CDPW {
                 }
                 if ((ds.Tables["Get_US_FlightInfo2"] != null)) {
                     base.Tables.Add(new Get_US_FlightInfo2DataTable(ds.Tables["Get_US_FlightInfo2"]));
+                }
+                if ((ds.Tables["Get_CAN_FlightInfo"] != null)) {
+                    base.Tables.Add(new Get_CAN_FlightInfoDataTable(ds.Tables["Get_CAN_FlightInfo"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -278,12 +278,6 @@ namespace CDPW {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableGet_CAN_FlightInfo = ((Get_CAN_FlightInfoDataTable)(base.Tables["Get_CAN_FlightInfo"]));
-            if ((initTable == true)) {
-                if ((this.tableGet_CAN_FlightInfo != null)) {
-                    this.tableGet_CAN_FlightInfo.InitVars();
-                }
-            }
             this.tableGet_CAN_Goods1 = ((Get_CAN_Goods1DataTable)(base.Tables["Get_CAN_Goods1"]));
             if ((initTable == true)) {
                 if ((this.tableGet_CAN_Goods1 != null)) {
@@ -314,6 +308,12 @@ namespace CDPW {
                     this.tableGet_US_FlightInfo2.InitVars();
                 }
             }
+            this.tableGet_CAN_FlightInfo = ((Get_CAN_FlightInfoDataTable)(base.Tables["Get_CAN_FlightInfo"]));
+            if ((initTable == true)) {
+                if ((this.tableGet_CAN_FlightInfo != null)) {
+                    this.tableGet_CAN_FlightInfo.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -324,8 +324,6 @@ namespace CDPW {
             this.Namespace = "http://tempuri.org/CDP_Dataset.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableGet_CAN_FlightInfo = new Get_CAN_FlightInfoDataTable();
-            base.Tables.Add(this.tableGet_CAN_FlightInfo);
             this.tableGet_CAN_Goods1 = new Get_CAN_Goods1DataTable();
             base.Tables.Add(this.tableGet_CAN_Goods1);
             this.tableGet_CAN_Goods2 = new Get_CAN_Goods2DataTable();
@@ -336,12 +334,8 @@ namespace CDPW {
             base.Tables.Add(this.tableGet_CAN_Persons);
             this.tableGet_US_FlightInfo2 = new Get_US_FlightInfo2DataTable();
             base.Tables.Add(this.tableGet_US_FlightInfo2);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeGet_CAN_FlightInfo() {
-            return false;
+            this.tableGet_CAN_FlightInfo = new Get_CAN_FlightInfoDataTable();
+            base.Tables.Add(this.tableGet_CAN_FlightInfo);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -371,6 +365,12 @@ namespace CDPW {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeGet_US_FlightInfo2() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeGet_CAN_FlightInfo() {
             return false;
         }
         
@@ -430,9 +430,6 @@ namespace CDPW {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void Get_CAN_FlightInfoRowChangeEventHandler(object sender, Get_CAN_FlightInfoRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void Get_CAN_Goods1RowChangeEventHandler(object sender, Get_CAN_Goods1RowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -447,850 +444,8 @@ namespace CDPW {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void Get_US_FlightInfo2RowChangeEventHandler(object sender, Get_US_FlightInfo2RowChangeEvent e);
         
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class Get_CAN_FlightInfoDataTable : global::System.Data.TypedTableBase<Get_CAN_FlightInfoRow> {
-            
-            private global::System.Data.DataColumn columnAirLineFlightNo;
-            
-            private global::System.Data.DataColumn columnAddressId;
-            
-            private global::System.Data.DataColumn columnAddress;
-            
-            private global::System.Data.DataColumn columnCity;
-            
-            private global::System.Data.DataColumn columnCountryName;
-            
-            private global::System.Data.DataColumn columnAdministrativeRegionCode;
-            
-            private global::System.Data.DataColumn columnPostalCode;
-            
-            private global::System.Data.DataColumn columnDate;
-            
-            private global::System.Data.DataColumn columnRank;
-            
-            private global::System.Data.DataColumn columnWArrivingBy1;
-            
-            private global::System.Data.DataColumn columnWArrivingBy2;
-            
-            private global::System.Data.DataColumn columnWArrivingBy3;
-            
-            private global::System.Data.DataColumn columnWArrivingBy4;
-            
-            private global::System.Data.DataColumn columnWTripPurpose1;
-            
-            private global::System.Data.DataColumn columnWTripPurpose2;
-            
-            private global::System.Data.DataColumn columnWTripPurpose3;
-            
-            private global::System.Data.DataColumn columnWArrivingFrom1;
-            
-            private global::System.Data.DataColumn columnWArrivingFrom2;
-            
-            private global::System.Data.DataColumn columnWArrivingFrom3;
-            
-            private global::System.Data.DataColumn columnFirearms_Yes;
-            
-            private global::System.Data.DataColumn columnFirearms_No;
-            
-            private global::System.Data.DataColumn columnCommercialGoods_Yes;
-            
-            private global::System.Data.DataColumn columnCommercialGoods_No;
-            
-            private global::System.Data.DataColumn columnMeatProducts_Yes;
-            
-            private global::System.Data.DataColumn columnMeatProducts_No;
-            
-            private global::System.Data.DataColumn columnCurrencyValue_Yes;
-            
-            private global::System.Data.DataColumn columnCurrencyValue_No;
-            
-            private global::System.Data.DataColumn columnGoods_Yes;
-            
-            private global::System.Data.DataColumn columnGoods_No;
-            
-            private global::System.Data.DataColumn columnFarmVisit_Yes;
-            
-            private global::System.Data.DataColumn columnFarmVisit_No;
-            
-            private global::System.Data.DataColumn columnExceedDutyFree_Yes;
-            
-            private global::System.Data.DataColumn columnExceedDutyFree_No;
-            
-            private global::System.Data.DataColumn columnExceedExemptions_Yes;
-            
-            private global::System.Data.DataColumn columnExceedExemptions_No;
-            
-            private global::System.Data.DataColumn columnDurationOfStay;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Get_CAN_FlightInfoDataTable() {
-                this.TableName = "Get_CAN_FlightInfo";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal Get_CAN_FlightInfoDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected Get_CAN_FlightInfoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AirLineFlightNoColumn {
-                get {
-                    return this.columnAirLineFlightNo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AddressIdColumn {
-                get {
-                    return this.columnAddressId;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AddressColumn {
-                get {
-                    return this.columnAddress;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CityColumn {
-                get {
-                    return this.columnCity;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CountryNameColumn {
-                get {
-                    return this.columnCountryName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AdministrativeRegionCodeColumn {
-                get {
-                    return this.columnAdministrativeRegionCode;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PostalCodeColumn {
-                get {
-                    return this.columnPostalCode;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DateColumn {
-                get {
-                    return this.columnDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn RankColumn {
-                get {
-                    return this.columnRank;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn WArrivingBy1Column {
-                get {
-                    return this.columnWArrivingBy1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn WArrivingBy2Column {
-                get {
-                    return this.columnWArrivingBy2;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn WArrivingBy3Column {
-                get {
-                    return this.columnWArrivingBy3;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn WArrivingBy4Column {
-                get {
-                    return this.columnWArrivingBy4;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn WTripPurpose1Column {
-                get {
-                    return this.columnWTripPurpose1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn WTripPurpose2Column {
-                get {
-                    return this.columnWTripPurpose2;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn WTripPurpose3Column {
-                get {
-                    return this.columnWTripPurpose3;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn WArrivingFrom1Column {
-                get {
-                    return this.columnWArrivingFrom1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn WArrivingFrom2Column {
-                get {
-                    return this.columnWArrivingFrom2;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn WArrivingFrom3Column {
-                get {
-                    return this.columnWArrivingFrom3;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Firearms_YesColumn {
-                get {
-                    return this.columnFirearms_Yes;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Firearms_NoColumn {
-                get {
-                    return this.columnFirearms_No;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CommercialGoods_YesColumn {
-                get {
-                    return this.columnCommercialGoods_Yes;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CommercialGoods_NoColumn {
-                get {
-                    return this.columnCommercialGoods_No;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn MeatProducts_YesColumn {
-                get {
-                    return this.columnMeatProducts_Yes;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn MeatProducts_NoColumn {
-                get {
-                    return this.columnMeatProducts_No;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CurrencyValue_YesColumn {
-                get {
-                    return this.columnCurrencyValue_Yes;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CurrencyValue_NoColumn {
-                get {
-                    return this.columnCurrencyValue_No;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Goods_YesColumn {
-                get {
-                    return this.columnGoods_Yes;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Goods_NoColumn {
-                get {
-                    return this.columnGoods_No;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FarmVisit_YesColumn {
-                get {
-                    return this.columnFarmVisit_Yes;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FarmVisit_NoColumn {
-                get {
-                    return this.columnFarmVisit_No;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ExceedDutyFree_YesColumn {
-                get {
-                    return this.columnExceedDutyFree_Yes;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ExceedDutyFree_NoColumn {
-                get {
-                    return this.columnExceedDutyFree_No;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ExceedExemptions_YesColumn {
-                get {
-                    return this.columnExceedExemptions_Yes;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ExceedExemptions_NoColumn {
-                get {
-                    return this.columnExceedExemptions_No;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DurationOfStayColumn {
-                get {
-                    return this.columnDurationOfStay;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Get_CAN_FlightInfoRow this[int index] {
-                get {
-                    return ((Get_CAN_FlightInfoRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Get_CAN_FlightInfoRowChangeEventHandler Get_CAN_FlightInfoRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Get_CAN_FlightInfoRowChangeEventHandler Get_CAN_FlightInfoRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Get_CAN_FlightInfoRowChangeEventHandler Get_CAN_FlightInfoRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Get_CAN_FlightInfoRowChangeEventHandler Get_CAN_FlightInfoRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddGet_CAN_FlightInfoRow(Get_CAN_FlightInfoRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Get_CAN_FlightInfoRow AddGet_CAN_FlightInfoRow(
-                        string AirLineFlightNo, 
-                        long AddressId, 
-                        string Address, 
-                        string City, 
-                        string CountryName, 
-                        string AdministrativeRegionCode, 
-                        string PostalCode, 
-                        string Date, 
-                        int Rank, 
-                        string WArrivingBy1, 
-                        string WArrivingBy2, 
-                        string WArrivingBy3, 
-                        string WArrivingBy4, 
-                        string WTripPurpose1, 
-                        string WTripPurpose2, 
-                        string WTripPurpose3, 
-                        string WArrivingFrom1, 
-                        string WArrivingFrom2, 
-                        string WArrivingFrom3, 
-                        string Firearms_Yes, 
-                        string Firearms_No, 
-                        string CommercialGoods_Yes, 
-                        string CommercialGoods_No, 
-                        string MeatProducts_Yes, 
-                        string MeatProducts_No, 
-                        string CurrencyValue_Yes, 
-                        string CurrencyValue_No, 
-                        string Goods_Yes, 
-                        string Goods_No, 
-                        string FarmVisit_Yes, 
-                        string FarmVisit_No, 
-                        string ExceedDutyFree_Yes, 
-                        string ExceedDutyFree_No, 
-                        string ExceedExemptions_Yes, 
-                        string ExceedExemptions_No, 
-                        string DurationOfStay) {
-                Get_CAN_FlightInfoRow rowGet_CAN_FlightInfoRow = ((Get_CAN_FlightInfoRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        AirLineFlightNo,
-                        AddressId,
-                        Address,
-                        City,
-                        CountryName,
-                        AdministrativeRegionCode,
-                        PostalCode,
-                        Date,
-                        Rank,
-                        WArrivingBy1,
-                        WArrivingBy2,
-                        WArrivingBy3,
-                        WArrivingBy4,
-                        WTripPurpose1,
-                        WTripPurpose2,
-                        WTripPurpose3,
-                        WArrivingFrom1,
-                        WArrivingFrom2,
-                        WArrivingFrom3,
-                        Firearms_Yes,
-                        Firearms_No,
-                        CommercialGoods_Yes,
-                        CommercialGoods_No,
-                        MeatProducts_Yes,
-                        MeatProducts_No,
-                        CurrencyValue_Yes,
-                        CurrencyValue_No,
-                        Goods_Yes,
-                        Goods_No,
-                        FarmVisit_Yes,
-                        FarmVisit_No,
-                        ExceedDutyFree_Yes,
-                        ExceedDutyFree_No,
-                        ExceedExemptions_Yes,
-                        ExceedExemptions_No,
-                        DurationOfStay};
-                rowGet_CAN_FlightInfoRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowGet_CAN_FlightInfoRow);
-                return rowGet_CAN_FlightInfoRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                Get_CAN_FlightInfoDataTable cln = ((Get_CAN_FlightInfoDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new Get_CAN_FlightInfoDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnAirLineFlightNo = base.Columns["AirLineFlightNo"];
-                this.columnAddressId = base.Columns["AddressId"];
-                this.columnAddress = base.Columns["Address"];
-                this.columnCity = base.Columns["City"];
-                this.columnCountryName = base.Columns["CountryName"];
-                this.columnAdministrativeRegionCode = base.Columns["AdministrativeRegionCode"];
-                this.columnPostalCode = base.Columns["PostalCode"];
-                this.columnDate = base.Columns["Date"];
-                this.columnRank = base.Columns["Rank"];
-                this.columnWArrivingBy1 = base.Columns["WArrivingBy1"];
-                this.columnWArrivingBy2 = base.Columns["WArrivingBy2"];
-                this.columnWArrivingBy3 = base.Columns["WArrivingBy3"];
-                this.columnWArrivingBy4 = base.Columns["WArrivingBy4"];
-                this.columnWTripPurpose1 = base.Columns["WTripPurpose1"];
-                this.columnWTripPurpose2 = base.Columns["WTripPurpose2"];
-                this.columnWTripPurpose3 = base.Columns["WTripPurpose3"];
-                this.columnWArrivingFrom1 = base.Columns["WArrivingFrom1"];
-                this.columnWArrivingFrom2 = base.Columns["WArrivingFrom2"];
-                this.columnWArrivingFrom3 = base.Columns["WArrivingFrom3"];
-                this.columnFirearms_Yes = base.Columns["Firearms_Yes"];
-                this.columnFirearms_No = base.Columns["Firearms_No"];
-                this.columnCommercialGoods_Yes = base.Columns["CommercialGoods_Yes"];
-                this.columnCommercialGoods_No = base.Columns["CommercialGoods_No"];
-                this.columnMeatProducts_Yes = base.Columns["MeatProducts_Yes"];
-                this.columnMeatProducts_No = base.Columns["MeatProducts_No"];
-                this.columnCurrencyValue_Yes = base.Columns["CurrencyValue_Yes"];
-                this.columnCurrencyValue_No = base.Columns["CurrencyValue_No"];
-                this.columnGoods_Yes = base.Columns["Goods_Yes"];
-                this.columnGoods_No = base.Columns["Goods_No"];
-                this.columnFarmVisit_Yes = base.Columns["FarmVisit_Yes"];
-                this.columnFarmVisit_No = base.Columns["FarmVisit_No"];
-                this.columnExceedDutyFree_Yes = base.Columns["ExceedDutyFree_Yes"];
-                this.columnExceedDutyFree_No = base.Columns["ExceedDutyFree_No"];
-                this.columnExceedExemptions_Yes = base.Columns["ExceedExemptions_Yes"];
-                this.columnExceedExemptions_No = base.Columns["ExceedExemptions_No"];
-                this.columnDurationOfStay = base.Columns["DurationOfStay"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnAirLineFlightNo = new global::System.Data.DataColumn("AirLineFlightNo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAirLineFlightNo);
-                this.columnAddressId = new global::System.Data.DataColumn("AddressId", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAddressId);
-                this.columnAddress = new global::System.Data.DataColumn("Address", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAddress);
-                this.columnCity = new global::System.Data.DataColumn("City", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCity);
-                this.columnCountryName = new global::System.Data.DataColumn("CountryName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCountryName);
-                this.columnAdministrativeRegionCode = new global::System.Data.DataColumn("AdministrativeRegionCode", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAdministrativeRegionCode);
-                this.columnPostalCode = new global::System.Data.DataColumn("PostalCode", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPostalCode);
-                this.columnDate = new global::System.Data.DataColumn("Date", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDate);
-                this.columnRank = new global::System.Data.DataColumn("Rank", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRank);
-                this.columnWArrivingBy1 = new global::System.Data.DataColumn("WArrivingBy1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWArrivingBy1);
-                this.columnWArrivingBy2 = new global::System.Data.DataColumn("WArrivingBy2", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWArrivingBy2);
-                this.columnWArrivingBy3 = new global::System.Data.DataColumn("WArrivingBy3", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWArrivingBy3);
-                this.columnWArrivingBy4 = new global::System.Data.DataColumn("WArrivingBy4", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWArrivingBy4);
-                this.columnWTripPurpose1 = new global::System.Data.DataColumn("WTripPurpose1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWTripPurpose1);
-                this.columnWTripPurpose2 = new global::System.Data.DataColumn("WTripPurpose2", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWTripPurpose2);
-                this.columnWTripPurpose3 = new global::System.Data.DataColumn("WTripPurpose3", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWTripPurpose3);
-                this.columnWArrivingFrom1 = new global::System.Data.DataColumn("WArrivingFrom1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWArrivingFrom1);
-                this.columnWArrivingFrom2 = new global::System.Data.DataColumn("WArrivingFrom2", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWArrivingFrom2);
-                this.columnWArrivingFrom3 = new global::System.Data.DataColumn("WArrivingFrom3", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWArrivingFrom3);
-                this.columnFirearms_Yes = new global::System.Data.DataColumn("Firearms_Yes", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFirearms_Yes);
-                this.columnFirearms_No = new global::System.Data.DataColumn("Firearms_No", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFirearms_No);
-                this.columnCommercialGoods_Yes = new global::System.Data.DataColumn("CommercialGoods_Yes", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCommercialGoods_Yes);
-                this.columnCommercialGoods_No = new global::System.Data.DataColumn("CommercialGoods_No", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCommercialGoods_No);
-                this.columnMeatProducts_Yes = new global::System.Data.DataColumn("MeatProducts_Yes", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMeatProducts_Yes);
-                this.columnMeatProducts_No = new global::System.Data.DataColumn("MeatProducts_No", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMeatProducts_No);
-                this.columnCurrencyValue_Yes = new global::System.Data.DataColumn("CurrencyValue_Yes", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCurrencyValue_Yes);
-                this.columnCurrencyValue_No = new global::System.Data.DataColumn("CurrencyValue_No", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCurrencyValue_No);
-                this.columnGoods_Yes = new global::System.Data.DataColumn("Goods_Yes", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGoods_Yes);
-                this.columnGoods_No = new global::System.Data.DataColumn("Goods_No", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGoods_No);
-                this.columnFarmVisit_Yes = new global::System.Data.DataColumn("FarmVisit_Yes", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFarmVisit_Yes);
-                this.columnFarmVisit_No = new global::System.Data.DataColumn("FarmVisit_No", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFarmVisit_No);
-                this.columnExceedDutyFree_Yes = new global::System.Data.DataColumn("ExceedDutyFree_Yes", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExceedDutyFree_Yes);
-                this.columnExceedDutyFree_No = new global::System.Data.DataColumn("ExceedDutyFree_No", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExceedDutyFree_No);
-                this.columnExceedExemptions_Yes = new global::System.Data.DataColumn("ExceedExemptions_Yes", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExceedExemptions_Yes);
-                this.columnExceedExemptions_No = new global::System.Data.DataColumn("ExceedExemptions_No", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExceedExemptions_No);
-                this.columnDurationOfStay = new global::System.Data.DataColumn("DurationOfStay", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDurationOfStay);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnAddressId}, false));
-                this.columnAirLineFlightNo.ReadOnly = true;
-                this.columnAirLineFlightNo.MaxLength = 9;
-                this.columnAddressId.Unique = true;
-                this.columnAddress.ReadOnly = true;
-                this.columnAddress.MaxLength = 200;
-                this.columnCity.ReadOnly = true;
-                this.columnCity.MaxLength = 4000;
-                this.columnCountryName.ReadOnly = true;
-                this.columnCountryName.MaxLength = 9;
-                this.columnAdministrativeRegionCode.ReadOnly = true;
-                this.columnAdministrativeRegionCode.MaxLength = 4;
-                this.columnPostalCode.ReadOnly = true;
-                this.columnPostalCode.MaxLength = 7;
-                this.columnDate.ReadOnly = true;
-                this.columnDate.MaxLength = 8;
-                this.columnRank.ReadOnly = true;
-                this.columnWArrivingBy1.ReadOnly = true;
-                this.columnWArrivingBy1.MaxLength = 1;
-                this.columnWArrivingBy2.ReadOnly = true;
-                this.columnWArrivingBy2.MaxLength = 1;
-                this.columnWArrivingBy3.ReadOnly = true;
-                this.columnWArrivingBy3.MaxLength = 1;
-                this.columnWArrivingBy4.ReadOnly = true;
-                this.columnWArrivingBy4.MaxLength = 1;
-                this.columnWTripPurpose1.ReadOnly = true;
-                this.columnWTripPurpose1.MaxLength = 1;
-                this.columnWTripPurpose2.ReadOnly = true;
-                this.columnWTripPurpose2.MaxLength = 1;
-                this.columnWTripPurpose3.ReadOnly = true;
-                this.columnWTripPurpose3.MaxLength = 1;
-                this.columnWArrivingFrom1.ReadOnly = true;
-                this.columnWArrivingFrom1.MaxLength = 1;
-                this.columnWArrivingFrom2.ReadOnly = true;
-                this.columnWArrivingFrom2.MaxLength = 1;
-                this.columnWArrivingFrom3.ReadOnly = true;
-                this.columnWArrivingFrom3.MaxLength = 1;
-                this.columnFirearms_Yes.ReadOnly = true;
-                this.columnFirearms_Yes.MaxLength = 1;
-                this.columnFirearms_No.ReadOnly = true;
-                this.columnFirearms_No.MaxLength = 1;
-                this.columnCommercialGoods_Yes.ReadOnly = true;
-                this.columnCommercialGoods_Yes.MaxLength = 1;
-                this.columnCommercialGoods_No.ReadOnly = true;
-                this.columnCommercialGoods_No.MaxLength = 1;
-                this.columnMeatProducts_Yes.ReadOnly = true;
-                this.columnMeatProducts_Yes.MaxLength = 1;
-                this.columnMeatProducts_No.ReadOnly = true;
-                this.columnMeatProducts_No.MaxLength = 1;
-                this.columnCurrencyValue_Yes.ReadOnly = true;
-                this.columnCurrencyValue_Yes.MaxLength = 1;
-                this.columnCurrencyValue_No.ReadOnly = true;
-                this.columnCurrencyValue_No.MaxLength = 1;
-                this.columnGoods_Yes.ReadOnly = true;
-                this.columnGoods_Yes.MaxLength = 1;
-                this.columnGoods_No.ReadOnly = true;
-                this.columnGoods_No.MaxLength = 1;
-                this.columnFarmVisit_Yes.ReadOnly = true;
-                this.columnFarmVisit_Yes.MaxLength = 1;
-                this.columnFarmVisit_No.ReadOnly = true;
-                this.columnFarmVisit_No.MaxLength = 1;
-                this.columnExceedDutyFree_Yes.ReadOnly = true;
-                this.columnExceedDutyFree_Yes.MaxLength = 1;
-                this.columnExceedDutyFree_No.ReadOnly = true;
-                this.columnExceedDutyFree_No.MaxLength = 1;
-                this.columnExceedExemptions_Yes.ReadOnly = true;
-                this.columnExceedExemptions_Yes.MaxLength = 1;
-                this.columnExceedExemptions_No.ReadOnly = true;
-                this.columnExceedExemptions_No.MaxLength = 1;
-                this.columnDurationOfStay.ReadOnly = true;
-                this.columnDurationOfStay.MaxLength = 8000;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Get_CAN_FlightInfoRow NewGet_CAN_FlightInfoRow() {
-                return ((Get_CAN_FlightInfoRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new Get_CAN_FlightInfoRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(Get_CAN_FlightInfoRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.Get_CAN_FlightInfoRowChanged != null)) {
-                    this.Get_CAN_FlightInfoRowChanged(this, new Get_CAN_FlightInfoRowChangeEvent(((Get_CAN_FlightInfoRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.Get_CAN_FlightInfoRowChanging != null)) {
-                    this.Get_CAN_FlightInfoRowChanging(this, new Get_CAN_FlightInfoRowChangeEvent(((Get_CAN_FlightInfoRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.Get_CAN_FlightInfoRowDeleted != null)) {
-                    this.Get_CAN_FlightInfoRowDeleted(this, new Get_CAN_FlightInfoRowChangeEvent(((Get_CAN_FlightInfoRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.Get_CAN_FlightInfoRowDeleting != null)) {
-                    this.Get_CAN_FlightInfoRowDeleting(this, new Get_CAN_FlightInfoRowChangeEvent(((Get_CAN_FlightInfoRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveGet_CAN_FlightInfoRow(Get_CAN_FlightInfoRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CDP_Dataset ds = new CDP_Dataset();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "Get_CAN_FlightInfoDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void Get_CAN_FlightInfoRowChangeEventHandler(object sender, Get_CAN_FlightInfoRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -3239,1033 +2394,949 @@ namespace CDPW {
         }
         
         /// <summary>
-        ///Represents strongly named DataRow class.
+        ///Represents the strongly named DataTable class.
         ///</summary>
-        public partial class Get_CAN_FlightInfoRow : global::System.Data.DataRow {
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Get_CAN_FlightInfoDataTable : global::System.Data.TypedTableBase<Get_CAN_FlightInfoRow> {
             
-            private Get_CAN_FlightInfoDataTable tableGet_CAN_FlightInfo;
+            private global::System.Data.DataColumn columnAirLineFlightNo;
+            
+            private global::System.Data.DataColumn columnAddressId;
+            
+            private global::System.Data.DataColumn columnAddress;
+            
+            private global::System.Data.DataColumn columnCity;
+            
+            private global::System.Data.DataColumn columnCountryName;
+            
+            private global::System.Data.DataColumn columnAdministrativeRegionCode;
+            
+            private global::System.Data.DataColumn columnPostalCode;
+            
+            private global::System.Data.DataColumn columnDate;
+            
+            private global::System.Data.DataColumn columnRank;
+            
+            private global::System.Data.DataColumn columnWArrivingBy1;
+            
+            private global::System.Data.DataColumn columnWArrivingBy2;
+            
+            private global::System.Data.DataColumn columnWArrivingBy3;
+            
+            private global::System.Data.DataColumn columnWArrivingBy4;
+            
+            private global::System.Data.DataColumn columnWTripPurpose1;
+            
+            private global::System.Data.DataColumn columnWTripPurpose2;
+            
+            private global::System.Data.DataColumn columnWTripPurpose3;
+            
+            private global::System.Data.DataColumn columnWArrivingFrom1;
+            
+            private global::System.Data.DataColumn columnWArrivingFrom2;
+            
+            private global::System.Data.DataColumn columnWArrivingFrom3;
+            
+            private global::System.Data.DataColumn columnFirearms_Yes;
+            
+            private global::System.Data.DataColumn columnFirearms_No;
+            
+            private global::System.Data.DataColumn columnCommercialGoods_Yes;
+            
+            private global::System.Data.DataColumn columnCommercialGoods_No;
+            
+            private global::System.Data.DataColumn columnMeatProducts_Yes;
+            
+            private global::System.Data.DataColumn columnMeatProducts_No;
+            
+            private global::System.Data.DataColumn columnCurrencyValue_Yes;
+            
+            private global::System.Data.DataColumn columnCurrencyValue_No;
+            
+            private global::System.Data.DataColumn columnGoods_Yes;
+            
+            private global::System.Data.DataColumn columnGoods_No;
+            
+            private global::System.Data.DataColumn columnFarmVisit_Yes;
+            
+            private global::System.Data.DataColumn columnFarmVisit_No;
+            
+            private global::System.Data.DataColumn columnExceedDutyFree_Yes;
+            
+            private global::System.Data.DataColumn columnExceedDutyFree_No;
+            
+            private global::System.Data.DataColumn columnExceedExemptions_Yes;
+            
+            private global::System.Data.DataColumn columnExceedExemptions_No;
+            
+            private global::System.Data.DataColumn columnDurationOfStay;
+            
+            private global::System.Data.DataColumn columnDate1;
+            
+            private global::System.Data.DataColumn columnDate2;
+            
+            private global::System.Data.DataColumn columnDate3;
+            
+            private global::System.Data.DataColumn columnDate4;
+            
+            private global::System.Data.DataColumn columnDate5;
+            
+            private global::System.Data.DataColumn columnDate6;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal Get_CAN_FlightInfoRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableGet_CAN_FlightInfo = ((Get_CAN_FlightInfoDataTable)(this.Table));
+            public Get_CAN_FlightInfoDataTable() {
+                this.TableName = "Get_CAN_FlightInfo";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string AirLineFlightNo {
+            internal Get_CAN_FlightInfoDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected Get_CAN_FlightInfoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AirLineFlightNoColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.AirLineFlightNoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AirLineFlightNo\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.AirLineFlightNoColumn] = value;
+                    return this.columnAirLineFlightNo;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public long AddressId {
+            public global::System.Data.DataColumn AddressIdColumn {
                 get {
-                    try {
-                        return ((long)(this[this.tableGet_CAN_FlightInfo.AddressIdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AddressId\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.AddressIdColumn] = value;
+                    return this.columnAddressId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Address {
+            public global::System.Data.DataColumn AddressColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.AddressColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Address\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.AddressColumn] = value;
+                    return this.columnAddress;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string City {
+            public global::System.Data.DataColumn CityColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.CityColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'City\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.CityColumn] = value;
+                    return this.columnCity;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string CountryName {
+            public global::System.Data.DataColumn CountryNameColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.CountryNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CountryName\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.CountryNameColumn] = value;
+                    return this.columnCountryName;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string AdministrativeRegionCode {
+            public global::System.Data.DataColumn AdministrativeRegionCodeColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.AdministrativeRegionCodeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AdministrativeRegionCode\' in table \'Get_CAN_FlightInfo\' is " +
-                                "DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.AdministrativeRegionCodeColumn] = value;
+                    return this.columnAdministrativeRegionCode;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string PostalCode {
+            public global::System.Data.DataColumn PostalCodeColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.PostalCodeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PostalCode\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.PostalCodeColumn] = value;
+                    return this.columnPostalCode;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Date {
+            public global::System.Data.DataColumn DateColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.DateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Date\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.DateColumn] = value;
+                    return this.columnDate;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Rank {
+            public global::System.Data.DataColumn RankColumn {
                 get {
-                    try {
-                        return ((int)(this[this.tableGet_CAN_FlightInfo.RankColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Rank\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.RankColumn] = value;
+                    return this.columnRank;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string WArrivingBy1 {
+            public global::System.Data.DataColumn WArrivingBy1Column {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.WArrivingBy1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'WArrivingBy1\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.WArrivingBy1Column] = value;
+                    return this.columnWArrivingBy1;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string WArrivingBy2 {
+            public global::System.Data.DataColumn WArrivingBy2Column {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.WArrivingBy2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'WArrivingBy2\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.WArrivingBy2Column] = value;
+                    return this.columnWArrivingBy2;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string WArrivingBy3 {
+            public global::System.Data.DataColumn WArrivingBy3Column {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.WArrivingBy3Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'WArrivingBy3\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.WArrivingBy3Column] = value;
+                    return this.columnWArrivingBy3;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string WArrivingBy4 {
+            public global::System.Data.DataColumn WArrivingBy4Column {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.WArrivingBy4Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'WArrivingBy4\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.WArrivingBy4Column] = value;
+                    return this.columnWArrivingBy4;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string WTripPurpose1 {
+            public global::System.Data.DataColumn WTripPurpose1Column {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.WTripPurpose1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'WTripPurpose1\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.WTripPurpose1Column] = value;
+                    return this.columnWTripPurpose1;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string WTripPurpose2 {
+            public global::System.Data.DataColumn WTripPurpose2Column {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.WTripPurpose2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'WTripPurpose2\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.WTripPurpose2Column] = value;
+                    return this.columnWTripPurpose2;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string WTripPurpose3 {
+            public global::System.Data.DataColumn WTripPurpose3Column {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.WTripPurpose3Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'WTripPurpose3\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.WTripPurpose3Column] = value;
+                    return this.columnWTripPurpose3;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string WArrivingFrom1 {
+            public global::System.Data.DataColumn WArrivingFrom1Column {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.WArrivingFrom1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'WArrivingFrom1\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.WArrivingFrom1Column] = value;
+                    return this.columnWArrivingFrom1;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string WArrivingFrom2 {
+            public global::System.Data.DataColumn WArrivingFrom2Column {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.WArrivingFrom2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'WArrivingFrom2\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.WArrivingFrom2Column] = value;
+                    return this.columnWArrivingFrom2;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string WArrivingFrom3 {
+            public global::System.Data.DataColumn WArrivingFrom3Column {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.WArrivingFrom3Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'WArrivingFrom3\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.WArrivingFrom3Column] = value;
+                    return this.columnWArrivingFrom3;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Firearms_Yes {
+            public global::System.Data.DataColumn Firearms_YesColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.Firearms_YesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Firearms_Yes\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.Firearms_YesColumn] = value;
+                    return this.columnFirearms_Yes;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Firearms_No {
+            public global::System.Data.DataColumn Firearms_NoColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.Firearms_NoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Firearms_No\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.Firearms_NoColumn] = value;
+                    return this.columnFirearms_No;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string CommercialGoods_Yes {
+            public global::System.Data.DataColumn CommercialGoods_YesColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.CommercialGoods_YesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CommercialGoods_Yes\' in table \'Get_CAN_FlightInfo\' is DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.CommercialGoods_YesColumn] = value;
+                    return this.columnCommercialGoods_Yes;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string CommercialGoods_No {
+            public global::System.Data.DataColumn CommercialGoods_NoColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.CommercialGoods_NoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CommercialGoods_No\' in table \'Get_CAN_FlightInfo\' is DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.CommercialGoods_NoColumn] = value;
+                    return this.columnCommercialGoods_No;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string MeatProducts_Yes {
+            public global::System.Data.DataColumn MeatProducts_YesColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.MeatProducts_YesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MeatProducts_Yes\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.MeatProducts_YesColumn] = value;
+                    return this.columnMeatProducts_Yes;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string MeatProducts_No {
+            public global::System.Data.DataColumn MeatProducts_NoColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.MeatProducts_NoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MeatProducts_No\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.MeatProducts_NoColumn] = value;
+                    return this.columnMeatProducts_No;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string CurrencyValue_Yes {
+            public global::System.Data.DataColumn CurrencyValue_YesColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.CurrencyValue_YesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CurrencyValue_Yes\' in table \'Get_CAN_FlightInfo\' is DBNull." +
-                                "", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.CurrencyValue_YesColumn] = value;
+                    return this.columnCurrencyValue_Yes;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string CurrencyValue_No {
+            public global::System.Data.DataColumn CurrencyValue_NoColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.CurrencyValue_NoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CurrencyValue_No\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.CurrencyValue_NoColumn] = value;
+                    return this.columnCurrencyValue_No;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Goods_Yes {
+            public global::System.Data.DataColumn Goods_YesColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.Goods_YesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Goods_Yes\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.Goods_YesColumn] = value;
+                    return this.columnGoods_Yes;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Goods_No {
+            public global::System.Data.DataColumn Goods_NoColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.Goods_NoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Goods_No\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.Goods_NoColumn] = value;
+                    return this.columnGoods_No;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string FarmVisit_Yes {
+            public global::System.Data.DataColumn FarmVisit_YesColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.FarmVisit_YesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FarmVisit_Yes\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.FarmVisit_YesColumn] = value;
+                    return this.columnFarmVisit_Yes;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string FarmVisit_No {
+            public global::System.Data.DataColumn FarmVisit_NoColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.FarmVisit_NoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FarmVisit_No\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.FarmVisit_NoColumn] = value;
+                    return this.columnFarmVisit_No;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ExceedDutyFree_Yes {
+            public global::System.Data.DataColumn ExceedDutyFree_YesColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.ExceedDutyFree_YesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ExceedDutyFree_Yes\' in table \'Get_CAN_FlightInfo\' is DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.ExceedDutyFree_YesColumn] = value;
+                    return this.columnExceedDutyFree_Yes;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ExceedDutyFree_No {
+            public global::System.Data.DataColumn ExceedDutyFree_NoColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.ExceedDutyFree_NoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ExceedDutyFree_No\' in table \'Get_CAN_FlightInfo\' is DBNull." +
-                                "", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.ExceedDutyFree_NoColumn] = value;
+                    return this.columnExceedDutyFree_No;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ExceedExemptions_Yes {
+            public global::System.Data.DataColumn ExceedExemptions_YesColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.ExceedExemptions_YesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ExceedExemptions_Yes\' in table \'Get_CAN_FlightInfo\' is DBNu" +
-                                "ll.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.ExceedExemptions_YesColumn] = value;
+                    return this.columnExceedExemptions_Yes;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ExceedExemptions_No {
+            public global::System.Data.DataColumn ExceedExemptions_NoColumn {
                 get {
-                    try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.ExceedExemptions_NoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ExceedExemptions_No\' in table \'Get_CAN_FlightInfo\' is DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.ExceedExemptions_NoColumn] = value;
+                    return this.columnExceedExemptions_No;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string DurationOfStay {
+            public global::System.Data.DataColumn DurationOfStayColumn {
                 get {
+                    return this.columnDurationOfStay;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Date1Column {
+                get {
+                    return this.columnDate1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Date2Column {
+                get {
+                    return this.columnDate2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Date3Column {
+                get {
+                    return this.columnDate3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Date4Column {
+                get {
+                    return this.columnDate4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Date5Column {
+                get {
+                    return this.columnDate5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Date6Column {
+                get {
+                    return this.columnDate6;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Get_CAN_FlightInfoRow this[int index] {
+                get {
+                    return ((Get_CAN_FlightInfoRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Get_CAN_FlightInfoRowChangeEventHandler Get_CAN_FlightInfoRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Get_CAN_FlightInfoRowChangeEventHandler Get_CAN_FlightInfoRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Get_CAN_FlightInfoRowChangeEventHandler Get_CAN_FlightInfoRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Get_CAN_FlightInfoRowChangeEventHandler Get_CAN_FlightInfoRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddGet_CAN_FlightInfoRow(Get_CAN_FlightInfoRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Get_CAN_FlightInfoRow AddGet_CAN_FlightInfoRow(
+                        string AirLineFlightNo, 
+                        long AddressId, 
+                        string Address, 
+                        string City, 
+                        string CountryName, 
+                        string AdministrativeRegionCode, 
+                        string PostalCode, 
+                        string Date, 
+                        int Rank, 
+                        string WArrivingBy1, 
+                        string WArrivingBy2, 
+                        string WArrivingBy3, 
+                        string WArrivingBy4, 
+                        string WTripPurpose1, 
+                        string WTripPurpose2, 
+                        string WTripPurpose3, 
+                        string WArrivingFrom1, 
+                        string WArrivingFrom2, 
+                        string WArrivingFrom3, 
+                        string Firearms_Yes, 
+                        string Firearms_No, 
+                        string CommercialGoods_Yes, 
+                        string CommercialGoods_No, 
+                        string MeatProducts_Yes, 
+                        string MeatProducts_No, 
+                        string CurrencyValue_Yes, 
+                        string CurrencyValue_No, 
+                        string Goods_Yes, 
+                        string Goods_No, 
+                        string FarmVisit_Yes, 
+                        string FarmVisit_No, 
+                        string ExceedDutyFree_Yes, 
+                        string ExceedDutyFree_No, 
+                        string ExceedExemptions_Yes, 
+                        string ExceedExemptions_No, 
+                        string DurationOfStay, 
+                        string Date1, 
+                        string Date2, 
+                        string Date3, 
+                        string Date4, 
+                        string Date5, 
+                        string Date6) {
+                Get_CAN_FlightInfoRow rowGet_CAN_FlightInfoRow = ((Get_CAN_FlightInfoRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        AirLineFlightNo,
+                        AddressId,
+                        Address,
+                        City,
+                        CountryName,
+                        AdministrativeRegionCode,
+                        PostalCode,
+                        Date,
+                        Rank,
+                        WArrivingBy1,
+                        WArrivingBy2,
+                        WArrivingBy3,
+                        WArrivingBy4,
+                        WTripPurpose1,
+                        WTripPurpose2,
+                        WTripPurpose3,
+                        WArrivingFrom1,
+                        WArrivingFrom2,
+                        WArrivingFrom3,
+                        Firearms_Yes,
+                        Firearms_No,
+                        CommercialGoods_Yes,
+                        CommercialGoods_No,
+                        MeatProducts_Yes,
+                        MeatProducts_No,
+                        CurrencyValue_Yes,
+                        CurrencyValue_No,
+                        Goods_Yes,
+                        Goods_No,
+                        FarmVisit_Yes,
+                        FarmVisit_No,
+                        ExceedDutyFree_Yes,
+                        ExceedDutyFree_No,
+                        ExceedExemptions_Yes,
+                        ExceedExemptions_No,
+                        DurationOfStay,
+                        Date1,
+                        Date2,
+                        Date3,
+                        Date4,
+                        Date5,
+                        Date6};
+                rowGet_CAN_FlightInfoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowGet_CAN_FlightInfoRow);
+                return rowGet_CAN_FlightInfoRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Get_CAN_FlightInfoDataTable cln = ((Get_CAN_FlightInfoDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Get_CAN_FlightInfoDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnAirLineFlightNo = base.Columns["AirLineFlightNo"];
+                this.columnAddressId = base.Columns["AddressId"];
+                this.columnAddress = base.Columns["Address"];
+                this.columnCity = base.Columns["City"];
+                this.columnCountryName = base.Columns["CountryName"];
+                this.columnAdministrativeRegionCode = base.Columns["AdministrativeRegionCode"];
+                this.columnPostalCode = base.Columns["PostalCode"];
+                this.columnDate = base.Columns["Date"];
+                this.columnRank = base.Columns["Rank"];
+                this.columnWArrivingBy1 = base.Columns["WArrivingBy1"];
+                this.columnWArrivingBy2 = base.Columns["WArrivingBy2"];
+                this.columnWArrivingBy3 = base.Columns["WArrivingBy3"];
+                this.columnWArrivingBy4 = base.Columns["WArrivingBy4"];
+                this.columnWTripPurpose1 = base.Columns["WTripPurpose1"];
+                this.columnWTripPurpose2 = base.Columns["WTripPurpose2"];
+                this.columnWTripPurpose3 = base.Columns["WTripPurpose3"];
+                this.columnWArrivingFrom1 = base.Columns["WArrivingFrom1"];
+                this.columnWArrivingFrom2 = base.Columns["WArrivingFrom2"];
+                this.columnWArrivingFrom3 = base.Columns["WArrivingFrom3"];
+                this.columnFirearms_Yes = base.Columns["Firearms_Yes"];
+                this.columnFirearms_No = base.Columns["Firearms_No"];
+                this.columnCommercialGoods_Yes = base.Columns["CommercialGoods_Yes"];
+                this.columnCommercialGoods_No = base.Columns["CommercialGoods_No"];
+                this.columnMeatProducts_Yes = base.Columns["MeatProducts_Yes"];
+                this.columnMeatProducts_No = base.Columns["MeatProducts_No"];
+                this.columnCurrencyValue_Yes = base.Columns["CurrencyValue_Yes"];
+                this.columnCurrencyValue_No = base.Columns["CurrencyValue_No"];
+                this.columnGoods_Yes = base.Columns["Goods_Yes"];
+                this.columnGoods_No = base.Columns["Goods_No"];
+                this.columnFarmVisit_Yes = base.Columns["FarmVisit_Yes"];
+                this.columnFarmVisit_No = base.Columns["FarmVisit_No"];
+                this.columnExceedDutyFree_Yes = base.Columns["ExceedDutyFree_Yes"];
+                this.columnExceedDutyFree_No = base.Columns["ExceedDutyFree_No"];
+                this.columnExceedExemptions_Yes = base.Columns["ExceedExemptions_Yes"];
+                this.columnExceedExemptions_No = base.Columns["ExceedExemptions_No"];
+                this.columnDurationOfStay = base.Columns["DurationOfStay"];
+                this.columnDate1 = base.Columns["Date1"];
+                this.columnDate2 = base.Columns["Date2"];
+                this.columnDate3 = base.Columns["Date3"];
+                this.columnDate4 = base.Columns["Date4"];
+                this.columnDate5 = base.Columns["Date5"];
+                this.columnDate6 = base.Columns["Date6"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnAirLineFlightNo = new global::System.Data.DataColumn("AirLineFlightNo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAirLineFlightNo);
+                this.columnAddressId = new global::System.Data.DataColumn("AddressId", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAddressId);
+                this.columnAddress = new global::System.Data.DataColumn("Address", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAddress);
+                this.columnCity = new global::System.Data.DataColumn("City", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCity);
+                this.columnCountryName = new global::System.Data.DataColumn("CountryName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCountryName);
+                this.columnAdministrativeRegionCode = new global::System.Data.DataColumn("AdministrativeRegionCode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAdministrativeRegionCode);
+                this.columnPostalCode = new global::System.Data.DataColumn("PostalCode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPostalCode);
+                this.columnDate = new global::System.Data.DataColumn("Date", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate);
+                this.columnRank = new global::System.Data.DataColumn("Rank", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRank);
+                this.columnWArrivingBy1 = new global::System.Data.DataColumn("WArrivingBy1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWArrivingBy1);
+                this.columnWArrivingBy2 = new global::System.Data.DataColumn("WArrivingBy2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWArrivingBy2);
+                this.columnWArrivingBy3 = new global::System.Data.DataColumn("WArrivingBy3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWArrivingBy3);
+                this.columnWArrivingBy4 = new global::System.Data.DataColumn("WArrivingBy4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWArrivingBy4);
+                this.columnWTripPurpose1 = new global::System.Data.DataColumn("WTripPurpose1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWTripPurpose1);
+                this.columnWTripPurpose2 = new global::System.Data.DataColumn("WTripPurpose2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWTripPurpose2);
+                this.columnWTripPurpose3 = new global::System.Data.DataColumn("WTripPurpose3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWTripPurpose3);
+                this.columnWArrivingFrom1 = new global::System.Data.DataColumn("WArrivingFrom1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWArrivingFrom1);
+                this.columnWArrivingFrom2 = new global::System.Data.DataColumn("WArrivingFrom2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWArrivingFrom2);
+                this.columnWArrivingFrom3 = new global::System.Data.DataColumn("WArrivingFrom3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWArrivingFrom3);
+                this.columnFirearms_Yes = new global::System.Data.DataColumn("Firearms_Yes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFirearms_Yes);
+                this.columnFirearms_No = new global::System.Data.DataColumn("Firearms_No", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFirearms_No);
+                this.columnCommercialGoods_Yes = new global::System.Data.DataColumn("CommercialGoods_Yes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCommercialGoods_Yes);
+                this.columnCommercialGoods_No = new global::System.Data.DataColumn("CommercialGoods_No", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCommercialGoods_No);
+                this.columnMeatProducts_Yes = new global::System.Data.DataColumn("MeatProducts_Yes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMeatProducts_Yes);
+                this.columnMeatProducts_No = new global::System.Data.DataColumn("MeatProducts_No", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMeatProducts_No);
+                this.columnCurrencyValue_Yes = new global::System.Data.DataColumn("CurrencyValue_Yes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCurrencyValue_Yes);
+                this.columnCurrencyValue_No = new global::System.Data.DataColumn("CurrencyValue_No", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCurrencyValue_No);
+                this.columnGoods_Yes = new global::System.Data.DataColumn("Goods_Yes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGoods_Yes);
+                this.columnGoods_No = new global::System.Data.DataColumn("Goods_No", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGoods_No);
+                this.columnFarmVisit_Yes = new global::System.Data.DataColumn("FarmVisit_Yes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFarmVisit_Yes);
+                this.columnFarmVisit_No = new global::System.Data.DataColumn("FarmVisit_No", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFarmVisit_No);
+                this.columnExceedDutyFree_Yes = new global::System.Data.DataColumn("ExceedDutyFree_Yes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExceedDutyFree_Yes);
+                this.columnExceedDutyFree_No = new global::System.Data.DataColumn("ExceedDutyFree_No", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExceedDutyFree_No);
+                this.columnExceedExemptions_Yes = new global::System.Data.DataColumn("ExceedExemptions_Yes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExceedExemptions_Yes);
+                this.columnExceedExemptions_No = new global::System.Data.DataColumn("ExceedExemptions_No", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExceedExemptions_No);
+                this.columnDurationOfStay = new global::System.Data.DataColumn("DurationOfStay", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDurationOfStay);
+                this.columnDate1 = new global::System.Data.DataColumn("Date1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate1);
+                this.columnDate2 = new global::System.Data.DataColumn("Date2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate2);
+                this.columnDate3 = new global::System.Data.DataColumn("Date3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate3);
+                this.columnDate4 = new global::System.Data.DataColumn("Date4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate4);
+                this.columnDate5 = new global::System.Data.DataColumn("Date5", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate5);
+                this.columnDate6 = new global::System.Data.DataColumn("Date6", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate6);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnAddressId}, false));
+                this.columnAirLineFlightNo.ReadOnly = true;
+                this.columnAirLineFlightNo.MaxLength = 9;
+                this.columnAddressId.Unique = true;
+                this.columnAddress.ReadOnly = true;
+                this.columnAddress.MaxLength = 200;
+                this.columnCity.ReadOnly = true;
+                this.columnCity.MaxLength = 4000;
+                this.columnCountryName.ReadOnly = true;
+                this.columnCountryName.MaxLength = 9;
+                this.columnAdministrativeRegionCode.ReadOnly = true;
+                this.columnAdministrativeRegionCode.MaxLength = 4;
+                this.columnPostalCode.ReadOnly = true;
+                this.columnPostalCode.MaxLength = 7;
+                this.columnDate.ReadOnly = true;
+                this.columnDate.MaxLength = 8;
+                this.columnRank.ReadOnly = true;
+                this.columnWArrivingBy1.ReadOnly = true;
+                this.columnWArrivingBy1.MaxLength = 1;
+                this.columnWArrivingBy2.ReadOnly = true;
+                this.columnWArrivingBy2.MaxLength = 1;
+                this.columnWArrivingBy3.ReadOnly = true;
+                this.columnWArrivingBy3.MaxLength = 1;
+                this.columnWArrivingBy4.ReadOnly = true;
+                this.columnWArrivingBy4.MaxLength = 1;
+                this.columnWTripPurpose1.ReadOnly = true;
+                this.columnWTripPurpose1.MaxLength = 1;
+                this.columnWTripPurpose2.ReadOnly = true;
+                this.columnWTripPurpose2.MaxLength = 1;
+                this.columnWTripPurpose3.ReadOnly = true;
+                this.columnWTripPurpose3.MaxLength = 1;
+                this.columnWArrivingFrom1.ReadOnly = true;
+                this.columnWArrivingFrom1.MaxLength = 1;
+                this.columnWArrivingFrom2.ReadOnly = true;
+                this.columnWArrivingFrom2.MaxLength = 1;
+                this.columnWArrivingFrom3.ReadOnly = true;
+                this.columnWArrivingFrom3.MaxLength = 1;
+                this.columnFirearms_Yes.ReadOnly = true;
+                this.columnFirearms_Yes.MaxLength = 1;
+                this.columnFirearms_No.ReadOnly = true;
+                this.columnFirearms_No.MaxLength = 1;
+                this.columnCommercialGoods_Yes.ReadOnly = true;
+                this.columnCommercialGoods_Yes.MaxLength = 1;
+                this.columnCommercialGoods_No.ReadOnly = true;
+                this.columnCommercialGoods_No.MaxLength = 1;
+                this.columnMeatProducts_Yes.ReadOnly = true;
+                this.columnMeatProducts_Yes.MaxLength = 1;
+                this.columnMeatProducts_No.ReadOnly = true;
+                this.columnMeatProducts_No.MaxLength = 1;
+                this.columnCurrencyValue_Yes.ReadOnly = true;
+                this.columnCurrencyValue_Yes.MaxLength = 1;
+                this.columnCurrencyValue_No.ReadOnly = true;
+                this.columnCurrencyValue_No.MaxLength = 1;
+                this.columnGoods_Yes.ReadOnly = true;
+                this.columnGoods_Yes.MaxLength = 1;
+                this.columnGoods_No.ReadOnly = true;
+                this.columnGoods_No.MaxLength = 1;
+                this.columnFarmVisit_Yes.ReadOnly = true;
+                this.columnFarmVisit_Yes.MaxLength = 1;
+                this.columnFarmVisit_No.ReadOnly = true;
+                this.columnFarmVisit_No.MaxLength = 1;
+                this.columnExceedDutyFree_Yes.ReadOnly = true;
+                this.columnExceedDutyFree_Yes.MaxLength = 1;
+                this.columnExceedDutyFree_No.ReadOnly = true;
+                this.columnExceedDutyFree_No.MaxLength = 1;
+                this.columnExceedExemptions_Yes.ReadOnly = true;
+                this.columnExceedExemptions_Yes.MaxLength = 1;
+                this.columnExceedExemptions_No.ReadOnly = true;
+                this.columnExceedExemptions_No.MaxLength = 1;
+                this.columnDurationOfStay.ReadOnly = true;
+                this.columnDurationOfStay.MaxLength = 8000;
+                this.columnDate1.ReadOnly = true;
+                this.columnDate1.MaxLength = 1;
+                this.columnDate2.ReadOnly = true;
+                this.columnDate2.MaxLength = 1;
+                this.columnDate3.ReadOnly = true;
+                this.columnDate3.MaxLength = 1;
+                this.columnDate4.ReadOnly = true;
+                this.columnDate4.MaxLength = 1;
+                this.columnDate5.ReadOnly = true;
+                this.columnDate5.MaxLength = 1;
+                this.columnDate6.ReadOnly = true;
+                this.columnDate6.MaxLength = 1;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Get_CAN_FlightInfoRow NewGet_CAN_FlightInfoRow() {
+                return ((Get_CAN_FlightInfoRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Get_CAN_FlightInfoRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Get_CAN_FlightInfoRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Get_CAN_FlightInfoRowChanged != null)) {
+                    this.Get_CAN_FlightInfoRowChanged(this, new Get_CAN_FlightInfoRowChangeEvent(((Get_CAN_FlightInfoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Get_CAN_FlightInfoRowChanging != null)) {
+                    this.Get_CAN_FlightInfoRowChanging(this, new Get_CAN_FlightInfoRowChangeEvent(((Get_CAN_FlightInfoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Get_CAN_FlightInfoRowDeleted != null)) {
+                    this.Get_CAN_FlightInfoRowDeleted(this, new Get_CAN_FlightInfoRowChangeEvent(((Get_CAN_FlightInfoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Get_CAN_FlightInfoRowDeleting != null)) {
+                    this.Get_CAN_FlightInfoRowDeleting(this, new Get_CAN_FlightInfoRowChangeEvent(((Get_CAN_FlightInfoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveGet_CAN_FlightInfoRow(Get_CAN_FlightInfoRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                CDP_Dataset ds = new CDP_Dataset();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Get_CAN_FlightInfoDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
                     try {
-                        return ((string)(this[this.tableGet_CAN_FlightInfo.DurationOfStayColumn]));
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DurationOfStay\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
                     }
                 }
-                set {
-                    this[this.tableGet_CAN_FlightInfo.DurationOfStayColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAirLineFlightNoNull() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.AirLineFlightNoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAirLineFlightNoNull() {
-                this[this.tableGet_CAN_FlightInfo.AirLineFlightNoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAddressIdNull() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.AddressIdColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAddressIdNull() {
-                this[this.tableGet_CAN_FlightInfo.AddressIdColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAddressNull() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.AddressColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAddressNull() {
-                this[this.tableGet_CAN_FlightInfo.AddressColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCityNull() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.CityColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCityNull() {
-                this[this.tableGet_CAN_FlightInfo.CityColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCountryNameNull() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.CountryNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCountryNameNull() {
-                this[this.tableGet_CAN_FlightInfo.CountryNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAdministrativeRegionCodeNull() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.AdministrativeRegionCodeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAdministrativeRegionCodeNull() {
-                this[this.tableGet_CAN_FlightInfo.AdministrativeRegionCodeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPostalCodeNull() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.PostalCodeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPostalCodeNull() {
-                this[this.tableGet_CAN_FlightInfo.PostalCodeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDateNull() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.DateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDateNull() {
-                this[this.tableGet_CAN_FlightInfo.DateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsRankNull() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.RankColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetRankNull() {
-                this[this.tableGet_CAN_FlightInfo.RankColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsWArrivingBy1Null() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.WArrivingBy1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetWArrivingBy1Null() {
-                this[this.tableGet_CAN_FlightInfo.WArrivingBy1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsWArrivingBy2Null() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.WArrivingBy2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetWArrivingBy2Null() {
-                this[this.tableGet_CAN_FlightInfo.WArrivingBy2Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsWArrivingBy3Null() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.WArrivingBy3Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetWArrivingBy3Null() {
-                this[this.tableGet_CAN_FlightInfo.WArrivingBy3Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsWArrivingBy4Null() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.WArrivingBy4Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetWArrivingBy4Null() {
-                this[this.tableGet_CAN_FlightInfo.WArrivingBy4Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsWTripPurpose1Null() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.WTripPurpose1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetWTripPurpose1Null() {
-                this[this.tableGet_CAN_FlightInfo.WTripPurpose1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsWTripPurpose2Null() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.WTripPurpose2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetWTripPurpose2Null() {
-                this[this.tableGet_CAN_FlightInfo.WTripPurpose2Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsWTripPurpose3Null() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.WTripPurpose3Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetWTripPurpose3Null() {
-                this[this.tableGet_CAN_FlightInfo.WTripPurpose3Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsWArrivingFrom1Null() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.WArrivingFrom1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetWArrivingFrom1Null() {
-                this[this.tableGet_CAN_FlightInfo.WArrivingFrom1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsWArrivingFrom2Null() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.WArrivingFrom2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetWArrivingFrom2Null() {
-                this[this.tableGet_CAN_FlightInfo.WArrivingFrom2Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsWArrivingFrom3Null() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.WArrivingFrom3Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetWArrivingFrom3Null() {
-                this[this.tableGet_CAN_FlightInfo.WArrivingFrom3Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFirearms_YesNull() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.Firearms_YesColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFirearms_YesNull() {
-                this[this.tableGet_CAN_FlightInfo.Firearms_YesColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFirearms_NoNull() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.Firearms_NoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFirearms_NoNull() {
-                this[this.tableGet_CAN_FlightInfo.Firearms_NoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCommercialGoods_YesNull() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.CommercialGoods_YesColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCommercialGoods_YesNull() {
-                this[this.tableGet_CAN_FlightInfo.CommercialGoods_YesColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCommercialGoods_NoNull() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.CommercialGoods_NoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCommercialGoods_NoNull() {
-                this[this.tableGet_CAN_FlightInfo.CommercialGoods_NoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsMeatProducts_YesNull() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.MeatProducts_YesColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetMeatProducts_YesNull() {
-                this[this.tableGet_CAN_FlightInfo.MeatProducts_YesColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsMeatProducts_NoNull() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.MeatProducts_NoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetMeatProducts_NoNull() {
-                this[this.tableGet_CAN_FlightInfo.MeatProducts_NoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCurrencyValue_YesNull() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.CurrencyValue_YesColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCurrencyValue_YesNull() {
-                this[this.tableGet_CAN_FlightInfo.CurrencyValue_YesColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCurrencyValue_NoNull() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.CurrencyValue_NoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCurrencyValue_NoNull() {
-                this[this.tableGet_CAN_FlightInfo.CurrencyValue_NoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsGoods_YesNull() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.Goods_YesColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetGoods_YesNull() {
-                this[this.tableGet_CAN_FlightInfo.Goods_YesColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsGoods_NoNull() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.Goods_NoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetGoods_NoNull() {
-                this[this.tableGet_CAN_FlightInfo.Goods_NoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFarmVisit_YesNull() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.FarmVisit_YesColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFarmVisit_YesNull() {
-                this[this.tableGet_CAN_FlightInfo.FarmVisit_YesColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFarmVisit_NoNull() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.FarmVisit_NoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFarmVisit_NoNull() {
-                this[this.tableGet_CAN_FlightInfo.FarmVisit_NoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExceedDutyFree_YesNull() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.ExceedDutyFree_YesColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExceedDutyFree_YesNull() {
-                this[this.tableGet_CAN_FlightInfo.ExceedDutyFree_YesColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExceedDutyFree_NoNull() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.ExceedDutyFree_NoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExceedDutyFree_NoNull() {
-                this[this.tableGet_CAN_FlightInfo.ExceedDutyFree_NoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExceedExemptions_YesNull() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.ExceedExemptions_YesColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExceedExemptions_YesNull() {
-                this[this.tableGet_CAN_FlightInfo.ExceedExemptions_YesColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExceedExemptions_NoNull() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.ExceedExemptions_NoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExceedExemptions_NoNull() {
-                this[this.tableGet_CAN_FlightInfo.ExceedExemptions_NoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDurationOfStayNull() {
-                return this.IsNull(this.tableGet_CAN_FlightInfo.DurationOfStayColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDurationOfStayNull() {
-                this[this.tableGet_CAN_FlightInfo.DurationOfStayColumn] = global::System.Convert.DBNull;
+                xs.Add(dsSchema);
+                return type;
             }
         }
         
@@ -5601,36 +4672,1201 @@ namespace CDPW {
         }
         
         /// <summary>
-        ///Row event argument class
+        ///Represents strongly named DataRow class.
         ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class Get_CAN_FlightInfoRowChangeEvent : global::System.EventArgs {
+        public partial class Get_CAN_FlightInfoRow : global::System.Data.DataRow {
             
-            private Get_CAN_FlightInfoRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
+            private Get_CAN_FlightInfoDataTable tableGet_CAN_FlightInfo;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Get_CAN_FlightInfoRowChangeEvent(Get_CAN_FlightInfoRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
+            internal Get_CAN_FlightInfoRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableGet_CAN_FlightInfo = ((Get_CAN_FlightInfoDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Get_CAN_FlightInfoRow Row {
+            public string AirLineFlightNo {
                 get {
-                    return this.eventRow;
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.AirLineFlightNoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'AirLineFlightNo\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.AirLineFlightNoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
+            public long AddressId {
                 get {
-                    return this.eventAction;
+                    try {
+                        return ((long)(this[this.tableGet_CAN_FlightInfo.AddressIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'AddressId\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
                 }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.AddressIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Address {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.AddressColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Address\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.AddressColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string City {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.CityColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'City\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.CityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CountryName {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.CountryNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CountryName\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.CountryNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string AdministrativeRegionCode {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.AdministrativeRegionCodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'AdministrativeRegionCode\' in table \'Get_CAN_FlightInfo\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.AdministrativeRegionCodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PostalCode {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.PostalCodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PostalCode\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.PostalCodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Date {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.DateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Date\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.DateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Rank {
+                get {
+                    try {
+                        return ((int)(this[this.tableGet_CAN_FlightInfo.RankColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Rank\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.RankColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string WArrivingBy1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.WArrivingBy1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'WArrivingBy1\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.WArrivingBy1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string WArrivingBy2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.WArrivingBy2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'WArrivingBy2\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.WArrivingBy2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string WArrivingBy3 {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.WArrivingBy3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'WArrivingBy3\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.WArrivingBy3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string WArrivingBy4 {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.WArrivingBy4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'WArrivingBy4\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.WArrivingBy4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string WTripPurpose1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.WTripPurpose1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'WTripPurpose1\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.WTripPurpose1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string WTripPurpose2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.WTripPurpose2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'WTripPurpose2\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.WTripPurpose2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string WTripPurpose3 {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.WTripPurpose3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'WTripPurpose3\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.WTripPurpose3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string WArrivingFrom1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.WArrivingFrom1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'WArrivingFrom1\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.WArrivingFrom1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string WArrivingFrom2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.WArrivingFrom2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'WArrivingFrom2\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.WArrivingFrom2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string WArrivingFrom3 {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.WArrivingFrom3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'WArrivingFrom3\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.WArrivingFrom3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Firearms_Yes {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.Firearms_YesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Firearms_Yes\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.Firearms_YesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Firearms_No {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.Firearms_NoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Firearms_No\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.Firearms_NoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CommercialGoods_Yes {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.CommercialGoods_YesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CommercialGoods_Yes\' in table \'Get_CAN_FlightInfo\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.CommercialGoods_YesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CommercialGoods_No {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.CommercialGoods_NoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CommercialGoods_No\' in table \'Get_CAN_FlightInfo\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.CommercialGoods_NoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MeatProducts_Yes {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.MeatProducts_YesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MeatProducts_Yes\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.MeatProducts_YesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MeatProducts_No {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.MeatProducts_NoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'MeatProducts_No\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.MeatProducts_NoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CurrencyValue_Yes {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.CurrencyValue_YesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CurrencyValue_Yes\' in table \'Get_CAN_FlightInfo\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.CurrencyValue_YesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CurrencyValue_No {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.CurrencyValue_NoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CurrencyValue_No\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.CurrencyValue_NoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Goods_Yes {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.Goods_YesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Goods_Yes\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.Goods_YesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Goods_No {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.Goods_NoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Goods_No\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.Goods_NoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string FarmVisit_Yes {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.FarmVisit_YesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FarmVisit_Yes\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.FarmVisit_YesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string FarmVisit_No {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.FarmVisit_NoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FarmVisit_No\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.FarmVisit_NoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ExceedDutyFree_Yes {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.ExceedDutyFree_YesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ExceedDutyFree_Yes\' in table \'Get_CAN_FlightInfo\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.ExceedDutyFree_YesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ExceedDutyFree_No {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.ExceedDutyFree_NoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ExceedDutyFree_No\' in table \'Get_CAN_FlightInfo\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.ExceedDutyFree_NoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ExceedExemptions_Yes {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.ExceedExemptions_YesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ExceedExemptions_Yes\' in table \'Get_CAN_FlightInfo\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.ExceedExemptions_YesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ExceedExemptions_No {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.ExceedExemptions_NoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ExceedExemptions_No\' in table \'Get_CAN_FlightInfo\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.ExceedExemptions_NoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DurationOfStay {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.DurationOfStayColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DurationOfStay\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.DurationOfStayColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Date1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.Date1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Date1\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.Date1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Date2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.Date2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Date2\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.Date2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Date3 {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.Date3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Date3\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.Date3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Date4 {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.Date4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Date4\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.Date4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Date5 {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.Date5Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Date5\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.Date5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Date6 {
+                get {
+                    try {
+                        return ((string)(this[this.tableGet_CAN_FlightInfo.Date6Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Date6\' in table \'Get_CAN_FlightInfo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGet_CAN_FlightInfo.Date6Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAirLineFlightNoNull() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.AirLineFlightNoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAirLineFlightNoNull() {
+                this[this.tableGet_CAN_FlightInfo.AirLineFlightNoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAddressIdNull() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.AddressIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAddressIdNull() {
+                this[this.tableGet_CAN_FlightInfo.AddressIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAddressNull() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.AddressColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAddressNull() {
+                this[this.tableGet_CAN_FlightInfo.AddressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCityNull() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.CityColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCityNull() {
+                this[this.tableGet_CAN_FlightInfo.CityColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCountryNameNull() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.CountryNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCountryNameNull() {
+                this[this.tableGet_CAN_FlightInfo.CountryNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAdministrativeRegionCodeNull() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.AdministrativeRegionCodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAdministrativeRegionCodeNull() {
+                this[this.tableGet_CAN_FlightInfo.AdministrativeRegionCodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPostalCodeNull() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.PostalCodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPostalCodeNull() {
+                this[this.tableGet_CAN_FlightInfo.PostalCodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDateNull() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.DateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDateNull() {
+                this[this.tableGet_CAN_FlightInfo.DateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsRankNull() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.RankColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetRankNull() {
+                this[this.tableGet_CAN_FlightInfo.RankColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsWArrivingBy1Null() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.WArrivingBy1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetWArrivingBy1Null() {
+                this[this.tableGet_CAN_FlightInfo.WArrivingBy1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsWArrivingBy2Null() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.WArrivingBy2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetWArrivingBy2Null() {
+                this[this.tableGet_CAN_FlightInfo.WArrivingBy2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsWArrivingBy3Null() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.WArrivingBy3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetWArrivingBy3Null() {
+                this[this.tableGet_CAN_FlightInfo.WArrivingBy3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsWArrivingBy4Null() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.WArrivingBy4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetWArrivingBy4Null() {
+                this[this.tableGet_CAN_FlightInfo.WArrivingBy4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsWTripPurpose1Null() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.WTripPurpose1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetWTripPurpose1Null() {
+                this[this.tableGet_CAN_FlightInfo.WTripPurpose1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsWTripPurpose2Null() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.WTripPurpose2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetWTripPurpose2Null() {
+                this[this.tableGet_CAN_FlightInfo.WTripPurpose2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsWTripPurpose3Null() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.WTripPurpose3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetWTripPurpose3Null() {
+                this[this.tableGet_CAN_FlightInfo.WTripPurpose3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsWArrivingFrom1Null() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.WArrivingFrom1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetWArrivingFrom1Null() {
+                this[this.tableGet_CAN_FlightInfo.WArrivingFrom1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsWArrivingFrom2Null() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.WArrivingFrom2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetWArrivingFrom2Null() {
+                this[this.tableGet_CAN_FlightInfo.WArrivingFrom2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsWArrivingFrom3Null() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.WArrivingFrom3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetWArrivingFrom3Null() {
+                this[this.tableGet_CAN_FlightInfo.WArrivingFrom3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFirearms_YesNull() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.Firearms_YesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFirearms_YesNull() {
+                this[this.tableGet_CAN_FlightInfo.Firearms_YesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFirearms_NoNull() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.Firearms_NoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFirearms_NoNull() {
+                this[this.tableGet_CAN_FlightInfo.Firearms_NoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCommercialGoods_YesNull() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.CommercialGoods_YesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCommercialGoods_YesNull() {
+                this[this.tableGet_CAN_FlightInfo.CommercialGoods_YesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCommercialGoods_NoNull() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.CommercialGoods_NoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCommercialGoods_NoNull() {
+                this[this.tableGet_CAN_FlightInfo.CommercialGoods_NoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMeatProducts_YesNull() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.MeatProducts_YesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMeatProducts_YesNull() {
+                this[this.tableGet_CAN_FlightInfo.MeatProducts_YesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMeatProducts_NoNull() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.MeatProducts_NoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMeatProducts_NoNull() {
+                this[this.tableGet_CAN_FlightInfo.MeatProducts_NoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCurrencyValue_YesNull() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.CurrencyValue_YesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCurrencyValue_YesNull() {
+                this[this.tableGet_CAN_FlightInfo.CurrencyValue_YesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCurrencyValue_NoNull() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.CurrencyValue_NoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCurrencyValue_NoNull() {
+                this[this.tableGet_CAN_FlightInfo.CurrencyValue_NoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGoods_YesNull() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.Goods_YesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGoods_YesNull() {
+                this[this.tableGet_CAN_FlightInfo.Goods_YesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGoods_NoNull() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.Goods_NoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGoods_NoNull() {
+                this[this.tableGet_CAN_FlightInfo.Goods_NoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFarmVisit_YesNull() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.FarmVisit_YesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFarmVisit_YesNull() {
+                this[this.tableGet_CAN_FlightInfo.FarmVisit_YesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFarmVisit_NoNull() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.FarmVisit_NoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFarmVisit_NoNull() {
+                this[this.tableGet_CAN_FlightInfo.FarmVisit_NoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsExceedDutyFree_YesNull() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.ExceedDutyFree_YesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetExceedDutyFree_YesNull() {
+                this[this.tableGet_CAN_FlightInfo.ExceedDutyFree_YesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsExceedDutyFree_NoNull() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.ExceedDutyFree_NoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetExceedDutyFree_NoNull() {
+                this[this.tableGet_CAN_FlightInfo.ExceedDutyFree_NoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsExceedExemptions_YesNull() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.ExceedExemptions_YesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetExceedExemptions_YesNull() {
+                this[this.tableGet_CAN_FlightInfo.ExceedExemptions_YesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsExceedExemptions_NoNull() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.ExceedExemptions_NoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetExceedExemptions_NoNull() {
+                this[this.tableGet_CAN_FlightInfo.ExceedExemptions_NoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDurationOfStayNull() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.DurationOfStayColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDurationOfStayNull() {
+                this[this.tableGet_CAN_FlightInfo.DurationOfStayColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDate1Null() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.Date1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDate1Null() {
+                this[this.tableGet_CAN_FlightInfo.Date1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDate2Null() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.Date2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDate2Null() {
+                this[this.tableGet_CAN_FlightInfo.Date2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDate3Null() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.Date3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDate3Null() {
+                this[this.tableGet_CAN_FlightInfo.Date3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDate4Null() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.Date4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDate4Null() {
+                this[this.tableGet_CAN_FlightInfo.Date4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDate5Null() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.Date5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDate5Null() {
+                this[this.tableGet_CAN_FlightInfo.Date5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDate6Null() {
+                return this.IsNull(this.tableGet_CAN_FlightInfo.Date6Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDate6Null() {
+                this[this.tableGet_CAN_FlightInfo.Date6Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -5803,215 +6039,44 @@ namespace CDPW {
                 }
             }
         }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class Get_CAN_FlightInfoRowChangeEvent : global::System.EventArgs {
+            
+            private Get_CAN_FlightInfoRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Get_CAN_FlightInfoRowChangeEvent(Get_CAN_FlightInfoRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Get_CAN_FlightInfoRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
     }
 }
 namespace CDPW.CDP_DatasetTableAdapters {
     
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class Get_CAN_FlightInfoTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public Get_CAN_FlightInfoTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Get_CAN_FlightInfo";
-            tableMapping.ColumnMappings.Add("AirLineFlightNo", "AirLineFlightNo");
-            tableMapping.ColumnMappings.Add("AddressId", "AddressId");
-            tableMapping.ColumnMappings.Add("Address", "Address");
-            tableMapping.ColumnMappings.Add("City", "City");
-            tableMapping.ColumnMappings.Add("CountryName", "CountryName");
-            tableMapping.ColumnMappings.Add("AdministrativeRegionCode", "AdministrativeRegionCode");
-            tableMapping.ColumnMappings.Add("PostalCode", "PostalCode");
-            tableMapping.ColumnMappings.Add("Date", "Date");
-            tableMapping.ColumnMappings.Add("Rank", "Rank");
-            tableMapping.ColumnMappings.Add("WArrivingBy1", "WArrivingBy1");
-            tableMapping.ColumnMappings.Add("WArrivingBy2", "WArrivingBy2");
-            tableMapping.ColumnMappings.Add("WArrivingBy3", "WArrivingBy3");
-            tableMapping.ColumnMappings.Add("WArrivingBy4", "WArrivingBy4");
-            tableMapping.ColumnMappings.Add("WTripPurpose1", "WTripPurpose1");
-            tableMapping.ColumnMappings.Add("WTripPurpose2", "WTripPurpose2");
-            tableMapping.ColumnMappings.Add("WTripPurpose3", "WTripPurpose3");
-            tableMapping.ColumnMappings.Add("WArrivingFrom1", "WArrivingFrom1");
-            tableMapping.ColumnMappings.Add("WArrivingFrom2", "WArrivingFrom2");
-            tableMapping.ColumnMappings.Add("WArrivingFrom3", "WArrivingFrom3");
-            tableMapping.ColumnMappings.Add("Firearms_Yes", "Firearms_Yes");
-            tableMapping.ColumnMappings.Add("Firearms_No", "Firearms_No");
-            tableMapping.ColumnMappings.Add("CommercialGoods_Yes", "CommercialGoods_Yes");
-            tableMapping.ColumnMappings.Add("CommercialGoods_No", "CommercialGoods_No");
-            tableMapping.ColumnMappings.Add("MeatProducts_Yes", "MeatProducts_Yes");
-            tableMapping.ColumnMappings.Add("MeatProducts_No", "MeatProducts_No");
-            tableMapping.ColumnMappings.Add("CurrencyValue_Yes", "CurrencyValue_Yes");
-            tableMapping.ColumnMappings.Add("CurrencyValue_No", "CurrencyValue_No");
-            tableMapping.ColumnMappings.Add("Goods_Yes", "Goods_Yes");
-            tableMapping.ColumnMappings.Add("Goods_No", "Goods_No");
-            tableMapping.ColumnMappings.Add("FarmVisit_Yes", "FarmVisit_Yes");
-            tableMapping.ColumnMappings.Add("FarmVisit_No", "FarmVisit_No");
-            tableMapping.ColumnMappings.Add("ExceedDutyFree_Yes", "ExceedDutyFree_Yes");
-            tableMapping.ColumnMappings.Add("ExceedDutyFree_No", "ExceedDutyFree_No");
-            tableMapping.ColumnMappings.Add("ExceedExemptions_Yes", "ExceedExemptions_Yes");
-            tableMapping.ColumnMappings.Add("ExceedExemptions_No", "ExceedExemptions_No");
-            tableMapping.ColumnMappings.Add("DurationOfStay", "DurationOfStay");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["cdpWebConn"].ConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT AirLineFlightNo, AddressId, Address, City, CountryName, AdministrativeRegionCode, PostalCode, Date, Rank, WArrivingBy1, WArrivingBy2, WArrivingBy3, WArrivingBy4, WTripPurpose1, WTripPurpose2, WTripPurpose3, WArrivingFrom1, WArrivingFrom2, WArrivingFrom3, Firearms_Yes, Firearms_No, CommercialGoods_Yes, CommercialGoods_No, MeatProducts_Yes, MeatProducts_No, CurrencyValue_Yes, CurrencyValue_No, Goods_Yes, Goods_No, FarmVisit_Yes, FarmVisit_No, ExceedDutyFree_Yes, ExceedDutyFree_No, ExceedExemptions_Yes, ExceedExemptions_No, DurationOfStay FROM dbo.Get_CAN_FlightInfo(@WAppUserId)";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@WAppUserId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CDP_Dataset.Get_CAN_FlightInfoDataTable dataTable, long WAppUserId) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((long)(WAppUserId));
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CDP_Dataset.Get_CAN_FlightInfoDataTable Get_CAN_FlightInfo(long WAppUserId) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((long)(WAppUserId));
-            CDP_Dataset.Get_CAN_FlightInfoDataTable dataTable = new CDP_Dataset.Get_CAN_FlightInfoDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
     
     /// <summary>
     ///Represents the connection and commands used to retrieve and save data.
@@ -6904,6 +6969,221 @@ namespace CDPW.CDP_DatasetTableAdapters {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((long)(WAppUserId));
             CDP_Dataset.Get_US_FlightInfo2DataTable dataTable = new CDP_Dataset.Get_US_FlightInfo2DataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class Get_CAN_FlightInfoTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public Get_CAN_FlightInfoTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Get_CAN_FlightInfo";
+            tableMapping.ColumnMappings.Add("AirLineFlightNo", "AirLineFlightNo");
+            tableMapping.ColumnMappings.Add("AddressId", "AddressId");
+            tableMapping.ColumnMappings.Add("Address", "Address");
+            tableMapping.ColumnMappings.Add("City", "City");
+            tableMapping.ColumnMappings.Add("CountryName", "CountryName");
+            tableMapping.ColumnMappings.Add("AdministrativeRegionCode", "AdministrativeRegionCode");
+            tableMapping.ColumnMappings.Add("PostalCode", "PostalCode");
+            tableMapping.ColumnMappings.Add("Date", "Date");
+            tableMapping.ColumnMappings.Add("Rank", "Rank");
+            tableMapping.ColumnMappings.Add("WArrivingBy1", "WArrivingBy1");
+            tableMapping.ColumnMappings.Add("WArrivingBy2", "WArrivingBy2");
+            tableMapping.ColumnMappings.Add("WArrivingBy3", "WArrivingBy3");
+            tableMapping.ColumnMappings.Add("WArrivingBy4", "WArrivingBy4");
+            tableMapping.ColumnMappings.Add("WTripPurpose1", "WTripPurpose1");
+            tableMapping.ColumnMappings.Add("WTripPurpose2", "WTripPurpose2");
+            tableMapping.ColumnMappings.Add("WTripPurpose3", "WTripPurpose3");
+            tableMapping.ColumnMappings.Add("WArrivingFrom1", "WArrivingFrom1");
+            tableMapping.ColumnMappings.Add("WArrivingFrom2", "WArrivingFrom2");
+            tableMapping.ColumnMappings.Add("WArrivingFrom3", "WArrivingFrom3");
+            tableMapping.ColumnMappings.Add("Firearms_Yes", "Firearms_Yes");
+            tableMapping.ColumnMappings.Add("Firearms_No", "Firearms_No");
+            tableMapping.ColumnMappings.Add("CommercialGoods_Yes", "CommercialGoods_Yes");
+            tableMapping.ColumnMappings.Add("CommercialGoods_No", "CommercialGoods_No");
+            tableMapping.ColumnMappings.Add("MeatProducts_Yes", "MeatProducts_Yes");
+            tableMapping.ColumnMappings.Add("MeatProducts_No", "MeatProducts_No");
+            tableMapping.ColumnMappings.Add("CurrencyValue_Yes", "CurrencyValue_Yes");
+            tableMapping.ColumnMappings.Add("CurrencyValue_No", "CurrencyValue_No");
+            tableMapping.ColumnMappings.Add("Goods_Yes", "Goods_Yes");
+            tableMapping.ColumnMappings.Add("Goods_No", "Goods_No");
+            tableMapping.ColumnMappings.Add("FarmVisit_Yes", "FarmVisit_Yes");
+            tableMapping.ColumnMappings.Add("FarmVisit_No", "FarmVisit_No");
+            tableMapping.ColumnMappings.Add("ExceedDutyFree_Yes", "ExceedDutyFree_Yes");
+            tableMapping.ColumnMappings.Add("ExceedDutyFree_No", "ExceedDutyFree_No");
+            tableMapping.ColumnMappings.Add("ExceedExemptions_Yes", "ExceedExemptions_Yes");
+            tableMapping.ColumnMappings.Add("ExceedExemptions_No", "ExceedExemptions_No");
+            tableMapping.ColumnMappings.Add("DurationOfStay", "DurationOfStay");
+            tableMapping.ColumnMappings.Add("Date1", "Date1");
+            tableMapping.ColumnMappings.Add("Date2", "Date2");
+            tableMapping.ColumnMappings.Add("Date3", "Date3");
+            tableMapping.ColumnMappings.Add("Date4", "Date4");
+            tableMapping.ColumnMappings.Add("Date5", "Date5");
+            tableMapping.ColumnMappings.Add("Date6", "Date6");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["cdpWebConn"].ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT        AirLineFlightNo, AddressId, Address, City, CountryName, AdministrativeRegionCode, PostalCode, Date, Rank, WArrivingBy1, WArrivingBy2, WArrivingBy3, WArrivingBy4, WTripPurpose1, WTripPurpose2, 
+                         WTripPurpose3, WArrivingFrom1, WArrivingFrom2, WArrivingFrom3, Firearms_Yes, Firearms_No, CommercialGoods_Yes, CommercialGoods_No, MeatProducts_Yes, MeatProducts_No, CurrencyValue_Yes, 
+                         CurrencyValue_No, Goods_Yes, Goods_No, FarmVisit_Yes, FarmVisit_No, ExceedDutyFree_Yes, ExceedDutyFree_No, ExceedExemptions_Yes, ExceedExemptions_No, DurationOfStay, Date1, Date2, Date3, 
+                         Date4, Date5, Date6
+FROM            dbo.Get_CAN_FlightInfo(@WAppUserId) AS Get_CAN_FlightInfo_1";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@WAppUserId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(CDP_Dataset.Get_CAN_FlightInfoDataTable dataTable, long WAppUserId) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((long)(WAppUserId));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual CDP_Dataset.Get_CAN_FlightInfoDataTable Get_CAN_FlightInfo(long WAppUserId) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((long)(WAppUserId));
+            CDP_Dataset.Get_CAN_FlightInfoDataTable dataTable = new CDP_Dataset.Get_CAN_FlightInfoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

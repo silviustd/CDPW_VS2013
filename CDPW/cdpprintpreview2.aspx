@@ -17,7 +17,7 @@
         <asp:ScriptManager ID="Scriptmanager1" runat="server" />
         <asp:PlaceHolder ID="phReport" runat="server">
             <rsweb:ReportViewer ID="rwPrintPreview" runat="server" SizeToReportContent="true" ShowPrintButton="true" ProcessingMode="Local">
-                <LocalReport DisplayName="Testare" EnableExternalImages="true"></LocalReport>
+                <LocalReport DisplayName="CustomDeclaration" EnableExternalImages="true"></LocalReport>
             </rsweb:ReportViewer>
 
             <script type="text/javascript">
