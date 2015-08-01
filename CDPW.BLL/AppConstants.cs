@@ -8,5 +8,6 @@ namespace CDPW.BLL
     public class AppConstants
     {
         public const Char DCAN_NAME_SEPARATOR = ',';
+        public const Int32 DCAN_NAME_LENGTH = 26;
     }
 }

@@ -22,7 +22,7 @@ namespace CDPW
         protected void Page_Load(object sender, EventArgs e)
         {
             if (log.IsInfoEnabled) log.Info(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name + "-" + System.Reflection.MethodBase.GetCurrentMethod().Name + " - Enter");
-
+            //ALEXANDRA54040,STOCHITA5404O,M
             try
             {
                 if (HttpContext.Current.Session != null && HttpContext.Current.Session["cdpUser"] != null)
@@ -87,9 +87,13 @@ namespace CDPW
                                             PIds[0] = String.IsNullOrEmpty(dr["PersonId"].ToString()) ? 0 : (Int64)dr["PersonId"];
                                             //txtName1.Text = string.Format("{0}", dr["Name"].ToString()).Trim();
                                             //hidName1.Value = string.Format("{0}", dr["Name"].ToString()).Trim();
-                                            txtName1.Text = string.Format("{0}", dr["LastName"].ToString()).Trim() + AppConstants.DCAN_NAME_SEPARATOR +
+                                            
+                                            String txtName1_Text = string.Format("{0}", dr["LastName"].ToString()).Trim() + AppConstants.DCAN_NAME_SEPARATOR +
                                                             string.Format("{0}", dr["FirstName"].ToString()).Trim() + AppConstants.DCAN_NAME_SEPARATOR +
                                                             string.Format("{0}", dr["MiddleName"].ToString()).Trim();
+                                            Int32 Name1Length = AppConstants.DCAN_NAME_LENGTH > txtName1_Text.Length ? txtName1_Text.Length : AppConstants.DCAN_NAME_LENGTH;
+                                            txtName1_Text = txtName1_Text.Substring(0, Name1Length);
+                                            txtName1.Text = txtName1_Text; 
                                             if (!string.IsNullOrEmpty(dr["DateofBirth"].ToString()))
                                             {
                                                 txtDOB1.Text = TextUtils.ReturnFromDB(dr["DateofBirth"].ToString(), true);
@@ -99,9 +103,12 @@ namespace CDPW
                                         case 2:
                                             PIds[1] = String.IsNullOrEmpty(dr["PersonId"].ToString()) ? 0 : (Int64)dr["PersonId"];
                                             //txtName2.Text = string.Format("{0}", dr["Name"].ToString()).Trim();
-                                            txtName2.Text = string.Format("{0}", dr["LastName"].ToString()).Trim() + AppConstants.DCAN_NAME_SEPARATOR +
+                                            String txtName2_Text = string.Format("{0}", dr["LastName"].ToString()).Trim() + AppConstants.DCAN_NAME_SEPARATOR +
                                                             string.Format("{0}", dr["FirstName"].ToString()).Trim() + AppConstants.DCAN_NAME_SEPARATOR +
                                                             string.Format("{0}", dr["MiddleName"].ToString()).Trim();
+                                            Int32 Name2Length = AppConstants.DCAN_NAME_LENGTH > txtName2_Text.Length ? txtName2_Text.Length : AppConstants.DCAN_NAME_LENGTH;
+                                            txtName2_Text = txtName2_Text.Substring(0, Name2Length);
+                                            txtName2.Text = txtName2_Text; 
                                             if (!string.IsNullOrEmpty(dr["DateofBirth"].ToString()))
                                             {
                                                 txtDOB2.Text = TextUtils.ReturnFromDB(dr["DateofBirth"].ToString(), true);
@@ -111,9 +118,12 @@ namespace CDPW
                                         case 3:
                                             PIds[2] = String.IsNullOrEmpty(dr["PersonId"].ToString()) ? 0 : (Int64)dr["PersonId"];
                                             txtName3.Text = string.Format("{0}", dr["Name"].ToString()).Trim();
-                                            txtName3.Text = string.Format("{0}", dr["LastName"].ToString()).Trim() + AppConstants.DCAN_NAME_SEPARATOR +
+                                            String txtName3_Text = string.Format("{0}", dr["LastName"].ToString()).Trim() + AppConstants.DCAN_NAME_SEPARATOR +
                                                             string.Format("{0}", dr["FirstName"].ToString()).Trim() + AppConstants.DCAN_NAME_SEPARATOR +
                                                             string.Format("{0}", dr["MiddleName"].ToString()).Trim();
+                                            Int32 Name3Length = AppConstants.DCAN_NAME_LENGTH > txtName3_Text.Length ? txtName3_Text.Length : AppConstants.DCAN_NAME_LENGTH;
+                                            txtName3_Text = txtName3_Text.Substring(0, Name3Length);
+                                            txtName3.Text = txtName3_Text; 
                                             if (!string.IsNullOrEmpty(dr["DateofBirth"].ToString()))
                                             {
                                                 txtDOB3.Text = TextUtils.ReturnFromDB(dr["DateofBirth"].ToString(), true);
@@ -122,10 +132,12 @@ namespace CDPW
                                             break;
                                         case 4:
                                             PIds[3] = String.IsNullOrEmpty(dr["PersonId"].ToString()) ? 0 : (Int64)dr["PersonId"];
-                                            txtName4.Text = string.Format("{0}", dr["Name"].ToString()).Trim();
-                                            txtName4.Text = string.Format("{0}", dr["LastName"].ToString()).Trim() + AppConstants.DCAN_NAME_SEPARATOR +
+                                            String txtName4_Text = string.Format("{0}", dr["LastName"].ToString()).Trim() + AppConstants.DCAN_NAME_SEPARATOR +
                                                             string.Format("{0}", dr["FirstName"].ToString()).Trim() + AppConstants.DCAN_NAME_SEPARATOR +
                                                             string.Format("{0}", dr["MiddleName"].ToString()).Trim();
+                                            Int32 Name4Length = AppConstants.DCAN_NAME_LENGTH > txtName4_Text.Length ? txtName4_Text.Length : AppConstants.DCAN_NAME_LENGTH;
+                                            txtName4_Text = txtName4_Text.Substring(0, Name4Length);
+                                            txtName4.Text = txtName4_Text; 
                                             if (!string.IsNullOrEmpty(dr["DateofBirth"].ToString()))
                                             {
                                                 txtDOB4.Text = TextUtils.ReturnFromDB(dr["DateofBirth"].ToString(), true);

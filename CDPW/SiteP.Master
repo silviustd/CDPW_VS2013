@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteP.Master.cs" Inherits="CDPW.SiteP"
+    ClientIDMode="Static" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta name="description" content="" />
+    <meta http-equiv="content-language" content="en" />
+    <link href="theme/css.ashx" rel="stylesheet" type="text/css" />
+    <%--    <link rel="stylesheet" type="text/css" href="theme/clasic/ie.css" />
+    <link rel="stylesheet" type="text/css" href="theme/clasic/main.css" />
+    <link rel="stylesheet" type="text/css" href="theme/clasic/reset.css" />
+    <link rel="stylesheet" type="text/css" href="theme/clasic/form.css" />
+    <link rel="stylesheet" type="text/css" href="theme/clasic/tipsy.css" />--%>
+    <%--<!--[if lt IE 8]>
+	<link rel="stylesheet" type="text/css" href="theme/clasic/ie.css" />
+	<![endif]-->--%>
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'/>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans|Ubuntu|Gudea|Raleway:400,500,600,700,800,900,300,200,100|Titillium+Web|Oxygen|Open+Sans' rel='stylesheet' type='text/css'/>
+    <link href='http://fonts.googleapis.com/css?family=Dosis|Lato:300,400,700,300italic,400italic,700italic|Cabin:400,500|Palanquin|Ubuntu:400,500|Ek+Mukta:400,500|Martel+Sans|Advent+Pro|Yantramanav' rel='stylesheet' type='text/css'/>
+    <script src="theme/js.ashx" type="text/javascript"></script>
+    <script type="text/javascript">
+        function printCF() {
+            var purl = window.location.href;
+            if (purl.indexOf("DCANForm.aspx") > 0) {
+                window.open('cdpprintpreview2.aspx?Report=CANForm');
+            }
+
+            if (purl.indexOf("DUSAForm.aspx") > 0) {
+
+                if (document.getElementById("opt2").checked || document.getElementById("opt22").checked) {
+                    window.open('cdpprintpreview2.aspx?Report=USAFormB');
+                }
+
+                if (document.getElementById("opt1").checked || document.getElementById("opt11").checked) {
+                    window.open('cdpprintpreview2.aspx?Report=USAForm');
+                }
+            }
+        } 
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <form id="form1" runat="server">
+    <div id="headerp-container">
+   
+    </div>
+    <asp:ContentPlaceHolder ID="cphMain" runat="server">
+    </asp:ContentPlaceHolder>
+    </form>
+    
+</body>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        if ($("#pnlMasterMessage").is(":visible")) {
+            $('#form1').css("position", "relative");
+            $('#form1').css("-webkit-filter", "blur(6px)");
+            $('#form1').css("filter", "blur(6px);");
+        }
+    });
+</script>
+</html>

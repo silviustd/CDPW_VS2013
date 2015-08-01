@@ -129,10 +129,12 @@
     <Content Include="components\_subCBSAPlan.txt" />
     <Content Include="components\_subUSCBPPlan.txt" />
     <Content Include="DCANForm.aspx" />
+    <Content Include="DUSAForm_print2.aspx" />
     <Content Include="DUSAForm.aspx" />
     <Content Include="Global.asax" />
     <Content Include="theme\clasic\colorbox.css" />
     <Content Include="theme\clasic\form.css" />
+    <Content Include="theme\clasic\formprint.css" />
     <Content Include="theme\clasic\images\add-to-cart.jpg" />
     <Content Include="theme\clasic\images\apply.png" />
     <Content Include="theme\clasic\images\bullet-1.png" />
@@ -229,6 +231,7 @@
     <None Include="Properties\PublishProfiles\Profile2.pubxml" />
     <None Include="Properties\PublishProfiles\Profile3.pubxml" />
     <None Include="Properties\PublishProfiles\ServerPersonal.pubxml" />
+    <Content Include="SiteP.Master" />
     <None Include="theme\clasic\js\Copy of jquery.validationEngine-en.jjs" />
     <Content Include="theme\clasic\js\functions.js" />
     <Content Include="theme\clasic\js\jquery-ui-1.8.23.custom.min.js" />
@@ -365,6 +368,13 @@
     <Compile Include="DCANForm.aspx.designer.cs">
       <DependentUpon>DCANForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DUSAForm_print2.aspx.cs">
+      <DependentUpon>DUSAForm_print2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DUSAForm_print2.aspx.designer.cs">
+      <DependentUpon>DUSAForm_print2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DUSAForm.aspx.cs">
       <DependentUpon>DUSAForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -382,6 +392,13 @@
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SiteP.Master.cs">
+      <DependentUpon>SiteP.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteP.Master.designer.cs">
+      <DependentUpon>SiteP.Master</DependentUpon>
     </Compile>
     <Compile Include="theme\css.ashx.cs">
       <DependentUpon>css.ashx</DependentUpon>
@@ -450,7 +467,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>22694</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:22678/</IISUrl>
+          <IISUrl>http://localhost:22673/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
